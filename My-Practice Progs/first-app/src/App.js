@@ -7,10 +7,6 @@ function App() {
       <NavScrollExample />
       <div className="d-flex">
         <TextExample />
-        <TextExample />
-        <TextExample />
-        <TextExample />
-        <TextExample />
       </div>
     </>
   );
