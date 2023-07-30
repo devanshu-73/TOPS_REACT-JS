@@ -23,6 +23,12 @@ function App() {
           iusto culpa fuga molestiae dignissimos! Culpa dolore corrupti quisquam
           architecto harum.
         </div>
+        <div className="sec-4">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia
+          voluptatem atque vel tempore et voluptatum nihil, facere cumque quae
+          iusto culpa fuga molestiae dignissimos! Culpa dolore corrupti quisquam
+          architecto harum.
+        </div>
       </div>
     </>
   );
