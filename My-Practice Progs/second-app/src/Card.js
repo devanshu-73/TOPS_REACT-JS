@@ -39,8 +39,8 @@ function BasicExample() {
                             </Col>
                         ))}
                     </Row>
-
                 </div>
+
             );
         }
         return cardGroups;
