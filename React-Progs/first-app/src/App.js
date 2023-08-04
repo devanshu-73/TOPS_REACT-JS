@@ -9,6 +9,8 @@ function App() {
         <TextExample />
         <TextExample />
         <TextExample />
+        <TextExample />
+        <TextExample />
       </div>
     </>
   );
