@@ -21,13 +21,13 @@ function BasicExample() {
         for (let i = 0; i < photos.length; i += 5) {
             const group = photos.slice(i, i + 5);
             cardGroups.push(
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '.4rem', border: '1px solid black' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '.4rem' }}>
                     <Row className='gap-3' key={i}>
                         {group.map(photo => (
                             <Card style={{ width: '15rem', marginBottom: '20px', padding: '.7rem' }}>
                                 <Card.Img variant="top" src={photo.url} />
-                                <Card.Body>
-                                    <Card.Title>{photo.title.slice(0,17)}</Card.Title>
+                                <Card.Body className={'text-center'}>
+                                    <Card.Title>{photo.title.slice(0, 17)}</Card.Title>
                                     <Card.Text>
                                         Some quick example text to build on the card ...
                                     </Card.Text>
