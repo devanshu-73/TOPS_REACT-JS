@@ -18,10 +18,12 @@ function BasicExample() {
 
     const renderCards = () => {
         const cardGroups = [];
+        let originalText = "Some quick example text to build on the card title and make up the bulk of the card's content.";
+        let slicedText = originalText.slice(0, 50);
         for (let i = 0; i < photos.length; i += 5) {
             const group = photos.slice(i, i + 5);
             cardGroups.push(
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',margin:'.4rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '.4rem', border: '1px solid black' }}>
                     <Row className='gap-3' key={i}>
                         {group.map(photo => (
                             <Card style={{ width: '15rem', marginBottom: '20px', padding: '.7rem' }}>
@@ -29,8 +31,7 @@ function BasicExample() {
                                 <Card.Body>
                                     <Card.Title>{photo.title}</Card.Title>
                                     <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
+                                        {slicedText + "..."}
                                     </Card.Text>
                                     <Button variant="primary">Go somewhere</Button>
                                 </Card.Body>
