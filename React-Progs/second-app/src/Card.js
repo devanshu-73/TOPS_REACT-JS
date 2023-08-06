@@ -24,7 +24,7 @@ function BasicExample() {
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '.4rem', border: '1px solid black' }}>
                     <Row className='gap-3' key={i}>
                         {group.map(photo => (
-                            <Card className='d-flex justify-content-center' style={{ width: '15rem', marginBottom: '20px', padding: '.7rem' }}>
+                            <Card style={{ width: '15rem', marginBottom: '20px', padding: '.7rem' }}>
                                 <Card.Img variant="top" src={photo.url} />
                                 <Card.Body>
                                     <Card.Title>{photo.title.slice(0,17)}</Card.Title>
