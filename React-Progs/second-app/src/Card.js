@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card, Button, Col, Row } from 'react-bootstrap';
+import { Card, Button, Row } from 'react-bootstrap';
 
 function BasicExample() {
     const [photos, setPhotos] = useState([]);
@@ -24,23 +24,20 @@ function BasicExample() {
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <Row key={i}>
                         {group.map(photo => (
-                            <Col key={photo.id} md={3}>
-                                <Card style={{ width: '15rem', marginBottom: '20px' }}>
-                                    <Card.Img variant="top" src={photo.url} />
-                                    <Card.Body>
-                                        <Card.Title>{photo.title}</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                        <Button variant="primary">Go somewhere</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
+                            <Card style={{ width: '15rem', marginBottom: '20px', padding: '.7rem' }}>
+                                <Card.Img variant="top" src={photo.url} />
+                                <Card.Body>
+                                    <Card.Title>{photo.title}</Card.Title>
+                                    <Card.Text>
+                                        Some quick example text to build on the card title and make up the
+                                        bulk of the card's content.
+                                    </Card.Text>
+                                    <Button variant="primary">Go somewhere</Button>
+                                </Card.Body>
+                            </Card>
                         ))}
                     </Row>
                 </div>
-
             );
         }
         return cardGroups;
