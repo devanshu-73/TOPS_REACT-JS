@@ -25,7 +25,7 @@ function BasicExample() {
                     <Row key={i}>
                         {group.map(photo => (
                             <Col key={photo.id} md={3}>
-                                <Card style={{ width: '18rem', marginBottom: '20px' }}>
+                                <Card style={{ width: '15rem', marginBottom: '20px' }}>
                                     <Card.Img variant="top" src={photo.url} />
                                     <Card.Body>
                                         <Card.Title>{photo.title}</Card.Title>
