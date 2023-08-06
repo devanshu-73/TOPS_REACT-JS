@@ -18,11 +18,11 @@ function BasicExample() {
 
     const renderCards = () => {
         const cardGroups = [];
-        for (let i = 0; i < photos.length; i += 4) {
-            const group = photos.slice(i, i + 4);
+        for (let i = 0; i < photos.length; i += 5) {
+            const group = photos.slice(i, i + 5);
             cardGroups.push(
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Row key={i}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',margin:'.4rem' }}>
+                    <Row className='gap-3' key={i}>
                         {group.map(photo => (
                             <Card style={{ width: '15rem', marginBottom: '20px', padding: '.7rem' }}>
                                 <Card.Img variant="top" src={photo.url} />
