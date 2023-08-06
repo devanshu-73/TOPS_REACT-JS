@@ -29,7 +29,7 @@ function BasicExample() {
                             <Card style={{ width: '15rem', marginBottom: '20px', padding: '.7rem' }}>
                                 <Card.Img variant="top" src={photo.url} />
                                 <Card.Body>
-                                    <Card.Title>{photo.title}</Card.Title>
+                                    <Card.Title>{photo.title.slice(0,17)}</Card.Title>
                                     <Card.Text>
                                         {slicedText + "..."}
                                     </Card.Text>
