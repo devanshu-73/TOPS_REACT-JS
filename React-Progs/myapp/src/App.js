@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className="container d-flex">
-      
+      {/* Hard coding... */}
         {/* <Card title="ABC" />
         <Card title="dev" />
         <Card title="Jay" />
