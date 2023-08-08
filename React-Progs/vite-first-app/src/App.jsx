@@ -1,12 +1,38 @@
 import Card from './Card';
 
 function App() {
+  let data = [
+    {
+      "id": 1,
+      "title": "Dog - 1",
+      "img": "https://images.pexels.com/photos/2951921/pexels-photo-2951921.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": 2,
+      "title": "Dog - 2",
+      "img": "https://images.pexels.com/photos/3090875/pexels-photo-3090875.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": 3,
+      "title": "Dog - 3",
+      "img": "https://images.pexels.com/photos/4587971/pexels-photo-4587971.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": 4,
+      "title": "Dog - 4",
+      "img": "https://images.pexels.com/photos/4587998/pexels-photo-4587998.jpeg?auto=compress&cs=tinysrgb&w=600"
+    }
+  ]
   return (
     <>
-      <Card title="Dog - 1" />
-      <Card title="Dog - 2" />
-      <Card title="Dog - 3" />
-      <Card title="Dog - 4" />
+      <div className="container">
+        <div className="row">
+          {data.map((val) => (
+            // eslint-disable-next-line react/jsx-key
+            <Card title={val.title} img={val.img} />
+          ))}
+        </div>
+      </div>
     </>
   )
 }
