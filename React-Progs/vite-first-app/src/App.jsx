@@ -28,8 +28,7 @@ function App() {
       <div className="container">
         <div className="row">
           {data.map((val) => (
-            // eslint-disable-next-line react/jsx-key
-            <Card title={val.title} img={val.img} />
+            <Card key={val.id} title={val.title} img={val.img} />
           ))}
         </div>
       </div>
