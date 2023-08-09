@@ -14,16 +14,21 @@ function App() {
     },
     {
       "id": 3,
+      "title": "Dog - 2",
+      "img": "https://images.pexels.com/photos/3090875/pexels-photo-3090875.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": 4,
       "title": "Dog - 3",
       "img": "https://images.pexels.com/photos/4587971/pexels-photo-4587971.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Dog - 4",
       "img": "https://images.pexels.com/photos/4587998/pexels-photo-4587998.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Dog - 4",
       "img": "https://images.pexels.com/photos/4587998/pexels-photo-4587998.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
