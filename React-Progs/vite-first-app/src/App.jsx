@@ -36,6 +36,11 @@ function App() {
       "id": 7,
       "title": "Dog - 4",
       "img": "https://images.pexels.com/photos/4587998/pexels-photo-4587998.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": 8,
+      "title": "Dog - 1",
+      "img": "https://images.pexels.com/photos/2951921/pexels-photo-2951921.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ]
   return (
