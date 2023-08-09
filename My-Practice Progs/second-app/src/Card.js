@@ -31,7 +31,7 @@ function BasicExample() {
                                     <Card.Text>
                                         Some quick example text to build on the card ...
                                     </Card.Text>
-                                    <Button variant="dark">Go somewhere</Button>
+                                    <Button variant="dark">Click</Button>
                                 </Card.Body>
                             </Card>
                         ))}
