@@ -13,6 +13,7 @@ function App() {
         <TextExample />
         <TextExample />
         <TextExample />
+        <TextExample />
       </div>
     </>
   );
