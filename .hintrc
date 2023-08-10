@@ -3,6 +3,15 @@
     "development"
   ],
   "hints": {
-    "compat-api/html": "off"
+    "compat-api/html": "off",
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "font-synthesis",
+          "-webkit-text-size-adjust"
+        ]
+      }
+    ]
   }
 }
