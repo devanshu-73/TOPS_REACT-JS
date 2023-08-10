@@ -2,7 +2,7 @@
 export default function Home() {
     return (
         <>
-            <div className="container mt-5">
+            <div className="mt-5">
                 <div className="row">
                     <div className="col-sm-4">
                         <h2>Home......</h2>
