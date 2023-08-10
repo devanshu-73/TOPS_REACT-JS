@@ -45,15 +45,16 @@ function App() {
   ]
   return (
     <>
-      <div className="container">
+    
+    
+        <div className="container">
         <div className="row">
           {data.map((val) => (
             <Card key={val.id} title={val.title} img={val.img} />
           ))}
         </div>
       </div>
-    </>
-  )
+    </>)
 }
 
 export default App
