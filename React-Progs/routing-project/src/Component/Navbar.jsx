@@ -7,8 +7,8 @@ export default function Navbar() {
                     <h1>My First Bootstrap 5 Page</h1>
                     <p>Resize this responsive page to see the effect!</p>
                 </div>
-                <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
-                    <div className="container-fluid">
+                <nav className=" navbar navbar-expand-sm bg-dark navbar-dark">
+                    <div className="container">
                         <ul className="navbar-nav">
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/">Home</NavLink>
