@@ -1,7 +1,7 @@
 
 export default function Contact() {
     return (
-        <div>
+        <div className="container">
             <form action="/action_page.php">
                 <div className="mb-3 mt-3">
                     <label htmlFor="email" className="form-label">Email:</label>
