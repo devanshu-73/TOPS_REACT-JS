@@ -3,7 +3,7 @@ export default function About() {
         <>
             <div className="col-sm-8">
                 <h2>About Page........</h2>
-                <h5>Title description, Dec 7, 2020</h5>
+                <h5>Title description</h5>
                 <div className="fakeimg">Fake Image</div>
                 <p>Some text..</p>
                 <p>Some text..</p>
