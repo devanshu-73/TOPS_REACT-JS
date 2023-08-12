@@ -4,21 +4,27 @@ import Footer from "./Comps/Footer"
 import About from "./Pages/About";
 import Service from "./Pages/Service";
 import Room from "./Pages/Room";
+import Team from "./Comps/Team";
 import Contact from "./Pages/Contact";
 import Header from "./Comps/Header";
+import Booking from "./Pages/Booking";
+import OurTeam from "./Pages/OurTeam";
+import Testimonial from "./Pages/Testimonial";
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<><Header /> <Home /> <Footer /></>}></Route>
-          <Route path="/about" element={<><Header /> <About /> <Footer /></>}></Route>
-          <Route path="/service" element={<><Header /> <Service /> <Footer /></>}></Route>
-          <Route path="/contact" element={<><Header /> <Contact /> <Footer /></>}></Route>
-          <Route path="/rooms" element={<><Header /> <Room /> <Footer /></>}></Route>
+          <Route exact path="/" element={<><Header /> <Home /> <Team /> <Footer /></>}></Route>
+          <Route exact path="/about" element={<><Header /> <About /> <Team /> <Footer /></>}></Route>
+          <Route exact path="/service" element={<><Header /> <Service /> <Team /> <Footer /></>}></Route>
+          <Route exact path="/rooms" element={<><Header /> <Room /> <Footer /></>}></Route>
+          <Route exact path="/pages/booking" element={<><Header /> <Booking /> <Footer /></>}></Route>
+          <Route exact path="/pages/team" element={<><Header /> <OurTeam /> <Footer /></>}></Route>
+          <Route exact path="/pages/testimonial" element={<><Header /> <Testimonial /> <Footer /></>}></Route>
+          <Route exact path="/contact" element={<><Header /> <Contact /> <Footer /></>}></Route>
         </Routes>
       </BrowserRouter>
-      {/* <Home /> */}
     </>
   );
 }
