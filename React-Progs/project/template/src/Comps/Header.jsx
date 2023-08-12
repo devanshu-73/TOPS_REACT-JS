@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 export default function Header() {
     return (
         <>
@@ -9,9 +9,9 @@ export default function Header() {
                 <div className="container-fluid bg-dark px-0">
                     <div className="row gx-0">
                         <div className="col-lg-3 bg-dark d-none d-lg-block">
-                            <a href="index.html" className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+                            <NavLink to="/" className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
                                 <h1 className="m-0 text-primary text-uppercase">Hotelier</h1>
-                            </a>
+                            </NavLink>
                         </div>
                         <div className="col-lg-9">
                             <div className="row gx-0 bg-white d-none d-lg-flex">
@@ -49,14 +49,14 @@ export default function Header() {
                                         <NavLink to="/service" className="nav-item nav-link">Services</NavLink>
                                         <NavLink to="/rooms" className="nav-item nav-link">Rooms</NavLink>
                                         <div className="nav-item dropdown">
-                                            <a href="/navbar" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                                            <Link to="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</Link>
                                             <div className="dropdown-menu rounded-0 m-0">
-                                                <a href="booking.html" className="dropdown-item">Booking</a>
-                                                <a href="team.html" className="dropdown-item">Our Team</a>
-                                                <a href="testimonial.html" className="dropdown-item">Testimonial</a>
+                                                <Link to="/pages/booking" className="dropdown-item">Booking</Link>
+                                                <Link to="/pages/team" className="dropdown-item">Our Team</Link>
+                                                <Link to="/pages/testimonial" className="dropdown-item">Testimonial</Link>
                                             </div>
                                         </div>
-                                        <a href="contact.html" className="nav-item nav-link">Contact</a>
+                                        <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
                                     </div>
                                     <a href="https://htmlcodex.com/hotel-html-template-pro" className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Premium Version<i className="fa fa-arrow-right ms-3" /></a>
                                 </div>
