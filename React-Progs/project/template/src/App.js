@@ -20,7 +20,6 @@ function App() {
       </BrowserRouter>
       {/* <Home /> */}
       {/* <About /> */}
-      {/* <Service /> */}
     </>
   );
 }
