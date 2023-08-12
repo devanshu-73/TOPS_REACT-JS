@@ -22,7 +22,6 @@ function App() {
       {/* <About /> */}
       {/* <Service /> */}
       {/* <Room /> */}
-      {/* <Contact /> */}
     </>
   );
 }
