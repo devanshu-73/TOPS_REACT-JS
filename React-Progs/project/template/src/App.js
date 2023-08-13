@@ -7,9 +7,9 @@ import Room from "./Pages/Room";
 import Team from "./Comps/Team";
 import Contact from "./Pages/Contact";
 import Header from "./Comps/Header";
-import Booking from "./Pages/Booking";
-import OurTeam from "./Pages/OurTeam";
-import Testimonial from "./Pages/Testimonial";
+import Booking from "./Pages/Page/Booking";
+import OurTeam from "./Pages/Page/OurTeam";
+import Testimonial from "./Pages/Page/Testimonial";
 function App() {
   return (
     <>
