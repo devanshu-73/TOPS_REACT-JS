@@ -51,9 +51,9 @@ export default function Header() {
                                         <div className="nav-item dropdown">
                                             <Link to="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</Link>
                                             <div className="dropdown-menu rounded-0 m-0">
-                                                <Link to="/pages/booking" className="dropdown-item">Booking</Link>
-                                                <Link to="/pages/team" className="dropdown-item">Our Team</Link>
-                                                <Link to="/pages/testimonial" className="dropdown-item">Testimonial</Link>
+                                                <Link to="/booking" className="dropdown-item">Booking</Link>
+                                                <Link to="/team" className="dropdown-item">Our Team</Link>
+                                                <Link to="/testimonial" className="dropdown-item">Testimonial</Link>
                                             </div>
                                         </div>
                                         <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
