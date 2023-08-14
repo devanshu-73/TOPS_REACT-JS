@@ -177,7 +177,7 @@ export default function OurTeam() {
                   </div>
                 </div>
                 <div className="text-center p-4 mt-3">
-                  <h5 className="fw-bold mb-0">Full name</h5>
+                  <h5 className="fw-bold mb-0">Full Name</h5>
                   <small>Designation</small>
                 </div>
               </div>
