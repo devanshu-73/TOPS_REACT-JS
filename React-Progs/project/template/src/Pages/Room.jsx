@@ -244,7 +244,7 @@ export default function Room() {
                                         <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />2 Bath</small>
                                         <small><i className="fa fa-wifi text-primary me-2" />Wifi</small>
                                     </div>
-                                    <p className="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                                    <p className="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est do duo eos lorem sed diam stet diam sed stet lorem.</p>
                                     <div className="d-flex justify-content-between">
                                         <a className="btn btn-sm btn-primary rounded py-2 px-4" href>View Detail</a>
                                         <a className="btn btn-sm btn-dark rounded py-2 px-4" href>Book Now</a>
