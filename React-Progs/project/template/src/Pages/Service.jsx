@@ -134,7 +134,7 @@ export default function Service() {
                                     </div>
                                 </div>
                                 <h5 className="mb-3">GYM &amp; Yoga</h5>
-                                <p className="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                                <p className="text-body mb-0">Erat ipsum justo amt duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                             </a>
                         </div>
                     </div>
