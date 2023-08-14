@@ -69,7 +69,7 @@ export default function Contact() {
                 <div className="container">
                     <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
                         <h6 className="section-title text-center text-primary text-uppercase">Contact Us</h6>
-                        <h1 className="mb-5"><span className="text-primary text-uppercase">Contact</span> For Any Query</h1>
+                        <h1 className="mb-5"><span className="text-primary text-uppercase">Contact</span>For Any Query</h1>
                     </div>
                     <div className="row g-4">
                         <div className="col-12">
