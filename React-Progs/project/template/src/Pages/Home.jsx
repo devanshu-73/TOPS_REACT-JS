@@ -94,7 +94,7 @@ export default function Home() {
                         <div className="col-lg-6">
                             <h6 className="section-title text-start text-primary text-uppercase">About Us</h6>
                             <h1 className="mb-4">Welcome to <span className="text-primary text-uppercase">Hotelier</span></h1>
-                            <p className="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                            <p className="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
                             <div className="row g-3 pb-4">
                                 <div className="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
                                     <div className="border rounded p-1">
