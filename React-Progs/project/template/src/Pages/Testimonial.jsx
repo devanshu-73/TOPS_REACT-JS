@@ -81,7 +81,7 @@ export default function Testimonial() {
                             <i className="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1" />
                         </div>
                         <div className="testimonial-item position-relative bg-white rounded overflow-hidden">
-                            <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
+                            <p>Tempor stet labore dolor clita stet diam amet ipum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
                             <div className="d-flex align-items-center">
                                 <img className="img-fluid flex-shrink-0 rounded" src="img/testimonial-2.jpg" style={{ width: 45, height: 45 }} />
                                 <div className="ps-3">
