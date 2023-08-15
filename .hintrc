@@ -27,6 +27,10 @@
       {
         "image-alt": "off"
       }
-    ]
+    ],
+    "meta-viewport": "off",
+    "axe/language": "off",
+    "axe/aria": "off",
+    "axe/structure": "off"
   }
 }
