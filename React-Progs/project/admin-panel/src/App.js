@@ -6,18 +6,7 @@ import Main from "./Comp/Main";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <>
-              <Header />
-              <Main />
-              <Footer />
-            </>
-          }
-        ></Route>
+      <Routes><Route exact path="/" element={<> <Header /><Main /><Footer /></>}></Route>
       </Routes>
     </BrowserRouter>
   );
