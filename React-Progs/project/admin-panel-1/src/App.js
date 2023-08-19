@@ -1,32 +1,37 @@
-/* eslint-disable react/jsx-pascal-case */
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Dashboard from './pages/Dashboard';
-// import Login from './pages/Login';
-import Add_categories from './pages/Add_categories';
-import Manage_categories from './pages/Manage_categories';
-import Manage_user from './pages/Manage_user';
-import Manage_product from './pages/Manage_product';
-import Add_product from './pages/Add_product';
-import Add_Blog from './pages/Add_Blog';
-import Manage_Order from './pages/Manage_Order';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./Component/Header";
+import Footer from "./Component/Footer";
+import Dashboard from "./Page/Dashboard";
+import Login from "./Page/Login";
+import AddCategory from './Page/AddCategory';
+import AddProduct from './Page/AddProduct';
+import AddBlog from './Page/AddBlog';
+import ManageUser from './Page/ManageUser';
+import ManageOrder from './Page/ManageOrder';
+import Logout from './Page/Logout';
+import ManageProduct from './Page/ManageProduct';
+import ManageBlog from './Page/ManageBlog';
+import Error from './Page/Error';
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route index path="/login" element={ <><Login/></> }></Route> */}
-        <Route exact path="/" element={<><Header /> <Dashboard /> <Footer /></>}></Route>
-        <Route exact path="/manage_categories" element={<><Header /> <Manage_categories /> <Footer /></>}></Route>
-        <Route exact path="/add_categories" element={<><Header /> <Add_categories /> <Footer /></>}></Route>
-        <Route exact path="/manage_product" element={<><Header /> <Manage_product /> <Footer /></>}></Route>
-        <Route exact path="/add_product" element={<><Header /> <Add_product /> <Footer /></>}></Route>
-        <Route exact path="/manage_order" element={<><Header /> <Manage_Order /> <Footer /></>}></Route>
-        <Route exact path="/manage_user" element={<><Header /> <Manage_user /> <Footer /></>}></Route>
-        <Route exact path="/add_blog" element={<><Header /> <Add_Blog /> <Footer /></>}></Route>
+        <Route path="/" element={<><Login/></>}></Route>
+        <Route path="/dashboard" element={<><Header/> <Dashboard/> <Footer/> </>}></Route>
+        <Route path="/addCategory" element={<><Header/> <AddCategory/> <Footer/></>}></Route>
+        <Route path="/addProduct" element={<><Header/> <AddProduct/> <Footer/></>}></Route>
+        <Route path="/addBlog" element={<><Header/> <AddBlog/> <Footer/></>}></Route>
+        <Route path="/manageUser" element={<><Header/> <ManageUser/> <Footer/></>}></Route>
+        <Route path="/manageOrder" element={<><Header/> <ManageOrder/> <Footer/></>}></Route>
+        <Route path="/logout" element={<><Header/> <Logout/> <Footer/></>}></Route>
+        <Route path="/manageProduct" element={<><Header/> <ManageProduct/> <Footer/></>}></Route>
+        <Route path="/manageBlog" element={<><Header/> <ManageBlog/> <Footer/></>}></Route>
+        <Route path="/error" element={<><Error/></>}></Route>
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
