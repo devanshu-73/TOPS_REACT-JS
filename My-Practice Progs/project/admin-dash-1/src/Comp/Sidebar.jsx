@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import Home from './Home';
 export default function Sidebar() {
     return (
         <div>
@@ -290,6 +291,7 @@ export default function Sidebar() {
                         {/* End of Topbar */}
                     </div>
                     {/* End of Main Content */}
+                    <Home />
                     {/* Footer */}
                     <footer className="sticky-footer bg-white">
                         <div className="container my-auto">
@@ -300,7 +302,7 @@ export default function Sidebar() {
                     </footer>
                     {/* End of Footer */}
 
-                    
+
                 </div>
                 {/* End of Content Wrapper */}
             </div>
