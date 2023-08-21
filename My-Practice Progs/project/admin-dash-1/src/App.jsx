@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Sidebar from './Comp/Sidebar';
-// import Home from './Comp/Home';
+import Sidebar from './Comp/Sidebar'
 function App() {
   return (
     <>
