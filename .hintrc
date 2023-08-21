@@ -32,6 +32,12 @@
     "axe/language": "off",
     "axe/aria": "off",
     "axe/structure": "off",
-    "disown-opener": "off"
+    "disown-opener": "off",
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id-aria": "off"
+      }
+    ]
   }
 }
