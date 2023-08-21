@@ -1,14 +1,13 @@
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Comp/Header';
 function App() {
   return (
     <>
-    <Header />  
-      {/* <BrowserRouter>
+      <BrowserRouter>
       <Routes>
         <Route path='/' element={<><Header /></>}> </Route>
       </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </>
   )
 }
