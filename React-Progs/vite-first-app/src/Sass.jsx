@@ -5,10 +5,10 @@ export default function Sass() {
             <h1 className="dev">Hello</h1>
             <div>    <nav>
                 <ul>
-                    <li><a href="">efef</a></li>
-                    <li><a href="">hth</a></li>
-                    <li><a href="">hyh</a></li>
-                    <li><a href="">gere</a></li>
+                    <li><a href="">fssefef</a></li>
+                    <li><a href="">fsshth</a></li>
+                    <li><a href="">fsshyh</a></li>
+                    <li><a href="">fssgere</a></li>
                 </ul>
             </nav></div>
             <div className="myfont">Hello How r u?</div>
