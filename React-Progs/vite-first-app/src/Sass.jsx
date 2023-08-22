@@ -6,8 +6,8 @@ export default function Sass() {
             <div>    <nav>
                 <ul>
                     <li><a href="">efef</a></li>
-                    <li><a href="">hth</a></li>
-                    <li><a href="">hyh</a></li>
+                    <li><a href="">htgh</a></li>
+                    <li><a href="">hgyh</a></li>
                     <li><a href="">gere</a></li>
                 </ul>
             </nav></div>
