@@ -1,8 +1,8 @@
-import Button from '@mui/material/Button'
+
 // import Card from './Card';
 // import Sass from './Sass';
 // import Module_Style from "./Module_Style"
-// import Button from "./MUI/Button"
+import ButtonMui from './MUI/Button';
 function App() {
   // let data = [
   //   {
@@ -57,17 +57,12 @@ function App() {
       </div> */}
 
 
+      {/* <Sass /> */}
+      {/* <Module_Style /> */}
+      <ButtonMui />
       <hr />
-      <Button variant="contained" color="success">
-        
-      </Button>
-      {/* <Button /> */}
     </>
-    // <>
-    //   {/* <Sass /> */}
-    //   {/* <Module_Style /> */}
-    // </>
-  )
+  );
 }
 
-export default App
+export default App;
