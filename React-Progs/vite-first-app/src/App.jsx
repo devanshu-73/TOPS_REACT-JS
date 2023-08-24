@@ -1,7 +1,8 @@
+import Button from '@mui/material/Button'
 // import Card from './Card';
 // import Sass from './Sass';
 // import Module_Style from "./Module_Style"
-import Button from "./MUI/Button"
+// import Button from "./MUI/Button"
 function App() {
   // let data = [
   //   {
@@ -57,7 +58,10 @@ function App() {
 
 
       <hr />
-      <Button />
+      <Button variant="contained" color="success">
+        
+      </Button>
+      {/* <Button /> */}
     </>
     // <>
     //   {/* <Sass /> */}
