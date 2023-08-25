@@ -1,7 +1,7 @@
-
 // import Card from './Card';
 // import Sass from './Sass';
 // import Module_Style from "./Module_Style"
+import Btn from './MUI/Btn';
 function App() {
   // let data = [
   //   {
@@ -57,6 +57,11 @@ function App() {
       {/* <Sass /> */}
       {/* <Module_Style /> */}
       <hr />
+      <Btn />
+
+
+
+
     </>
   );
 }
