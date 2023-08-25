@@ -1,7 +1,7 @@
 // import Card from './Card';
 // import Sass from './Sass';
-// import Module_Style from "./Module_Style"
-import Btn from './MUI/Btn';
+import Module_Style from "./Module_Style"
+
 function App() {
   // let data = [
   //   {
@@ -55,10 +55,7 @@ function App() {
         </div>
       </div> */}
       {/* <Sass /> */}
-      {/* <Module_Style /> */}
-      <hr />
-      <Btn />
-
+      <Module_Style />
 
 
 
