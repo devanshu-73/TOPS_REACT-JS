@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Button from '@mui/material/Button';
+import StyledComp from './Styled_Comp';
 function App() {
+  let text1 = ["hello", "frew", "rv", "btrbr", "vrr"];
+  let color1 = ["yellow", "white", "red", "blur", "orange"];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Button variant="contained" color="primary">
+        jcjejc
+      </Button>
+      <Button variant="text">Text</Button>
+      <Button variant="contained">Contained</Button>
+      <Button variant="outlined">Outlined</Button>
+      <hr />
+      {text1.map((val,index) => (
+        <StyledComp text={val} color_1={color1[index]} />
+      ))}
+    </>
   );
 }
 
