@@ -12,9 +12,12 @@ function App() {
       <Button variant="contained">Contained</Button>
       <Button variant="outlined">Outlined</Button>
       <hr />
-      {text1.map((val,index) => (
-        <StyledComp text={val} color_1={color1[index]} />
-      ))}
+      {
+        text1.map((val, index) => (
+          color1.map((item) => (
+            console.log(val, item)
+          ))
+        ))}
     </>
   );
 }
