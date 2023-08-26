@@ -1,14 +1,13 @@
-import React from 'react'
-// import styled from '@emotion/styled';
-import styled from 'styled-components'
-export default function Styled_Comp(props) {
+import React from 'react';
+import styled from 'styled-components';
+export default function Styled_Comp({ text, color_1 }) {
   const Btn1 = styled.button`
-  color: ${props => props.color_1 || 'white'};
+  color: ${color_1};
   background-color:black;
   `;
   return (
     <div>
-      <Btn1>{props.text}</Btn1>
+      <Btn1>{text}</Btn1>
     </div>
   )
 }
