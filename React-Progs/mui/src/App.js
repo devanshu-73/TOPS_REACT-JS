@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import StyledComp from './Styled_Comp';
 function App() {
-  let text1 = ["hello", "frew", "rv", "btrbr", "vrr"];
+  let text1 = ["hello", "frew", "rv", "btrbr"];
   let color1 = ["yellow", "white", "red", "blue", "orange"];
   return (
     <>
