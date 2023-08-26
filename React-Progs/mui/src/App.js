@@ -11,8 +11,8 @@ function App() {
       <hr /><hr /><hr />
 
       {
-        text1.map((val, index) => (
-          <StyledComp key={index} text={val} color_1={color1[index]} />
+        text1.map((val, index) => (<>
+          <StyledComp key={index} text={val} color_1={color1[index]} /></>
         ))
       }
     </>
