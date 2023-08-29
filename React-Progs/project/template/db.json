@@ -27,6 +27,12 @@
             "phone": 9555202,
             "email": "mukesh@gmail.com",
             "password": "1212"
+        },
+        {
+            "id": 5,
+            "name": "dipak",
+            "email": "dipak@gmail.com",
+            "password": "3231"
         }
     ],
     "order": [
