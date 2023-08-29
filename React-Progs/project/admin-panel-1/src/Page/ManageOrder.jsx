@@ -24,7 +24,6 @@ function ManageUser() {
                           <th>Name</th>
                           <th>Rooms</th>
                           <th>Price</th>
-                          <th>Item</th>
                           <th>Edit/Delete</th>
                         </tr>
                       </thead>
@@ -35,7 +34,7 @@ function ManageUser() {
                           <td>Dev-1</td>
                           <td>Junior Suite</td>
                           <td>₹2000</td>
-                          <td>2</td>
+
                           <td>
                             <button type="submit" className="btn btn-success">Edit</button>
                             <button type="submit" className="btn btn-danger">Delete</button>
@@ -47,7 +46,7 @@ function ManageUser() {
                           <td>Tirth</td>
                           <td>Executive Suite</td>
                           <td>₹4000</td>
-                          <td>2</td>
+
                           <td>
                             <button type="submit" className="btn btn-success">Edit</button>
                             <button type="submit" className="btn btn-danger">Delete</button>
@@ -59,7 +58,7 @@ function ManageUser() {
                           <td>Jay...</td>
                           <td>Super Deluxe</td>
                           <td>₹7000</td>
-                          <td>1</td>
+
                           <td>
                             <button type="submit" className="btn btn-success">Edit</button>
                             <button type="submit" className="btn btn-danger">Delete</button>
