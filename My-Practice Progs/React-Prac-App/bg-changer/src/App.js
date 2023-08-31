@@ -1,27 +1,53 @@
+import { useState } from 'react';
 import './App.css';
+
 function App() {
+  const [selectedColor, setSelectedColor] = useState(null);
+
   const bgChange = (e) => {
-    document.body.style.backgroundColor = e.target.innerText;
-   
-    if (e.target.innerText === 'Yellow' || e.target.innerText === 'Violet') {
-      document.getElementById('h1').style.color = "black";
+    const colorName = e.target.innerText;
+    
+    if (colorName === selectedColor) {
+      setSelectedColor(null);
+      document.body.style.backgroundColor = 'white';
+      document.getElementById('h1').style.color = 'black';
+    } else {
+      setSelectedColor(colorName);
+      document.body.style.backgroundColor = colorName;
+      document.getElementById('h1').style.color = 'white';
     }
-    else {
-      document.getElementById('h1').style.color = "white";
-    }
-  }
+  };
+
+  const getButtonClassName = (color) => {
+    return `btn${selectedColor === color ? ' selected' : ''}`;
+  };
+
   return (
     <>
       <div className="flex">
-        <h1 id='h1'>Bg Changer</h1>
+        <h1 id="h1">Bg Changer</h1>
         <div>
-          <button className='btn' onClick={bgChange}>Red</button>
-          <button className='btn' onClick={bgChange}>Green</button>
-          <button className='btn' onClick={bgChange}>Blue</button>
-          <button className='btn' onClick={bgChange}>Violet</button>
-          <button className='btn' onClick={bgChange}>Yellow</button>
-          <button className='btn' onClick={bgChange}>Orange</button>
-          <button className='btn' onClick={bgChange}>Black</button>
+          <button className={getButtonClassName('Red')} onClick={bgChange}>
+            Red
+          </button>
+          <button className={getButtonClassName('Green')} onClick={bgChange}>
+            Green
+          </button>
+          <button className={getButtonClassName('Blue')} onClick={bgChange}>
+            Blue
+          </button>
+          <button className={getButtonClassName('Violet')} onClick={bgChange}>
+            Violet
+          </button>
+          <button className={getButtonClassName('Yellow')} onClick={bgChange}>
+            Yellow
+          </button>
+          <button className={getButtonClassName('Orange')} onClick={bgChange}>
+            Orange
+          </button>
+          <button className={getButtonClassName('Black')} onClick={bgChange}>
+            Black
+          </button>
         </div>
       </div>
     </>
