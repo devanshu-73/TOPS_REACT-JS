@@ -7,7 +7,7 @@ function AddProduct() {
                 <div id="page-inner">
                     <div className="row">
                         <div className="col-md-12">
-                            <h1 className="page-head-line">Add Cake</h1>
+                            <h1 className="page-head-line">Add Product</h1>
                         </div>
                     </div>
                     {/*/.ROW*/}
