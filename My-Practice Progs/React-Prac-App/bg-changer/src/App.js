@@ -2,11 +2,7 @@ import './App.css';
 function App() {
   const bgChange = (e) => {
     document.body.style.backgroundColor = e.target.innerText;
-    if (condition) {
-
-    } else {
-
-    }
+   
     if (e.target.innerText === 'Yellow' || e.target.innerText === 'Violet') {
       document.getElementById('h1').style.color = "black";
     }
