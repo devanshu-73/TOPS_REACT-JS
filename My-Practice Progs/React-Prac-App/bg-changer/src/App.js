@@ -3,9 +3,7 @@ import { useState } from 'react';
 
 function App() {
   const colors = ['Red', 'Green', 'Blue', 'Violet', 'Yellow', 'Orange', 'Black'];
-
-  const [selectedColor, setSelectedColor] = useState(null);
-
+  const [selectedColor, setSelectedColor] = useState();
   const bgChange = (color) => {
     setSelectedColor(color);
     document.body.style.backgroundColor = color;
