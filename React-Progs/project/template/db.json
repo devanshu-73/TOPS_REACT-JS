@@ -69,6 +69,29 @@
             "price": 7000
         }
     ],
+    "contact": [
+        {
+            "id": 1,
+            "name": "devanshu",
+            "email": "devanshu@gmail.com",
+            "subject":"nwejnwc",
+            "message":"bcwhbcjwkcbwkcwbcwk"
+        },
+        {
+            "id": 2,
+            "name": "tirth",
+            "email": "tirth@gmail.com",
+            "subject":"nwejnvvwc",
+            "message":"bcwhbcjvsdvevwkcbwkcwbcwk"
+        },
+        {
+            "id": 3,
+            "name": "jay",
+            "email": "jay@gmail.com",
+            "subject":"nwefewwf",
+            "message":"vrvevevkcbwkcwbcwk"
+        }
+    ],
     "admin": [
         {
             "id": 1,
