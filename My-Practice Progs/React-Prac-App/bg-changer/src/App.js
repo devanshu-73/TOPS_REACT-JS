@@ -21,12 +21,8 @@ function App() {
         <h1 id='h1'>Bg Changer</h1>
         <div>
           {colors.map((color) => (
-            <button
-              key={color}
-              className={`btn${selectedColor === color ? ' selected' : ''}`}
-              onClick={() => bgChange(color)}
-              style={{ backgroundColor: selectedColor === color ? color : 'white' }}
-            >
+            <button key={color} className={`btn${selectedColor === color ? ' selected' : ''}`}
+              onClick={() => bgChange(color)} style={{ backgroundColor: selectedColor === color ? color : 'white' }}>
               {color}
             </button>
           ))}
