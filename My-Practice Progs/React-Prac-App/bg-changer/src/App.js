@@ -15,12 +15,12 @@ function App() {
         <h1 id='h1'>Bg Changer</h1>
         <div>
           <button className='btn' onClick={bgChange}>Red</button>
+          <button className='btn' onClick={bgChange}>Green</button>
           <button className='btn' onClick={bgChange}>Black</button>
           <button className='btn' onClick={bgChange}>Violet</button>
           <button className='btn' onClick={bgChange}>Yellow</button>
           <button className='btn' onClick={bgChange}>Blue</button>
           <button className='btn' onClick={bgChange}>Orange</button>
-          <button className='btn' onClick={bgChange}>Green</button>
         </div>
       </div>
     </>
