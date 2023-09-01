@@ -5,9 +5,9 @@ const Counter = () => {
     return (
         <>
             <div>
-                <button onClick={() => setCount(count => count - 1)} style={{ marginRight: 10 }}> - </button>
+                <button onClick={ () => setCount(count => count - 1)} style={{ marginRight: 10 }}> - </button>
                 <span id="center">{count}</span>
-                <button onClick={() => setCount(count => count + 1)} style={{ marginLeft: 10 }}> + </button>
+                <button onClick={ () => setCount(count => count + 1)} style={{ marginLeft: 10 }}> + </button>
             </div>
         </>
     )
