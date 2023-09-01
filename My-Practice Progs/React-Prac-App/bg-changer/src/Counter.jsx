@@ -9,12 +9,7 @@ const Counter = () => {
             <span id="center">{count}</span>
             <button onClick={() => setCount(count => count + 1)} style={{ marginLeft: 10 }}>+</button> */}
             </div>
-            <div>
-                <button onClick={() => setCount(count => count - 1)} style={{ marginRight: 10 }}>-</button>
-                <input type="number"  value={count} />
-                <button onClick={() => setCount(count => count + 1)} style={{ marginLeft: 10 }}>+</button>
-            </div>
-
+      
         </>
     )
 }
