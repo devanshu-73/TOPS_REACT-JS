@@ -11,7 +11,7 @@ const Counter = () => {
             </div>
             <div>
                 <button onClick={() => setCount(count => count - 1)} style={{ marginRight: 10 }}>-</button>
-                <input type="number" id="count" />
+                <input type="number" id="center" value={count} />
                 <button onClick={() => setCount(count => count + 1)} style={{ marginLeft: 10 }}>+</button>
             </div>
 
