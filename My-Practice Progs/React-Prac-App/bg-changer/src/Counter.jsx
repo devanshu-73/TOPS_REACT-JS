@@ -9,7 +9,6 @@ const Counter = () => {
                 <span id="center">{count}</span>
                 <button onClick={() => setCount(count => count + 1)} style={{ marginLeft: 10 }}>+</button>
             </div>
-
         </>
     )
 }
