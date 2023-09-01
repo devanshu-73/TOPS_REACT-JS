@@ -1,12 +1,12 @@
 import React,{ useState } from "react"
 const Counter = () => {
-    const [state, setstate] = useState(0);
-    const add =()=>{
-        
-    }
+    const [count, setCount] = useState(0);
+  
   return (
     <div>
-        <button onClick={minus} style={{marginRight: 10}}>-</button><span id="center">{state}</span><button onClick={add} style={{marginLeft: 10}}>+</button>
+        <button onClick={()=>setCount(count=>count-1)} style={{marginRight: 10}}>-</button>
+        <span id="center">{count}</span>
+        <button onClick={()=>setCount(count=>count+1)} style={{marginLeft: 10}}>+</button>
     </div>
   )
 }
