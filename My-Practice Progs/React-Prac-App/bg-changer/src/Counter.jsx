@@ -6,7 +6,7 @@ const Counter = () => {
     }
   return (
     <div>
-        <button onClick={minus} style={{marginRight: 10}}>-</button><span>{state}</span><button onClick={add} style={{marginLeft: 10}}>+</button>
+        <button onClick={minus} style={{marginRight: 10}}>-</button><span id="center">{state}</span><button onClick={add} style={{marginLeft: 10}}>+</button>
     </div>
   )
 }
