@@ -129,7 +129,7 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
-            {/* Contact End */}
+            {/* Contact-End */}
         </div>
 
     )
