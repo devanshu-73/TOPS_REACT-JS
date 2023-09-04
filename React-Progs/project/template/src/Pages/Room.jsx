@@ -255,7 +255,7 @@ export default function Room() {
                     </div>
                 </div>
             </div>
-            {/* Room End */}
+            {/* Room-End */}
         </div>
 
     )
