@@ -201,7 +201,7 @@ export default function OurTeam() {
           </div>
         </div>
       </div>
-      {/* Team End */}
+      {/* Team-End */}
     </div>
 
   )
