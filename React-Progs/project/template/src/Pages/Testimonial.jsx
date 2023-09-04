@@ -106,7 +106,7 @@ export default function Testimonial() {
 
                 </div>
             </div>
-            {/* Testimonial End */}
+            {/* Testimonial-End */}
 
         </div>
 
