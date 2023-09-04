@@ -89,7 +89,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            {/* Back-to Top */}
+            {/* Back-to-Top */}
             <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top"><i className="bi bi-arrow-up" /></a>
 
             {/* Footer-End */}
