@@ -1,9 +1,11 @@
 import React from 'react'
-import Counter from './Counter'
+import Count from './Count'
+// import Counter from './Counter'
 const App = () => {
   return (
     <div>
-        <Counter />
+      <Count />
+      {/* <Counter /> */}
     </div>
   )
 }
