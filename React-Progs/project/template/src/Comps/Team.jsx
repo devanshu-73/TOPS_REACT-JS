@@ -79,7 +79,7 @@ export default function Team() {
                     </div>
                 </div>
             </div>
-            {/* Team End */}
+            {/* Team-End */}
         </div>
     )
 }
