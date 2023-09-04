@@ -122,7 +122,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            {/* About End */}
+            {/* About-End */}
         </>
 
     )
