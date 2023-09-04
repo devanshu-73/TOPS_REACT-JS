@@ -404,7 +404,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            {/* Testimonial End */}
+            {/* Testimonial-End */}
 
         </div>
     );
