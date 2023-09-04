@@ -165,7 +165,7 @@ export default function Booking() {
                     </div>
                 </div>
             </div>
-            {/* Booking End */}
+            {/* Booking-End */}
 
         </>
     );
