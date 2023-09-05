@@ -48,7 +48,7 @@
             "id": 3,
             "order-no": "812",
             "username": "devanshu",
-            "rooms": "super suite",
+            "rooms": "super-suite",
             "price": 7000
         }
     ],
@@ -74,22 +74,22 @@
             "id": 1,
             "name": "devanshu",
             "email": "devanshu@gmail.com",
-            "subject":"nwejnwc",
-            "message":"bcwhbcjwkcbwkcwbcwk"
+            "subject": "nwejnwc",
+            "message": "bcwhbcjwkcbwkcwbcwk"
         },
         {
             "id": 2,
             "name": "tirth",
             "email": "tirth@gmail.com",
-            "subject":"nwejnvvwc",
-            "message":"bcwhbcjvsdvevwkcbwkcwbcwk"
+            "subject": "nwejnvvwc",
+            "message": "bcwhbcjvsdvevwkcbwkcwbcwk"
         },
         {
             "id": 3,
             "name": "jay",
             "email": "jay@gmail.com",
-            "subject":"nwefewwf",
-            "message":"vrvevevkcbwkcwbcwk"
+            "subject": "nwefewwf",
+            "message": "vrvevevkcbwkcwbcwk"
         }
     ],
     "admin": [
