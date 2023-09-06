@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Sidebar from './Comp/Sidebar'
+import Foot from './Comp/Foot';
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<><Sidebar /></>}> </Route>
+          <Route path='/' element={<><Foot /></>}> </Route>
         </Routes>
       </BrowserRouter>
     </>
