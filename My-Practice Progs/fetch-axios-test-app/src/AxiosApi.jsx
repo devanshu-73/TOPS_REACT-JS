@@ -5,7 +5,7 @@ const AxiosApi = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
         axios.get("https://jsonplaceholder.typicode.com/users")
-            .then((response) => setUsers(response.data));
+            .then((response) => setUsers(response.data))
     }, [])
     return (
         <div>
