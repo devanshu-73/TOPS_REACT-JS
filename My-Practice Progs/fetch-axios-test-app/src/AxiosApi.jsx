@@ -10,15 +10,28 @@ const AxiosApi = () => {
     return (
         <div>
             <ul>
-                {
-                    users.map((user) => (
-                        <>
-                            <label htmlFor="username">Username : </label>
-                            <input type="text" name="username" key={user.id} id="username" value={user.username} />
-                        </>
-                    ))
-                }
 
+                <>
+                    <table border={1}>
+                        <thead>
+                            <th>Id</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                        </thead>
+                        <tbody>
+                            {
+                                users.map((user) => (
+
+                                    <tr>
+                                        <td>  {user.id} </td>
+                                        <td> <input type="text" name="username" id="username" value={user.username} /></td>
+                                        <td> <div>{user.email}</div></td>
+                                    </tr>
+
+                                ))}
+                        </tbody>
+                    </table>
+                </>
             </ul>
         </div>
     )
