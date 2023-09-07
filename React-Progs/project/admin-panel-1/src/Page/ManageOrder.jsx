@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 
 function ManageUser() {
+  const [orders, setOrders] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/order")
+      .then((response) => response.json())
+      .then((data) => setOrders(data));
+  }, []);
   return (
     <div>
       <div id="page-wrapper">
@@ -28,42 +34,25 @@ function ManageUser() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>11515</td>
-                          <td>Dev-1</td>
-                          <td>Junior Suite</td>
-                          <td>₹2000</td>
-
-                          <td>
-                            <button type="submit" className="btn btn-success">Edit</button>
-                            <button type="submit" className="btn btn-danger">Delete</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>52021</td>
-                          <td>Tirth</td>
-                          <td>Executive Suite</td>
-                          <td>₹4000</td>
-
-                          <td>
-                            <button type="submit" className="btn btn-success">Edit</button>
-                            <button type="submit" className="btn btn-danger">Delete</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>8965</td>
-                          <td>Jay...</td>
-                          <td>Super Deluxe</td>
-                          <td>₹7000</td>
-
-                          <td>
-                            <button type="submit" className="btn btn-success">Edit</button>
-                            <button type="submit" className="btn btn-danger">Delete</button>
-                          </td>
-                        </tr>
+                        {
+                          orders.map((order) => (
+                            <tr>
+                              <td>{order.id}</td>
+                              <td>{order.order_no}</td>
+                              <td>{order.username}</td>
+                              <td>{order.rooms}</td>
+                              <td>{order.price}</td>
+                              <td>
+                                <button type="submit" className="btn btn-success">
+                                  Edit
+                                </button>
+                                <button type="submit" className="btn btn-danger">
+                                  Delete
+                                </button>
+                              </td>
+                            </tr>
+                          ))
+                        }
                       </tbody>
                     </table>
                   </div>
