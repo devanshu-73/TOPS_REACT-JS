@@ -17,7 +17,7 @@ const AxiosApi = () => {
                             <input type="text" name="username" key={user.id} id="username" value={user.username} />
                         </>
                     ))
-                    }
+                }
 
             </ul>
         </div>
