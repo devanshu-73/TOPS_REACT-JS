@@ -1,7 +1,12 @@
-import React,{useState} from 'react'
+import React, { useState, useEffect } from "react";
 
 function ManageUser() {
-
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/user")
+      .then((response) => response.json())
+      .then((data) => setUsers(data));
+  }, []);
   return (
     <div>
       <div id="page-wrapper">
@@ -28,17 +33,24 @@ function ManageUser() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>Jay</td>
-                          <td>987465232</td>
-                          <td>@Jaypara</td>
-                          <td>
-                            <button type="submit" className="btn btn-success">Edit</button>
-                            <button type="submit" className="btn btn-danger">Delete</button>
-                          </td>
-                        </tr>
-          
+                        {
+                          users.map((user) => (
+                            <tr>
+                              <td>{user.id}</td>
+                              <td>{user.username}</td>
+                              <td>{user.phone}</td>
+                              <td>{user.email}</td>
+                              <td>
+                                <button type="submit" className="btn btn-success">
+                                  Edit
+                                </button>
+                                <button type="submit" className="btn btn-danger">
+                                  Delete
+                                </button>
+                              </td>
+                            </tr>
+                          ))
+                        }
                       </tbody>
                     </table>
                   </div>
@@ -50,7 +62,7 @@ function ManageUser() {
         {/* /. PAGE INNER  */}
       </div>
     </div>
-  )
+  );
 }
 
-export default ManageUser
+export default ManageUser;
