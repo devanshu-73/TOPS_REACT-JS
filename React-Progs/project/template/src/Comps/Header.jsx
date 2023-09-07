@@ -54,7 +54,7 @@ export default function Header() {
                                                 <Link to="/booking" className="dropdown-item">Booking</Link>
                                                 <Link to="/team" className="dropdown-item">Our Team</Link>
                                                 <Link to="/testimonial" className="dropdown-item">Testimonial</Link>
-                                            </div>re
+                                            </div>
                                         </div>
                                         <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
                                     </div>
