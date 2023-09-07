@@ -11,7 +11,10 @@ const AxiosApi = () => {
         <div>
             <ul>
                 {users.map((user) => (
-                    <div>{user.id}: {user.name}</div>
+                    <>
+                    <label htmlFor="username">Username</label>
+                    <input type="text" name="username" key={user.id} id="username" value={user.username} />
+                </>
                 ))}
 
             </ul>
