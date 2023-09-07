@@ -1,11 +1,19 @@
-// import FetchApi from './FetchApi';
+import FetchApi from './FetchApi';
 import AxiosApi from './AxiosApi';
 
 function App() {
   return (
     <div>
-      {/* <FetchApi /> */}
+      axios....
       <AxiosApi />
+
+
+
+      fetch.......
+      <FetchApi />
+
+
+
 
     </div>
   );

@@ -22,9 +22,10 @@ const AxiosApi = () => {
 
                                 <tr>
                                     <td>  {user.id} </td>
-                                    <td> <input type="text" name="username" id="username" value={user.username} /></td>
-                                    <td> <div>{user.email}</div></td>
+                                    <td>{user.username}</td>
+                                    <td> {user.email}</td>
                                 </tr>
+
 
                             ))}
                     </tbody>
