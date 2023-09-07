@@ -9,21 +9,21 @@
         },
         {
             "id": 2,
-            "name": "tirth",
+            "username": "tirth",
             "phone": 9521542,
             "email": "tirth@gmail.com",
             "password": "3232"
         },
         {
             "id": 3,
-            "name": "jay",
+            "username": "jay",
             "phone": 9555222,
             "email": "jay@gmail.com",
             "password": "3632"
         },
         {
             "id": 4,
-            "name": "mukesh",
+            "username": "mukesh",
             "phone": 9555202,
             "email": "mukesh@gmail.com",
             "password": "1212"
@@ -32,21 +32,21 @@
     "order": [
         {
             "id": 1,
-            "order-no": "853",
+            "order_no": "853",
             "username": "jay",
             "rooms": "junior suite",
             "price": 2000
         },
         {
             "id": 2,
-            "order-no": "544",
+            "order_no": "544",
             "username": "tirth",
             "rooms": "executive suite",
             "price": 4000
         },
         {
             "id": 3,
-            "order-no": "812",
+            "order_no": "812",
             "username": "devanshu",
             "rooms": "super suite",
             "price": 7000
