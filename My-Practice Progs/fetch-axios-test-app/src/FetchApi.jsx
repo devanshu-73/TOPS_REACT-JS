@@ -11,6 +11,9 @@ const FetchApi = () => {
         <div>
             <ul>
                 {users.map((user) => (
+                    <>
+                        <label htmlFor="username">Username</label>
+                        <input type="text" name="username" id="username" value={user.username} /> </>
                 ))}
 
             </ul>
