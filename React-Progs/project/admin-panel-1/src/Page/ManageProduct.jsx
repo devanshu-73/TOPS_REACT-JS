@@ -1,6 +1,11 @@
-import React from 'react'
-
+import React, { useState, useEffect } from "react";
 function ManageProduct() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/product")
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, []);
   return (
     <div>
       <div id="page-wrapper">
@@ -26,33 +31,23 @@ function ManageProduct() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>Junior Suite</td>
-                          <td>₹2000</td>
-                          <td>
-                            <button type="submit" className="btn btn-success">Edit</button>
-                            <button type="submit" className="btn btn-danger">Delete</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Executive Suite</td>
-                          <td>₹4000</td>
-                          <td>
-                            <button type="submit" className="btn btn-success">Edit</button>
-                            <button type="submit" className="btn btn-danger">Delete</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>Super Deluxe</td>
-                          <td>₹7000</td>
-                          <td>
-                            <button type="submit" className="btn btn-success">Edit</button>
-                            <button type="submit" className="btn btn-danger">Delete</button>
-                          </td>
-                        </tr>
+                        {
+                          products.map((product) => (
+                            <tr>
+                              <td>{product.id}</td>
+                              <td>{product.rooms}</td>
+                              <td>{product.price}</td>
+                              <td>
+                                <button type="submit" className="btn btn-success">
+                                  Edit
+                                </button>
+                                <button type="submit" className="btn btn-danger">
+                                  Delete
+                                </button>
+                              </td>
+                            </tr>
+                          ))
+                        }
                       </tbody>
                     </table>
                   </div>
