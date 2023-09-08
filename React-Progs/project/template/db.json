@@ -27,6 +27,20 @@
             "phone": 9555202,
             "email": "mukesh@gmail.com",
             "password": "1212"
+        },
+        {
+            "id": 5,
+            "username": "dipak",
+            "phone": 9555252,
+            "email": "dipak@gmail.com",
+            "password": "1414"
+        },
+        {
+            "id": 6,
+            "username": "shivam",
+            "phone": 9559222,
+            "email": "shivam@gmail.com",
+            "password": "1154"
         }
     ],
     "order": [
@@ -50,6 +64,13 @@
             "username": "devanshu",
             "rooms": "super suite",
             "price": 7000
+        },
+        {
+            "id": 4,
+            "order_no": "582",
+            "username": "mukesh",
+            "rooms": "junior suite",
+            "price": 2000
         }
     ],
     "product": [
