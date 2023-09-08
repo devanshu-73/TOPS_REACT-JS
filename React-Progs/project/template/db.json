@@ -62,7 +62,7 @@
             "id": 3,
             "order_no": "812",
             "username": "devanshu",
-            "rooms": "super suite",
+            "rooms": "super delux",
             "price": 7000
         },
         {
@@ -71,6 +71,13 @@
             "username": "mukesh",
             "rooms": "junior suite",
             "price": 2000
+        },
+        {
+            "id": 5,
+            "order_no": "582",
+            "username": "dipak",
+            "rooms": "super delux",
+            "price": 7000
         }
     ],
     "product": [
