@@ -43,7 +43,7 @@ function AddCategory() {
                         </div>
                     </div>
                 </div>
-                {/* /. PAGE INNER  */}
+                {/* /. PAGE-INNER  */}
             </div>
         </div>
     )
