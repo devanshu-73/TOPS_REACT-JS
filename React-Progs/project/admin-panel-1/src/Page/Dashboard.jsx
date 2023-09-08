@@ -158,7 +158,7 @@ function Dashboard() {
                                 </div>
                             </div>
                         </div>
-                        {/*/.Chat Panel End*/}
+                        {/*/.Chat-Panel End*/}
                     </div>
                     {/*/.Row*/}
                     <hr />

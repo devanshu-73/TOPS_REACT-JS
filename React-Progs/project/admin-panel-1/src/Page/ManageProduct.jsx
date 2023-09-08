@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios'
 function ManageProduct() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/product")
-      .then((response) => response.json())
-      .then((data) => setProducts(data));
+
+                      // fetch.........
+
+    // fetch("http://localhost:3000/product")
+    //   .then((response) => response.json())
+    //   .then((data) => setProducts(data));
+
+                            // Axios.........
+    axios.get('http://localhost:3000/product')
+    .then((response)=>setProducts(response.data))
+    
   }, []);
   return (
     <div>
@@ -56,7 +65,7 @@ function ManageProduct() {
             </div>
           </div>
         </div>
-        {/* /. PAGE INNER  */}
+        {/* /. PAGE-INNER  */}
       </div>
     </div>
   )

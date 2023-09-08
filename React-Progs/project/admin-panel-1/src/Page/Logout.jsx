@@ -12,7 +12,7 @@ function Logout() {
                         </div>
                     </div>
                 </div>
-                {/* /. PAGE INNER  */}
+                {/* /. PAGE-INNER  */}
             </div>
         </div>
     )

@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
-
+import axios from 'axios'
 function ManageUser() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/user")
-      .then((response) => response.json())
-      .then((data) => setUsers(data));
+    // fetch("http://localhost:3000/user")
+    //   .then((response) => response.json())
+    //   .then((data) => setUsers(data));
+
+
+    // Axios.........
+    axios.get('http://localhost:3000/user')
+      .then((response) => setUsers(response.data))
   }, []);
   return (
     <div>
@@ -59,7 +64,7 @@ function ManageUser() {
             </div>
           </div>
         </div>
-        {/* /. PAGE INNER  */}
+        {/* /. PAGE-INNER  */}
       </div>
     </div>
   );

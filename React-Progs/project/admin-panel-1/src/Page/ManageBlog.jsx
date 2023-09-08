@@ -77,7 +77,7 @@ function ManageBlog() {
                             </div>
                         </div>
                     </div>
-                    {/* /. PAGE INNER  */}
+                    {/* /. PAGE-INNER  */}
                 </div>
             </div>
         </div>

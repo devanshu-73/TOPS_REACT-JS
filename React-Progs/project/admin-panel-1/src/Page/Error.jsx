@@ -26,7 +26,7 @@ function Error() {
                         </div>
                         <br />
                     </div>
-                    {/*Search Section end*/}
+                    {/*Search-Section end*/}
                 </div>
             </div>
             <div className="container">
