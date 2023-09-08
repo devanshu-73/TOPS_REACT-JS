@@ -31,7 +31,7 @@ function AddBlog() {
                         </div>
                     </div>
                 </div>
-                {/* /. PAGE INNER  */}
+                {/* /. PAGE-INNER  */}
             </div>
         </div>
     )
