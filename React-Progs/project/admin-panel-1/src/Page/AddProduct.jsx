@@ -44,7 +44,7 @@ function AddProduct() {
                         </div>
                     </div>
                 </div>
-                {/* /. PAGE INNER  */}
+                {/* /. PAGE-INNER  */}
             </div>
         </div>
     )
