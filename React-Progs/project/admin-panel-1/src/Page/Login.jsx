@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 
