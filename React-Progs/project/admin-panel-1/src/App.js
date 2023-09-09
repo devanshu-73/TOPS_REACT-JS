@@ -4,7 +4,6 @@ import Header from "./Component/Header";
 import Footer from "./Component/Footer";
 import Dashboard from "./Page/Dashboard";
 import Login from "./Page/Login";
-import AddCategory from './Page/AddCategory';
 import AddProduct from './Page/AddProduct';
 import AddBlog from './Page/AddBlog';
 import ManageUser from './Page/ManageUser';
@@ -20,7 +19,6 @@ function App() {
       <Routes>
         <Route path="/" element={<><Login/></>}></Route>
         <Route path="/dashboard" element={<><Header/> <Dashboard/> <Footer/> </>}></Route>
-        <Route path="/addCategory" element={<><Header/> <AddCategory/> <Footer/></>}></Route>
         <Route path="/addProduct" element={<><Header/> <AddProduct/> <Footer/></>}></Route>
         <Route path="/addBlog" element={<><Header/> <AddBlog/> <Footer/></>}></Route>
         <Route path="/manageUser" element={<><Header/> <ManageUser/> <Footer/></>}></Route>
