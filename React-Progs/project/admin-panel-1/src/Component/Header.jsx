@@ -45,9 +45,6 @@ function Header() {
                                 <Link to="#"><i className="fa fa-desktop "></i>Add<span className="fa arrow"></span></Link>
                                 <ul className="nav nav-second-level">
                                     <li>
-                                        <NavLink to="/addCategory"><i className="fa fa-edit"></i>Add Category</NavLink>
-                                    </li>
-                                    <li>
                                         <NavLink to="/addProduct"><i className="fa fa-edit "></i>Add Product</NavLink>
                                     </li>
                                     <li>
