@@ -41,7 +41,6 @@ function Login() {
                 </div>
             </div>
         </div>
-                // login page
     )
 }
 
