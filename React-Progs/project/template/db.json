@@ -41,6 +41,13 @@
             "phone": 9559222,
             "email": "shivam@gmail.com",
             "password": "1154"
+        },
+        {
+            "id": 7,
+            "username": "shivam",
+            "phone": 9559222,
+            "email": "shivam@gmail.com",
+            "password": "1154"
         }
     ],
     "order": [
