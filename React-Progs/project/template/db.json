@@ -96,23 +96,23 @@
         {
             "id": 7,
             "order_no": "815",
-            "username": "jainish",
-            "rooms": "executive suite",
-            "price": 4000
+            "username": "sahil",
+            "rooms": "junior suite",
+            "price": 2000
         },
         {
             "id": 8,
             "order_no": "652",
-            "username": "jainish",
-            "rooms": "executive suite",
-            "price": 4000
+            "username": "yash",
+            "rooms": "super delux",
+            "price": 7000
         },
         {
             "id": 9,
             "order_no": "652",
-            "username": "jainish",
-            "rooms": "executive suite",
-            "price": 4000
+            "username": "mitesh",
+            "rooms": "junior suite",
+            "price": 2000
         }
     ],
     "product": [
