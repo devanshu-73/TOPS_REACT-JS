@@ -16,7 +16,7 @@ export default function Sass() {
             {/* // 4)Extend(inheritence) in sass */}
 
             <div>
-                <button className='btn-1'>Submit</button>
+                <button className='btn-1'>Submit 1</button>
                 <button className='btn-2'>Submit</button>
                 <button className='btn-3'>Submit</button>
                 <button className='btn-4'>Submit</button>
