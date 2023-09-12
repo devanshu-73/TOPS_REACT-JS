@@ -1,6 +1,20 @@
 {
   "user": [
     {
+      "id": 1,
+      "username": "devanshu",
+      "phone": 9557822,
+      "email": "devanshu@gmail.com",
+      "password": "3632"
+    },
+    {
+      "id": 2,
+      "username": "tirth",
+      "phone": 8120225,
+      "email": "tirth@gmail.com",
+      "password": "8512"
+    },
+    {
       "id": 3,
       "username": "jay",
       "phone": 9555222,
@@ -23,6 +37,34 @@
     },
     {
       "id": 6,
+      "username": "shivam",
+      "phone": 9559222,
+      "email": "shivam@gmail.com",
+      "password": "1154"
+    },
+    {
+      "id": 7,
+      "username": "shivam",
+      "phone": 9559222,
+      "email": "shivam@gmail.com",
+      "password": "1154"
+    },
+    {
+      "id": 8,
+      "username": "shivam",
+      "phone": 9559222,
+      "email": "shivam@gmail.com",
+      "password": "1154"
+    },
+    {
+      "id": 9,
+      "username": "shivam",
+      "phone": 9559222,
+      "email": "shivam@gmail.com",
+      "password": "1154"
+    },
+    {
+      "id": 10,
       "username": "shivam",
       "phone": 9559222,
       "email": "shivam@gmail.com",
@@ -89,13 +131,18 @@
   ],
   "product": [
     {
+      "id": 1,
+      "rooms": "junior suite",
+      "price": 4000
+    },
+    {
       "id": 2,
       "rooms": "executive suite",
       "price": 4000
     },
     {
       "id": 3,
-      "rooms": "super suite",
+      "rooms": "super delux",
       "price": 7000
     }
   ],
