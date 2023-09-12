@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React, { useState, useEffect } from "react";
 import axios from 'axios'
 function ManageUser() {
@@ -6,12 +7,22 @@ function ManageUser() {
     // fetch("http://localhost:3000/user")
     //   .then((response) => response.json())
     //   .then((data) => setUsers(data));
-
-
-    // Axios.........
-    axios.get('http://localhost:3000/user')
-      .then((response) => setUsers(response.data))
+    fetch();
   }, []);
+  // Axios.........
+  const fetch = async () => {
+    const res = await axios.get('http://localhost:3000/user');
+    setUsers(res.data);
+  }
+  const onDelete = async (id) => {
+    console.log(1);
+    const res = await axios.delete(`http://localhost:3000/user/${id}`);
+    if(res.status == "200"){
+      alert('success...');
+      fetch();
+    }
+
+  };
   return (
     <div>
       <div id="page-wrapper">
@@ -40,16 +51,16 @@ function ManageUser() {
                       <tbody>
                         {
                           users.map((user) => (
-                            <tr>
+                            <tr key={user.id}>
                               <td>{user.id}</td>
                               <td>{user.username}</td>
                               <td>{user.phone}</td>
                               <td>{user.email}</td>
                               <td>
-                                <button type="submit" className="btn btn-success">
+                                <button type="submit" className="btn btn-success" >
                                   Edit
                                 </button>
-                                <button type="submit" className="btn btn-danger">
+                                <button type="submit" className="btn btn-danger" onClick={()=>onDelete(user.id)} >
                                   Delete
                                 </button>
                               </td>
