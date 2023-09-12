@@ -1,12 +1,28 @@
+/* eslint-disable eqeqeq */
 import React, { useState, useEffect } from "react";
-
+import axios from 'axios'
 function ManageUser() {
-  const [orders, setOrders] = useState([]);
+  const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/order")
-      .then((response) => response.json())
-      .then((data) => setOrders(data));
+    // fetch("http://localhost:3000/user")
+    //   .then((response) => response.json())
+    //   .then((data) => setUsers(data));
+    fetch();
   }, []);
+  // Axios.........
+  const fetch = async () => {
+    const res = await axios.get('http://localhost:3000/order');
+    setUsers(res.data);
+  }
+  const onDelete = async (id) => {
+    console.log(1);
+    const res = await axios.delete(`http://localhost:3000/order/${id}`);
+    if (res.status == "200") {
+      alert('success...');
+      fetch();
+    }
+
+  };
   return (
     <div>
       <div id="page-wrapper">
@@ -35,18 +51,18 @@ function ManageUser() {
                       </thead>
                       <tbody>
                         {
-                          orders.map((order) => (
+                          users.map((user) => (
                             <tr>
-                              <td>{order.id}</td>
-                              <td>{order.order_no}</td>
-                              <td>{order.username}</td>
-                              <td>{order.rooms}</td>
-                              <td>{order.price}</td>
+                              <td>{user.id}</td>
+                              <td>{user.order_no}</td>
+                              <td>{user.username}</td>
+                              <td>{user.rooms}</td>
+                              <td>{user.price}</td>
                               <td>
                                 <button type="submit" className="btn btn-success">
                                   Edit
                                 </button>
-                                <button type="submit" className="btn btn-danger">
+                                <button type="submit" className="btn btn-danger" onClick={() => onDelete(user.id)} >
                                   Delete
                                 </button>
                               </td>
