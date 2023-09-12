@@ -42,7 +42,7 @@ function ManageProduct() {
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>Rooms</th>
+                          <th>Hotel Type</th>
                           <th>Price</th>
                           <th>Edit/Delete</th>
                         </tr>
@@ -52,7 +52,7 @@ function ManageProduct() {
                           users.map((user) => (
                             <tr>
                               <td>{user.id}</td>
-                              <td>{user.rooms}</td>
+                              <td>{user.hotelType}</td>
                               <td>{user.price}</td>
                               <td>
                                 <button type="submit" className="btn btn-success">

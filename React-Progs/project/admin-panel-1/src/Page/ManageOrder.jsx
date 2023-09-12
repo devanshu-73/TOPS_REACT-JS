@@ -9,13 +9,12 @@ function ManageUser() {
     //   .then((data) => setUsers(data));
     fetch();
   }, []);
-  // Axios.........
   const fetch = async () => {
-    const res = await axios.get('http://localhost:3000/order');
+    // Axios.........
+    const res = await axios.get(`http://localhost:3000/order`);
     setUsers(res.data);
   }
   const onDelete = async (id) => {
-    console.log(1);
     const res = await axios.delete(`http://localhost:3000/order/${id}`);
     if (res.status == "200") {
       alert('success...');

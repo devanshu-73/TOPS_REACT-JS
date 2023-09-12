@@ -15,9 +15,8 @@ function ManageUser() {
     setUsers(res.data);
   }
   const onDelete = async (id) => {
-    console.log(1);
     const res = await axios.delete(`http://localhost:3000/user/${id}`);
-    if(res.status == "200"){
+    if (res.status == "200") {
       alert('success...');
       fetch();
     }
@@ -60,7 +59,7 @@ function ManageUser() {
                                 <button type="submit" className="btn btn-success" >
                                   Edit
                                 </button>
-                                <button type="submit" className="btn btn-danger" onClick={()=>onDelete(user.id)} >
+                                <button type="submit" className="btn btn-danger" onClick={() => onDelete(user.id)} >
                                   Delete
                                 </button>
                               </td>
