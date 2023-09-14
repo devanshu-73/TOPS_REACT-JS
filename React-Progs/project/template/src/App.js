@@ -10,10 +10,13 @@ import Header from "./Comps/Header";
 import Booking from "./Pages/Booking";
 import OurTeam from "./Pages/OurTeam";
 import Testimonial from "./Pages/Testimonial";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 function App() {
   return (
 
     <BrowserRouter>
+      <ToastContainer></ToastContainer>
       <Routes>
         <Route exact path="/" element={<><Header /> <Home /> <Team /> <Footer /></>}></Route>
         <Route exact path="/about" element={<><Header /> <About /> <Team /> <Footer /></>}></Route>
