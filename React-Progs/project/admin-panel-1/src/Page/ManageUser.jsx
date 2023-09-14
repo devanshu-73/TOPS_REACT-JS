@@ -15,6 +15,7 @@ function ManageUser() {
     setUsers(res.data);
   }
   const onDelete = async (id) => {
+    console.log(1);
     const res = await axios.delete(`http://localhost:3000/user/${id}`);
     if (res.status == "200") {
       alert('success...');
