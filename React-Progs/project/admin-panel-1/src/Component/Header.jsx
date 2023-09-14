@@ -39,7 +39,7 @@ function Header() {
                                 <NavLink to="/dashboard"><i className="fa fa-dashboard " />Dashboard</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/"><i className="fa fa-sign-in " />Login Page</NavLink>
+                                <NavLink to="/login"><i className="fa fa-sign-in " />Login Page</NavLink>
                             </li>
                             <li>
                                 <Link to="#"><i className="fa fa-desktop "></i>Add<span className="fa arrow"></span></Link>
@@ -63,6 +63,9 @@ function Header() {
                                     </li>
                                     <li>
                                         <NavLink to="/manageProduct"><i className="fa fa-send "></i>Manage Product</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/manageContact"><i className="fa fa-send "></i>Manage Contact</NavLink>
                                     </li>
                                     <li>
                                         <NavLink to="/manageBlog"><i className="fa fa-send "></i>Manage Blog</NavLink>
