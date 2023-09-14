@@ -10,6 +10,7 @@ import ManageUser from './Page/ManageUser';
 import ManageOrder from './Page/ManageOrder';
 import Logout from './Page/Logout';
 import ManageProduct from './Page/ManageProduct';
+import ManageContact from './Page/ManageContact';
 import ManageBlog from './Page/ManageBlog';
 import Error from './Page/Error';
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/logout" element={<><Header/> <Logout/> <Footer/></>}></Route>
         <Route path="/manageProduct" element={<><Header/> <ManageProduct/> <Footer/></>}></Route>
         <Route path="/manageBlog" element={<><Header/> <ManageBlog/> <Footer/></>}></Route>
+        <Route path="/manageContact" element={<><Header/> <ManageContact/> <Footer/></>}></Route>
         <Route path="/error" element={<><Error/></>}></Route>
       </Routes>
     </BrowserRouter>
