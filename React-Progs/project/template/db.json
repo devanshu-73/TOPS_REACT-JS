@@ -1,76 +1,5 @@
 {
-  "user": [
-    {
-      "id": 1,
-      "username": "devanshu",
-      "phone": 9557822,
-      "email": "devanshu@gmail.com",
-      "password": "3632"
-    },
-    {
-      "id": 2,
-      "username": "tirth",
-      "phone": 8120225,
-      "email": "tirth@gmail.com",
-      "password": "8512"
-    },
-    {
-      "id": 3,
-      "username": "jay",
-      "phone": 9555222,
-      "email": "jay@gmail.com",
-      "password": "3632"
-    },
-    {
-      "id": 4,
-      "username": "mukesh",
-      "phone": 9555202,
-      "email": "mukesh@gmail.com",
-      "password": "1212"
-    },
-    {
-      "id": 5,
-      "username": "dipak",
-      "phone": 9555252,
-      "email": "dipak@gmail.com",
-      "password": "1414"
-    },
-    {
-      "id": 6,
-      "username": "shivam",
-      "phone": 9559222,
-      "email": "shivam@gmail.com",
-      "password": "1154"
-    },
-    {
-      "id": 7,
-      "username": "shivam",
-      "phone": 9559222,
-      "email": "shivam@gmail.com",
-      "password": "1154"
-    },
-    {
-      "id": 8,
-      "username": "shivam",
-      "phone": 9559222,
-      "email": "shivam@gmail.com",
-      "password": "1154"
-    },
-    {
-      "id": 9,
-      "username": "shivam",
-      "phone": 9559222,
-      "email": "shivam@gmail.com",
-      "password": "1154"
-    },
-    {
-      "id": 10,
-      "username": "shivam",
-      "phone": 9559222,
-      "email": "shivam@gmail.com",
-      "password": "1154"
-    }
-  ],
+  "user": [],
   "order": [
     {
       "id": 1,
@@ -78,115 +7,16 @@
       "username": "jay",
       "rooms": "junior suite",
       "price": 2000
-    },
-    {
-      "id": 2,
-      "order_no": "544",
-      "username": "tirth",
-      "rooms": "executive suite",
-      "price": 4000
-    },
-    {
-      "id": 3,
-      "order_no": "812",
-      "username": "devanshu",
-      "rooms": "super delux",
-      "price": 7000
-    },
-    {
-      "id": 4,
-      "order_no": "582",
-      "username": "mukesh",
-      "rooms": "junior suite",
-      "price": 2000
-    },
-    {
-      "id": 5,
-      "order_no": "155",
-      "username": "dipak",
-      "rooms": "super delux",
-      "price": 7000
-    },
-    {
-      "id": 6,
-      "order_no": "652",
-      "username": "jainish",
-      "rooms": "executive suite",
-      "price": 4000
-    },
-    {
-      "id": 7,
-      "order_no": "815",
-      "username": "sahil",
-      "rooms": "junior suite",
-      "price": 2000
-    },
-    {
-      "id": 8,
-      "order_no": "652",
-      "username": "yash",
-      "rooms": "super delux",
-      "price": 7000
     }
   ],
   "product": [
     {
       "hotelType": "Junior Suite Room",
-      "price": "Rs. 2000",
+      "price": "Rs. 7000",
       "id": 1
     }
   ],
-  "contact": [
-    {
-      "id": 1,
-      "name": "devanshu",
-      "email": "devanshu@gmail.com",
-      "subject": "nwejnwc",
-      "message": "bcwhbcjwkcbwkcwbcwk"
-    },
-    {
-      "id": 2,
-      "name": "tirth",
-      "email": "tirth@gmail.com",
-      "subject": "nwejnvvwc",
-      "message": "bcwhbcjvsdvevwkcbwkcwbcwk"
-    },
-    {
-      "id": 3,
-      "name": "jay",
-      "email": "jay@gmail.com",
-      "subject": "nwefewwf",
-      "message": "vrvevevkcbwkcwbcwk"
-    },
-    {
-      "id": 4,
-      "name": "mukesh",
-      "email": "mukesh@gmail.com",
-      "subject": "fefjbfewwf",
-      "message": "eefecrvvkcbwkcwbcwk"
-    },
-    {
-      "id": 5,
-      "name": "dipak",
-      "email": "dipak@gmail.com",
-      "subject": "nbjbfewwf",
-      "message": "hvhvhvevkcbwkcwbcwk"
-    },
-    {
-      "id": 6,
-      "name": "shivam",
-      "email": "shivam@gmail.com",
-      "subject": "dewdebfewwf",
-      "message": "dwdxwdvevkcbwkcwbcwk"
-    },
-    {
-      "id": 7,
-      "name": "sahil",
-      "email": "sahil@gmail.com",
-      "subject": "dfedeebfewwf",
-      "message": "knnkvkcbwkcwbcwk"
-    }
-  ],
+  "contact": [],
   "admin": [
     {
       "id": 1,
