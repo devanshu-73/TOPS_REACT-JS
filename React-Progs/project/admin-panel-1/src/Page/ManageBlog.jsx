@@ -9,7 +9,7 @@ function ManageBlog() {
                         <div className="row">
                             <div className="col-md-12">
                                 <h1 className="page-head-line">Blogs</h1>
-                            </div>
+                            </div>s
                         </div>
                         {/* /. ROW  */}
                         <div className="row">
