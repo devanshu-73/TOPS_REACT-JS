@@ -6,7 +6,7 @@ function App() {
     colors.map(color => setColors(color))
   }
   return (
-    <div width={100} style={{}} id="bgcolor">
+    <div width={100}  style={{backgroundColor:}} id="bgcolor">
       <button onClick={colorChange}>Click Me</button>
     </div>
   );
