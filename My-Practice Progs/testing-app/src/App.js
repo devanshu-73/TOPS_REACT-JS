@@ -2,9 +2,12 @@ import { useState } from "react";
 
 function App() {
   const [colors, setColors] = useState(['red', 'yellow', 'green', 'blue', 'black'])
+  const colorChange = () => {
+    colors.map(color => setColors(color))
+  }
   return (
     <div width={100} style={{}} id="bgcolor">
-      <button onClick={() => (colors.map(color => setColors(color)))}>Click Me</button>
+      <button onClick={colorChange}>Click Me</button>
     </div>
   );
 }
