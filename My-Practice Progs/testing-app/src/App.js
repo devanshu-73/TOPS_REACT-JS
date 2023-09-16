@@ -1,9 +1,12 @@
-import { useState } from "react";
+// import { useState } from "react";
 function App() {
+  const bgChange = ()=>{
+    const bgDiv = document.getElementById('bgDiv');
+  }
   return (
     <>
       <div id="bgDiv"></div>
-      <button onClick={() => ()}></button>
+      <button onClick={() => (bgChange)}></button>
     </>
   );
 }
