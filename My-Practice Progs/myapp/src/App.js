@@ -1,8 +1,7 @@
 import Card from './Card';
 function App() {
   let titleArr = ["Hello", "I", "AM", "Dev_eloper"]
-  return
-  <>
+  return (<>
     {/* -------------------------------------------------------------------------- */}
     <div className="container d-flex">
       {/* Hard coding... */}
@@ -19,7 +18,7 @@ function App() {
       ))}
 
     </div>
-  </>;
+  </>)
 }
 
 export default App;
