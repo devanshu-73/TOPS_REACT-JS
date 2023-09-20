@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 function TextExample({title}) {
   return (
+
     <Card style={{ width: '18rem' }}>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
@@ -13,6 +14,7 @@ function TextExample({title}) {
         <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
     </Card>
+  
   );
 }
 
