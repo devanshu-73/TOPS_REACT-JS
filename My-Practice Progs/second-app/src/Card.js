@@ -4,9 +4,7 @@ import { Card, Button, Row } from 'react-bootstrap';
 
 function BasicExample() {
     const [photos, setPhotos] = useState([]);
-
     useEffect(() => {
-        // Make an API call when the component mounts
         axios.get('https://api.slingacademy.com/v1/sample-data/photos')
             .then(response => {
                 setPhotos(response.data.photos);
