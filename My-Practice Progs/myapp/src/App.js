@@ -1,7 +1,8 @@
 import Card from './Card';
 function App() {
-  let titleArr = ["Hello","I","AM","Dev_eloper"]
-  return <>
+  let titleArr = ["Hello", "I", "AM", "Dev_eloper"]
+  return
+  <>
     {/* -------------------------------------------------------------------------- */}
     <div className="container d-flex">
       {/* Hard coding... */}
