@@ -11,7 +11,6 @@ function App() {
       setIndex(index + 1);
     }
   }
-
   return (
     <>
       <div
