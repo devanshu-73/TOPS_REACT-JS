@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function App() {
   const colors = ['red', 'blue', 'green', 'black','yellow'];
-  const [index, setIndex] = useState(-1); // Start with -1 for no color
+  const [index, setIndex] = useState(-1); 
 
   const bgChange = () => {
     if (index === colors.length - 1) {
