@@ -8,7 +8,7 @@ function App() {
     if (index === colors.length - 1) {
       setIndex(0); // Reset to the first color when reaching the end
     } else {
-      setIndex(index + 1); // Increment the index
+      setIndex(index + 1);
     }
   }
 
