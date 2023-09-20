@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function App() {
-  const colors = ['red', 'blue', 'green', 'black'];
+  const colors = ['red', 'blue', 'green', 'black','yellow'];
   const [index, setIndex] = useState(-1); // Start with -1 for no color
 
   const bgChange = () => {
