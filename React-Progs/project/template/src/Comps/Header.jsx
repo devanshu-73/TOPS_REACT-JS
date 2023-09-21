@@ -57,6 +57,9 @@ export default function Header() {
                                             </div>
                                         </div>
                                         <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
+                                        <NavLink to="/signup" className="nav-item nav-link">SignUp</NavLink>
+                                        <NavLink to="/login" className="nav-item nav-link">Login</NavLink>
+                                        <NavLink to="/profile" className="nav-item nav-link">Profile</NavLink>
                                     </div>
                                     <a href="https://htmlcodex.com/hotel-html-template-pro" className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Premium Version<i className="fa fa-arrow-right ms-3" /></a>
                                 </div>
