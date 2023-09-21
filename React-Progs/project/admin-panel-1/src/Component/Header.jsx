@@ -39,7 +39,7 @@ function Header() {
                                 <NavLink to="/dashboard"><i className="fa fa-dashboard " />Dashboard</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/login"><i className="fa fa-sign-in " />Login Page</NavLink>
+                                <NavLink to="/"><i className="fa fa-sign-in " />Login Page</NavLink>
                             </li>
                             <li>
                                 <Link to="#"><i className="fa fa-desktop "></i>Add<span className="fa arrow"></span></Link>
