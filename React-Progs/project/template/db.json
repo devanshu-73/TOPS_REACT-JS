@@ -16,7 +16,15 @@
       "id": 1
     }
   ],
-  "contact": [],
+  "contact": [
+    {
+      "name": "ecw",
+      "email": "devanshuchauhan732000@gmail.com",
+      "subject": "cewcew",
+      "message": "efcewcew",
+      "id": "1695285198894"
+    }
+  ],
   "admin": [
     {
       "id": 1,
