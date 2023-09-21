@@ -11,6 +11,9 @@ import Booking from "./Pages/Booking";
 import OurTeam from "./Pages/OurTeam";
 import Testimonial from "./Pages/Testimonial";
 import { ToastContainer } from 'react-toastify';
+import SignUp from "./Pages/SignUp";
+import Login from './Pages/Login'
+import Profile from './Pages/Profile'
 import 'react-toastify/dist/ReactToastify.css'
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
         <Route exact path="/team" element={<><Header /> <OurTeam /> <Footer /></>}></Route>
         <Route exact path="/testimonial" element={<><Header /> <Testimonial /> <Footer /></>}></Route>
         <Route exact path="/contact" element={<><Header /> <Contact /> <Footer /></>}></Route>
+        <Route exact path="/signup" element={<><Header /> <SignUp /> <Footer /></>}></Route>
+        <Route exact path="/login" element={<><Header /> <Login /> <Footer /></>}></Route>
+        <Route exact path="/profile" element={<><Header /> <Profile /> <Footer /></>}></Route>
       </Routes>
     </BrowserRouter>
 
