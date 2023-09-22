@@ -1,5 +1,13 @@
 {
-  "user": [],
+  "user": [
+    {
+      "id": 1,
+      "username": "dev",
+      "phone": 5151515,
+      "email": "dev@gmail.com",
+      "password": 2142
+    }
+  ],
   "order": [
     {
       "id": 1,
