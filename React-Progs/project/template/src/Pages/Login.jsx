@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function SignUp() {
     return (
@@ -20,7 +21,7 @@ function SignUp() {
                                     <span className="input-group-addon"><i className="fa fa-lock" /></span>
                                     <input type="password" className="form-control" placeholder="Your Password" />
                                 </div>
-                                <a href="index.html" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="btn btn-primary ">Login Now</a>
+                                <Link to="/profile" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="btn btn-primary ">Login Now</Link>
                             </form>
                         </div>
                     </div>
