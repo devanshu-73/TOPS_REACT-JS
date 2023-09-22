@@ -27,7 +27,6 @@ function SignUp() {
                                     <span className="input-group-addon"><i className="fa fa-tag" /></span>
                                     <input type="number" className="form-control" placeholder="Your phone " />
                                 </div>
-
                                 <div className="form-group input-group" style={{ padding: 10 }}>
                                     <span className="input-group-addon"><i className="fa fa-lock" /></span>
                                     <input type="password" className="form-control" placeholder="Your Password" />
