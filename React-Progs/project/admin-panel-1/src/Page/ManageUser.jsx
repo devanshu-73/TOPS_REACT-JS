@@ -45,6 +45,7 @@ function ManageUser() {
                           <th>Username</th>
                           <th>Phone</th>
                           <th>Email</th>
+                          <th>Password</th>
                           <th>Edit/Delete</th>
                         </tr>
                       </thead>
@@ -56,6 +57,7 @@ function ManageUser() {
                               <td>{user.username}</td>
                               <td>{user.phone}</td>
                               <td>{user.email}</td>
+                              <td>{user.password}</td>
                               <td>
                                 <button type="submit" className="btn btn-success" >
                                   Edit
