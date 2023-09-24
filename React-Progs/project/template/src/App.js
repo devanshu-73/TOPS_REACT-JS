@@ -18,7 +18,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import Header2 from './Comps/Header2';
 function App() {
   return (
-
     <BrowserRouter>
       <ToastContainer></ToastContainer>
       <Routes>
