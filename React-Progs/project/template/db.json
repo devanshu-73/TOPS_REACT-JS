@@ -1,11 +1,18 @@
 {
   "user": [
     {
-      "id": 1,
       "username": "dev",
-      "phone": 5151515,
-      "email": "dev@gmail.com",
-      "password": 2142
+      "email": "devanshuchauhan732000@gmail.com",
+      "phone": "421123124",
+      "password": "1234",
+      "id": "1695560554307"
+    },
+    {
+      "username": "yash",
+      "email": "devanshuchauhan732000@gmail.com",
+      "phone": "234221",
+      "password": "1111",
+      "id": "1695562160336"
     }
   ],
   "order": [
