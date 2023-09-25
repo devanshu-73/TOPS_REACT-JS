@@ -1,34 +1,75 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
-/* eslint-disable jsx-a11y/alt-text */
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function SignUp() {
+function Login() {
+    const navigate = useNavigate(); // Use useNavigate to access navigation function
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleUsernameChange = (e) => {
+        setUsername(e.target.value);
+    };
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    };
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:3000/user'); // Replace with the correct endpoint for your user data
+            const userData = await response.json();
+
+            // Check if the entered credentials match any user
+            const user = userData.find((user) => user.username === username && user.password === password);
+
+            if (user) {
+                // Successful login
+                alert('Login successful');
+
+                // Redirect to the /profile route
+                navigate('/profile');
+            } else {
+                // Handle login error (e.g., show an error message)
+                alert('Login failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
     return (
-        <div>
-            <div className="container" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: 100 }}>
-                <div className="row " >
-                    <div className="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-                        <div className="panel-body">
-                            <form role="form" style={{ width: "300px", marginTop: 20, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                                <h5>Enter Details to Login</h5>
-                                <div className="form-group input-group" style={{ padding: 10 }}>
-                                    <span className="input-group-addon"><i className="fa fa-tag" /></span>
-                                    <input type="text" className="form-control" placeholder="Your UserName " />
-                                </div>
+        <>
+            <div>
+                <div className="container" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: 100 }}>
+                    <div className="row ">
+                        <div className="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                            <div className="panel-body">
+                                <form role="form" style={{ width: "300px", marginTop: 20, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                                    <h5>Enter Details to Login</h5>
+                                    <div className="form-group input-group" style={{ padding: 10 }}>
+                                        <span className="input-group-addon"><i className="fa fa-tag" /></span>
+                                        <input type="text" value={username} onChange={handleUsernameChange} />
+                                    </div>
 
-                                <div className="form-group input-group" style={{ padding: 10 }}>
-                                    <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                                    <input type="password" className="form-control" placeholder="Your Password" />
-                                </div>
-                                <Link to="/profile" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="btn btn-primary ">Login Now</Link>
-                            </form>
+                                    <div className="form-group input-group" style={{ padding: 10 }}>
+                                        <span className="input-group-addon"><i className="fa fa-lock" /></span>
+                                        <input type="password" value={password} onChange={handlePasswordChange} />
+                                    </div>
+                                    {/* Use the navigate function to navigate to the profile page */}
+                                    <button type="button" onClick={handleLogin} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="btn btn-primary">
+                                        Login Now
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    )
+        </>
+    );
 }
 
-export default SignUp
+export default Login;
