@@ -15,7 +15,7 @@ import SignUp from "./Pages/SignUp";
 import Login from './Pages/Login'
 import Profile from './Pages/Profile'
 import 'react-toastify/dist/ReactToastify.css'
-import Header2 from './Comps/Header2';
+// import Header2 from './Comps/Header2';
 function App() {
   return (
     <BrowserRouter>
@@ -31,7 +31,7 @@ function App() {
         <Route exact path="/contact" element={<><Header /> <Contact /> <Footer /></>}></Route>
         <Route exact path="/signup" element={<><Header /> <SignUp /> <Footer /></>}></Route>
         <Route exact path="/login" element={<><Header /> <Login /> <Footer /></>}></Route>
-        <Route exact path="/profile" element={<><Header2 /> <Profile /> <Footer /></>}></Route>
+        <Route exact path="/profile" element={<><Profile /></>}></Route>
       </Routes>
     </BrowserRouter>
 
