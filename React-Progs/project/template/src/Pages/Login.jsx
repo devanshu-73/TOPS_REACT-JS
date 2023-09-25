@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-    const navigate = useNavigate(); // Use useNavigate to access navigation function
+    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -19,7 +19,7 @@ function Login() {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3000/user'); // Replace with the correct endpoint for your user data
+            const response = await fetch('http://localhost:3000/user');
             const userData = await response.json();
 
             // Check if the entered credentials match any user
@@ -31,6 +31,10 @@ function Login() {
 
                 // Redirect to the /profile route
                 navigate('/profile');
+                localStorage.setItem("username", username);
+                localStorage.setItem("phone", user.phone);
+                localStorage.setItem("email", user.email);
+                localStorage.setItem("password", password);
             } else {
                 // Handle login error (e.g., show an error message)
                 alert('Login failed');
@@ -51,12 +55,12 @@ function Login() {
                                     <h5>Enter Details to Login</h5>
                                     <div className="form-group input-group" style={{ padding: 10 }}>
                                         <span className="input-group-addon"><i className="fa fa-tag" /></span>
-                                        <input type="text" value={username} onChange={handleUsernameChange} />
+                                        <input type="text" className="form-control" value={username} onChange={handleUsernameChange} />
                                     </div>
 
                                     <div className="form-group input-group" style={{ padding: 10 }}>
                                         <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                                        <input type="password" value={password} onChange={handlePasswordChange} />
+                                        <input type="password" className="form-control" value={password} onChange={handlePasswordChange} />
                                     </div>
                                     {/* Use the navigate function to navigate to the profile page */}
                                     <button type="button" onClick={handleLogin} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="btn btn-primary">
