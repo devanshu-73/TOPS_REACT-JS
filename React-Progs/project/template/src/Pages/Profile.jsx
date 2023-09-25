@@ -14,20 +14,20 @@ function Profile() {
                                 <h5>Profile Page</h5>
                                 <div className="form-group input-group" style={{ padding: 10 }}>
                                     <span className="input-group-addon"><i className="fa fa-tag" /></span>
-                                    <input type="text" className="form-control" placeholder="Your UserName " />
+                                    <input type="text" className="form-control" value={localStorage.username} placeholder="Your UserName " />
                                 </div>
                                 <div className="form-group input-group" style={{ padding: 10 }}>
                                     <span className="input-group-addon"><i className="fa fa-tag" /></span>
-                                    <input type="number" className="form-control" placeholder="Your Phone " />
+                                    <input type="number" className="form-control" value={localStorage.phone} placeholder="Your Phone " />
                                 </div>
                                 <div className="form-group input-group" style={{ padding: 10 }}>
                                     <span className="input-group-addon"><i className="fa fa-tag" /></span>
-                                    <input type="email" className="form-control" placeholder="Your Email " />
+                                    <input type="email" className="form-control" value={localStorage.email} placeholder="Your Email " />
                                 </div>
 
                                 <div className="form-group input-group" style={{ padding: 10 }}>
                                     <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                                    <input type="password" className="form-control" placeholder="Your Password" />
+                                    <input type="password" className="form-control" value={localStorage.password} placeholder="Your Password" />
                                 </div>
                                 <a href="index.html" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="btn btn-primary ">Edit</a>
                             </form>
