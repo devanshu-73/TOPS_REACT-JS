@@ -11,7 +11,7 @@ function Profile() {
                     <div className="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                         <div className="panel-body">
                             <form role="form" style={{ width: "300px", marginTop: 20, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                                <h5>Enter Details to Login</h5>
+                                <h5>Profile Page</h5>
                                 <div className="form-group input-group" style={{ padding: 10 }}>
                                     <span className="input-group-addon"><i className="fa fa-tag" /></span>
                                     <input type="text" className="form-control" placeholder="Your UserName " />
