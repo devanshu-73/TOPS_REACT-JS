@@ -4,18 +4,18 @@ import axios from 'axios'
 function ManageUser() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
+
     // fetch("http://localhost:3000/user")
     //   .then((response) => response.json())
     //   .then((data) => setUsers(data));
     fetch();
   }, []);
   // Axios.........
-  const fetch = async () => {
+  const fetch = async (e) => {
     const res = await axios.get('http://localhost:3000/user');
     setUsers(res.data);
   }
   const onDelete = async (id) => {
-    console.log(1);
     const res = await axios.delete(`http://localhost:3000/user/${id}`);
     if (res.status == "200") {
       alert('success...');
@@ -43,8 +43,8 @@ function ManageUser() {
                         <tr>
                           <th>Id</th>
                           <th>Username</th>
-                          <th>Phone</th>
                           <th>Email</th>
+                          <th>Phone</th>
                           <th>Password</th>
                           <th>Edit/Delete</th>
                         </tr>
@@ -55,8 +55,8 @@ function ManageUser() {
                             <tr key={user.id}>
                               <td>{user.id}</td>
                               <td>{user.username}</td>
-                              <td>{user.phone}</td>
                               <td>{user.email}</td>
+                              <td>{user.phone}</td>
                               <td>{user.password}</td>
                               <td>
                                 <button type="submit" className="btn btn-success" >
