@@ -20,19 +20,22 @@ function App() {
   return (
     <BrowserRouter>
       <ToastContainer></ToastContainer>
+
       <Routes>
-        <Route exact path="/" element={<><Header /> <Home /> <Team /> <Footer /></>}></Route>
-        <Route exact path="/about" element={<><Header /> <About /> <Team /> <Footer /></>}></Route>
-        <Route exact path="/service" element={<><Header /> <Service /> <Team /> <Footer /></>}></Route>
-        <Route exact path="/rooms" element={<><Header /> <Room /> <Footer /></>}></Route>
-        <Route exact path="/booking" element={<><Header /> <Booking /> <Footer /></>}></Route>
-        <Route exact path="/team" element={<><Header /> <OurTeam /> <Footer /></>}></Route>
-        <Route exact path="/testimonial" element={<><Header /> <Testimonial /> <Footer /></>}></Route>
-        <Route exact path="/contact" element={<><Header /> <Contact /> <Footer /></>}></Route>
-        <Route exact path="/signup" element={<><Header /> <SignUp /> <Footer /></>}></Route>
-        <Route exact path="/login" element={<><Header /> <Login /> <Footer /></>}></Route>
-        <Route exact path="/profile" element={<><Profile /></>}></Route>
+        <Route exact path="/" element={<>  <Header /><Home /> <Team />   <Footer /></>}></Route>
+        <Route exact path="/about" element={<>  <Header /><About /> <Team />   <Footer /></>}></Route>
+        <Route exact path="/service" element={<>  <Header /><Service /> <Team />  <Footer /> </>}></Route>
+        <Route exact path="/rooms" element={<> <Header /> <Room />  <Footer /> </>}></Route>
+        <Route exact path="/booking" element={<> <Header /> <Booking />  <Footer /> </>}></Route>
+        <Route exact path="/team" element={<>  <Header /><OurTeam />   <Footer /></>}></Route>
+        <Route exact path="/testimonial" element={<> <Header /> <Testimonial />  <Footer /> </>}></Route>
+        <Route exact path="/contact" element={<>  <Header /><Contact />  <Footer /> </>}></Route>
+        <Route exact path="/signup" element={<> <Header /> <SignUp />   <Footer /></>}></Route>
+        <Route exact path="/login" element={<>  <Header /><Login />  <Footer /> </>}></Route>
+        <Route exact path="/profile" element={<><Header /><Profile />  <Footer /></>}></Route>
+        <Route exact path="/header2" element={<><Header /><h2 className="d-flex justify-content-center align-items-center mt-5">LogOut SuccessFully</h2><Footer /></>}></Route>
       </Routes>
+
     </BrowserRouter>
 
   );
