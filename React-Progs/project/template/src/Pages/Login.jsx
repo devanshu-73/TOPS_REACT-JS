@@ -22,21 +22,17 @@ function Login() {
             const response = await fetch('http://localhost:3000/user');
             const userData = await response.json();
 
-            // Check if the entered credentials match any user
             const user = userData.find((user) => user.username === username && user.password === password);
 
             if (user) {
-                // Successful login
                 alert('Login successful');
-
-                // Redirect to the /profile route
                 navigate('/profile');
                 localStorage.setItem("username", username);
+                localStorage.setItem("uid", user.id);
                 localStorage.setItem("phone", user.phone);
                 localStorage.setItem("email", user.email);
                 localStorage.setItem("password", password);
             } else {
-                // Handle login error (e.g., show an error message)
                 alert('Login failed');
             }
         } catch (error) {
