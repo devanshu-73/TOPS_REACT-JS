@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
+// import { NavLink, Link, useNavigate } from 'react-router-dom'
 export default function Header2() {
     return (
         <>
@@ -57,7 +58,8 @@ export default function Header2() {
                                             </div>
                                         </div>
                                         <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
-                                        <NavLink to="/profile" className="nav-item nav-link">Profile</NavLink>
+                                        <NavLink className="nav-item nav-link" to="/signup">SignUp</NavLink>
+                                        <NavLink className="nav-item nav-link" to="/login">Login</NavLink>
                                     </div>
                                     <a href="https://htmlcodex.com/hotel-html-template-pro" className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Premium Version<i className="fa fa-arrow-right ms-3" /></a>
                                 </div>
