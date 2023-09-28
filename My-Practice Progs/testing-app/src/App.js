@@ -1,11 +1,12 @@
 // import BgChangeOnClick from './BgChangeOnClick';
+import SignUpTest from './SignUpTest';
 
 function App() {
 
   return (
     <>
       {/* <BgChangeOnClick /> */}
-      Signup/
+      <SignUpTest />
     </>
   );
 }
