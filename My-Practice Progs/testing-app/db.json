@@ -1,13 +1,3 @@
 {
-    "user": [
-        {
-            "name":"dev",
-            "age":23
-        },
-        {
-            "name":"yash",
-            "age":21
-        }
-
-    ]
+    "user": []
 }
