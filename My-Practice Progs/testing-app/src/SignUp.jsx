@@ -3,6 +3,7 @@ import React from 'react'
 const SignUp = () => {
     return (
         <div>
+            <h1 className='text-center'>Sign Up Form</h1>
             <form>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
