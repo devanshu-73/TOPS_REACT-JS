@@ -27,11 +27,11 @@ function Login() {
             if (user) {
                 alert('Login successful');
                 navigate('/profile');
-                localStorage.setItem("username", username);
+                // localStorage.setItem("username", username);
                 localStorage.setItem("uid", user.id);
-                localStorage.setItem("phone", user.phone);
-                localStorage.setItem("email", user.email);
-                localStorage.setItem("password", password);
+                // localStorage.setItem("phone", user.phone);
+                // localStorage.setItem("email", user.email);
+                // localStorage.setItem("password", password);
             } else {
                 alert('Login failed');
             }
