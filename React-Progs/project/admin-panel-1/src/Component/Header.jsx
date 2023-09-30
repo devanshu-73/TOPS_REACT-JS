@@ -29,8 +29,7 @@ function Header() {
                                 <div className="user-img-div">
                                     <img src="assets/img/user.png" className="img-thumbnail" alt='...' />
                                     <div className="inner-text">
-                                        Devanshu Chauhan
-                                        <br />
+                                        <h2> {localStorage.getItem('username')}</h2>
                                         <small>Last Login : 27 sec Ago </small>
                                     </div>
                                 </div>
