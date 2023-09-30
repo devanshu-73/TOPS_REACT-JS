@@ -57,7 +57,7 @@ function Profile() {
                 alert('Update success');
             }
         }
-    }
+    }     
 
     return (
         <div>
