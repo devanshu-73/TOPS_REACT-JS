@@ -1,8 +1,44 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable jsx-a11y/no-redundant-roles */
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function Login() {
+    const navigate = useNavigate();
+    const [name, setname] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handlenameChange = (e) => {
+        setname(e.target.value);
+    };
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    };
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:3000/admin');
+            const userData = await response.json();
+
+            const user = userData.find((user) => user.name === name && user.password === password);
+
+            if (user) {
+                alert('Login successful');
+                navigate('/dashboard');
+                localStorage.setItem("uid", user.id);
+                localStorage.setItem("username", user.name);
+            } else {
+                alert('Login failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
     return (
         <div>
             <div className="container">
@@ -16,27 +52,22 @@ function Login() {
                         <div className="panel-body">
                             <form role="form">
                                 <hr />
-                                <h5>Enter Details to Login</h5>
+                                <h3 className='text-center'>Enter Details to Login</h3>
                                 <br />
                                 <div className="form-group input-group">
                                     <span className="input-group-addon"><i className="fa fa-tag" /></span>
-                                    <input type="text" className="form-control" placeholder="Your Username " />
+                                    <input type="text" name='name' value={name} onChange={handlenameChange} className="form-control" placeholder="Your Username " />
                                 </div>
                                 <div className="form-group input-group">
                                     <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                                    <input type="password" className="form-control" placeholder="Your Password" />
+                                    <input type="password" name='password' value={password} onChange={handlePasswordChange} className="form-control" placeholder="Your Password" />
                                 </div>
-                                <div className="form-group">
-                                    <label className="checkbox-inline">
-                                        <input type="checkbox" /> Remember me
-                                    </label>
-                                    <span className="pull-right">
-                                        <a href="index.html">Forget password ? </a>
-                                    </span>
+                                <div className='text-center'>
+                                    <button type="button" onClick={handleLogin} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="btn btn-primary">
+                                        Login Now
+                                    </button>
+                                    {/* <Link to="/dashboard" className="btn btn-primary">Login Now</Link> */}
                                 </div>
-                                <a href="index.html" className="btn btn-primary ">Login Now</a>
-                                <hr />
-                                Not register ? <a href="index.html">click here </a> or go to <a href="index.html">Home</a>
                             </form>
                         </div>
                     </div>
