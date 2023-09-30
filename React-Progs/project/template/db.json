@@ -1,10 +1,10 @@
 {
   "user": [
     {
-      "username": "devanshu",
+      "username": "Devanshu",
       "email": "devanshuchauhan732000@gmail.com",
       "phone": "421123124",
-      "password": "1234",
+      "password": "1111",
       "id": "1695560554307"
     },
     {
@@ -43,8 +43,12 @@
   "admin": [
     {
       "id": 1,
-      "name": "admin",
-      "email": "admin@gmail.com",
+      "name": "admin1",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "name": "admin2",
       "password": "1234"
     }
   ]
