@@ -1,7 +1,9 @@
 /* eslint-disable eqeqeq */
 import React, { useState, useEffect } from "react";
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 function ManageUser() {
+  const redirect = useNavigate();
   const [users, setUsers] = useState([]);
   useEffect(() => {
 
@@ -59,7 +61,7 @@ function ManageUser() {
                               <td>{user.phone}</td>
                               <td>{user.password}</td>
                               <td>
-                                <button type="submit" className="btn btn-success" >
+                                <button type="submit" className="btn btn-success" onClick={()=>{redirect('/edit_user/'+user.id)}} >
                                   Edit
                                 </button>
                                 <button type="submit" className="btn btn-danger" onClick={() => onDelete(user.id)} >
