@@ -73,7 +73,7 @@ function SignUp() {
                                     <input type="password" value={data.password} className="form-control" name='password' onChange={onchange} placeholder="Your Password" />
                                 </div>
                                 <Link to="/profile" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
-                                    <button type='submit' onClick={onsubmit} className="btn btn-primary w-100 py-3">SignUp Now</button>
+                                    <button type='submit' onClick={onsubmit} className="btn btn-primary w-100 py-3">SignUp</button>
                                 </Link>
                             </form>
                         </div>
