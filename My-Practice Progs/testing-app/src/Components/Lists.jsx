@@ -1,23 +1,27 @@
-import React from 'react'
+import React from 'react';
 
 const Lists = () => {
-    const items = [
+    let items = [
         "DEVANSHU",
         "chauhan",
         "Yash"
     ];
+    // items = [];  
     return (
-        <>
-            <div>
-                <h1 >List</h1>
+        <div>
+            <h1>List</h1>
+            {items.length === 0 ? (
+                <p>Nothing to display...</p>
+            ) : (
                 <ul>
                     {items.map((item, index) => (
-                        <li style={{ textTransform: 'none' }} key={index} type='none'>{index}:{item}</li>
+                        <li style={{ textTransform: 'none' }} onClick={() => (console.log(item + ' clicked'))} key={index}>{index}: {item}</li>
                     ))}
                 </ul>
-            </div>
-        </>
-    )
+            )
+            }
+        </div >
+    );
 }
 
-export default Lists
+export default Lists;
