@@ -47,7 +47,7 @@ const SignUpTest = () => {
                     <input type="text" name="password" className="form-control" value={data.password} onChange={onchange} />
                 </div>
                 <div className='mt-2 d-flex justify-content-center align-items-center'>
-                    <button type="submit" onClick={onsubmit} className='btn btn-primary'>SignUp Now</button>
+                    <button type="submit" onClick={onsubmit} className='btn btn-primary'>Sign Up Now</button>
                 </div>
             </form>
         </div>
