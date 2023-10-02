@@ -1,12 +1,12 @@
-// import BgChangeOnClick from './BgChangeOnClick';
-import SignUpTest from './SignUpTest';
 
+import Lists from './Components/Lists';
 function App() {
 
   return (
     <>
       {/* <BgChangeOnClick /> */}
-      <SignUpTest />
+      {/* <SignUpTest /> */}
+      <Lists />
     </>
   );
 }
