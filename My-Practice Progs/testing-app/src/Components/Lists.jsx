@@ -3,11 +3,9 @@ import React from 'react';
 const Lists = () => {
     let items = [
         "devanshu",
-        "chauhan",
         "Yash",
         "sahil"
     ];
-    // items = [];  
     return (
         <div>
             <h1>List</h1>
