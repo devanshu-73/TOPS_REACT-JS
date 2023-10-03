@@ -4,7 +4,8 @@ const Lists = () => {
     let items = [
         "devanshu",
         "chauhan",
-        "Yash"
+        "Yash",
+        "sahil"
     ];
     // items = [];  
     return (
