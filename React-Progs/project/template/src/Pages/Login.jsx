@@ -25,17 +25,23 @@ function Login() {
             const user = userData.find((user) => user.username === username && user.password === password);
 
             if (user) {
-                alert('Login successful');
-                navigate('/profile');
-                // localStorage.setItem("username", username);
+                if (user.status) {
+                    alert('Login successful');
+                    navigate('/profile');
+                    localStorage.setItem("username", username);
 
-                localStorage.setItem("uid", user.id);
-                
+                    localStorage.setItem("uid", user.id);
+                }
+                else{
+                    alert('U r Blocked');
+
+                }
+
                 // localStorage.setItem("phone", user.phone);
                 // localStorage.setItem("email", user.email);
                 // localStorage.setItem("password", password);
             } else {
-                alert('Login failed');
+                alert('Login Failed');
             }
         } catch (error) {
             console.error('Error:', error);
