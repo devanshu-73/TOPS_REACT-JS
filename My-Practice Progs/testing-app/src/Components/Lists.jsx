@@ -3,8 +3,7 @@ import React from 'react';
 const Lists = () => {
     let items = [
         "DEVANSHU",
-        "chauhan",
-        "Yash"
+        "chauhan"
     ];
     // items = [];  
     return (
