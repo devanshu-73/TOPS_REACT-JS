@@ -25,6 +25,23 @@ function ManageUser() {
     }
 
   };
+
+  const statusChange = async (id) => {
+    const res = await axios.get(`http://localhost:3000/user/${id}`);
+    if (res.data.status) {
+      const res1 = await axios.patch(`http://localhost:3000/user/${id}`, { status: false });
+      if (res1.status == 200) {
+        fetch();
+        alert('status Block successFul');
+      }
+    } else {
+      const res1 = await axios.patch(`http://localhost:3000/user/${id}`, { status: true });
+      if (res1.status == 200) {
+        fetch();
+        alert('status Unblock successFul');
+      }
+    }
+  }
   return (
     <div>
       <div id="page-wrapper">
@@ -48,6 +65,7 @@ function ManageUser() {
                           <th>Email</th>
                           <th>Phone</th>
                           <th>Password</th>
+                          <th>Status</th>
                           <th>Edit/Delete</th>
                         </tr>
                       </thead>
@@ -60,12 +78,16 @@ function ManageUser() {
                               <td>{user.email}</td>
                               <td>{user.phone}</td>
                               <td>{user.password}</td>
+                              <td>{(user.status) ? 'Unblock' : 'Block'}</td>
                               <td>
-                                <button type="submit" className="btn btn-success" onClick={()=>{redirect('/edit_user/'+user.id)}} >
+                                <button type="submit" className="btn btn-success" onClick={() => { redirect('/edit_user/' + user.id) }} >
                                   Edit
                                 </button>
                                 <button type="submit" className="btn btn-danger" onClick={() => onDelete(user.id)} >
                                   Delete
+                                </button>
+                                <button type="submit" className="btn btn-danger" onClick={() => statusChange(user.id)} >
+                                  {(user.status) ? 'Block' : 'Unblock'}
                                 </button>
                               </td>
                             </tr>
