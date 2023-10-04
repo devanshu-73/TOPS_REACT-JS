@@ -28,9 +28,19 @@
   ],
   "product": [
     {
-      "hotelType": "Junior Suite Room",
-      "price": "Rs. 7000",
+      "roomType": "Junior Suite Room",
+      "price": 2000,
       "id": 1
+    },
+    {
+      "roomType": "Executive Suite Room",
+      "price": 4000,
+      "id": 2
+    },
+    {
+      "roomType": "Super Deluxe Room",
+      "price": 7000,
+      "id": 3
     }
   ],
   "contact": [
