@@ -31,11 +31,6 @@
       "roomType": "Junior Suite Room",
       "price": 2000,
       "id": 1
-    },
-    {
-      "roomType": "Executive Suite Room",
-      "price": 4000,
-      "id": 2
     }
   ],
   "contact": [
