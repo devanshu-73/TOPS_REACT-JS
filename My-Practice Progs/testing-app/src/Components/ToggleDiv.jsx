@@ -10,7 +10,7 @@ const ToggleDiv = () => {
         <>
             <div>
                 <button onClick={toggleVisibility}>Toggle Div</button>
-                {isVisible && <div style={{border:'1px solid black'}}>This div is visible or Not.</div>}
+                {isVisible && <div style={{border:'1px solid black'}}>I am visible or Not.</div>}
             </div>
         </>
     )
