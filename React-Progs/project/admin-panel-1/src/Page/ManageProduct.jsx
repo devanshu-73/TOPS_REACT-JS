@@ -1,21 +1,24 @@
 /* eslint-disable eqeqeq */
 import React, { useState, useEffect } from "react";
 import axios from 'axios'
+
 function ManageProduct() {
+
   const [users, setUsers] = useState([]);
+
   useEffect(() => {
     // fetch("http://localhost:3000/user")
     //   .then((response) => response.json())
     //   .then((data) => setUsers(data));
     fetch();
   }, []);
+
   // Axios.........
   const fetch = async () => {
     const res = await axios.get('http://localhost:3000/product');
     setUsers(res.data);
   }
   const onDelete = async (id) => {
-    console.log(1);
     const res = await axios.delete(`http://localhost:3000/product/${id}`);
     if (res.status == "200") {
       alert('success...');
@@ -23,6 +26,7 @@ function ManageProduct() {
     }
 
   };
+
   return (
     <div>
       <div id="page-wrapper">
@@ -42,7 +46,7 @@ function ManageProduct() {
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>Hotel Type</th>
+                          <th>Room Type</th>
                           <th>Price</th>
                           <th>Edit/Delete</th>
                         </tr>
@@ -52,7 +56,7 @@ function ManageProduct() {
                           users.map((user) => (
                             <tr>
                               <td>{user.id}</td>
-                              <td>{user.hotelType}</td>
+                              <td>{user.roomType}</td>
                               <td>{user.price}</td>
                               <td>
                                 <button type="submit" className="btn btn-success">
