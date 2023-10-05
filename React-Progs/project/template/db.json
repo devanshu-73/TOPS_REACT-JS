@@ -36,6 +36,11 @@
       "roomType": "Executive Suite Room",
       "price": 4000,
       "id": 2
+    },
+    {
+      "roomType": "Super Deluxe Room",
+      "price": 7000,
+      "id": 3
     }
   ],
   "contact": [
