@@ -1,15 +1,26 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/iframe-has-title */
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
 export default function Home() {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => { fetch() }, []);
+
+    // Axios.........
+    const fetch = async () => {
+        const res = await axios.get('http://localhost:3000/product');
+        setUsers(res.data);
+    }
     return (
         <div>
             {/* Carousel Start */}
             <div className="container-fluid p-0 mb-5">
                 <div id="header-carousel" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner"> 
+                    <div className="carousel-inner">
                         <div className="carousel-item active">
                             <img className="w-100" src="img/carousel-1.jpg" alt="Image" />
                             <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -154,96 +165,66 @@ export default function Home() {
                         <h1 className="mb-5">Explore Our <span className="text-primary text-uppercase">Rooms</span></h1>
                     </div>
                     <div className="row g-4">
-                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div className="room-item shadow rounded overflow-hidden">
-                                <div className="position-relative">
-                                    <img className="img-fluid" src="img/room-1.jpg" alt />
-                                    <small className="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-                                </div>
-                                <div className="p-4 mt-2">
-                                    <div className="d-flex justify-content-between mb-3">
-                                        <h5 className="mb-0">Junior Suite</h5>
-                                        <div className="ps-2">
-                                            <small className="fa fa-star text-primary" />
-                                            <small className="fa fa-star text-primary" />
-                                            <small className="fa fa-star text-primary" />
-                                            <small className="fa fa-star text-primary" />
-                                            <small className="fa fa-star text-primary" />
+
+                        {
+                            users.map((user) => (
+                                <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                                    <div className="room-item shadow rounded overflow-hidden">
+                                        <div className="position-relative">
+                                            <img className="img-fluid" src="img/room-3.jpg" alt />
+                                            <small className="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">{user.price}/Night</small>
+                                        </div>
+                                        <div className="p-4 mt-2">
+                                            <div className="d-flex justify-content-between mb-3">
+                                                <h5 className="mb-0">{user.roomType}</h5>
+                                                <div className="ps-2">
+                                                    <small className="fa fa-star text-primary" />
+                                                    <small className="fa fa-star text-primary" />
+                                                    <small className="fa fa-star text-primary" />
+                                                    <small className="fa fa-star text-primary" />
+                                                    <small className="fa fa-star text-primary" />
+                                                </div>
+                                            </div>
+                                            <div className="d-flex mb-3">
+                                                {
+                                                    (user.price == 2000) ? (
+                                                        <>
+                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />
+                                                                1 Bed
+                                                            </small>
+                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />1 Bath</small>
+                                                        </>
+                                                    ) : (user.price == 4000) ? (
+                                                        <>
+                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />
+                                                                2 Bed
+                                                            </small>
+                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />1 Bath</small>
+                                                            <small><i className="fa fa-wifi text-primary me-2" />Wifi</small>
+                                                        </>
+                                                    ) : (
+                                                        // Render this if neither condition1 nor condition2 is true
+                                                        <>
+                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />
+                                                                3 Bed
+                                                            </small>
+                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />2 Bath</small>
+                                                            <small><i className="fa fa-wifi text-primary me-2" />Wifi</small>
+                                                        </>
+                                                    )
+
+                                                }
+                                            </div >
+                                            <p className="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                                            <div className="d-flex justify-content-between">
+                                                <a className="btn btn-sm btn-primary rounded py-2 px-4" href>View Detail</a>
+                                                <a className="btn btn-sm btn-dark rounded py-2 px-4" href>Book Now</a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="d-flex mb-3">
-                                        <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />3 Bed</small>
-                                        <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />2 Bath</small>
-                                        <small><i className="fa fa-wifi text-primary me-2" />Wifi</small>
-                                    </div>
-                                    <p className="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                                    <div className="d-flex justify-content-between">
-                                        <a className="btn btn-sm btn-primary rounded py-2 px-4" href>View Detail</a>
-                                        <a className="btn btn-sm btn-dark rounded py-2 px-4" href>Book Now</a>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div className="room-item shadow rounded overflow-hidden">
-                                <div className="position-relative">
-                                    <img className="img-fluid" src="img/room-2.jpg" alt />
-                                    <small className="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-                                </div>
-                                <div className="p-4 mt-2">
-                                    <div className="d-flex justify-content-between mb-3">
-                                        <h5 className="mb-0">Executive Suite</h5>
-                                        <div className="ps-2">
-                                            <small className="fa fa-star text-primary" />
-                                            <small className="fa fa-star text-primary" />
-                                            <small className="fa fa-star text-primary" />
-                                            <small className="fa fa-star text-primary" />
-                                            <small className="fa fa-star text-primary" />
-                                        </div>
-                                    </div>
-                                    <div className="d-flex mb-3">
-                                        <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />3 Bed</small>
-                                        <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />2 Bath</small>
-                                        <small><i className="fa fa-wifi text-primary me-2" />Wifi</small>
-                                    </div>
-                                    <p className="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                                    <div className="d-flex justify-content-between">
-                                        <a className="btn btn-sm btn-primary rounded py-2 px-4" href>View Detail</a>
-                                        <a className="btn btn-sm btn-dark rounded py-2 px-4" href>Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                            <div className="room-item shadow rounded overflow-hidden">
-                                <div className="position-relative">
-                                    <img className="img-fluid" src="img/room-3.jpg" alt />
-                                    <small className="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-                                </div>
-                                <div className="p-4 mt-2">
-                                    <div className="d-flex justify-content-between mb-3">
-                                        <h5 className="mb-0">Super Deluxe</h5>
-                                        <div className="ps-2">
-                                            <small className="fa fa-star text-primary" />
-                                            <small className="fa fa-star text-primary" />
-                                            <small className="fa fa-star text-primary" />
-                                            <small className="fa fa-star text-primary" />
-                                            <small className="fa fa-star text-primary" />
-                                        </div>
-                                    </div>
-                                    <div className="d-flex mb-3">
-                                        <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />3 Bed</small>
-                                        <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />2 Bath</small>
-                                        <small><i className="fa fa-wifi text-primary me-2" />Wifi</small>
-                                    </div>
-                                    <p className="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                                    <div className="d-flex justify-content-between">
-                                        <a className="btn btn-sm btn-primary rounded py-2 px-4" href>View Detail</a>
-                                        <a className="btn btn-sm btn-dark rounded py-2 px-4" href>Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
