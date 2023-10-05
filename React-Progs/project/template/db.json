@@ -55,7 +55,7 @@
   "admin": [
     {
       "id": 1,
-      "name": "admin1",
+      "name": "Admin1",
       "password": "1234"
     },
     {
