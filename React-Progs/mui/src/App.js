@@ -5,10 +5,14 @@ function App() {
   let color1 = ["yellow", "white", "red", "blue", "orange"];
   return (
     <>
+
       <Button variant="contained" color="primary">Dev-1</Button>
       <Button variant="text">Text</Button>
       <Button variant="outlined">Outlined</Button>
-      <hr /><hr /><hr />
+
+      <hr />
+      <hr />
+      <hr />
 
       {
         text1.map((val, index) => (<>
