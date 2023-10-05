@@ -199,7 +199,7 @@ export default function Home() {
                                                             <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />
                                                                 2 Bed
                                                             </small>
-                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />1 Bath</small>
+                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" /> 1 Bath </small>
                                                             <small><i className="fa fa-wifi text-primary me-2" />Wifi</small>
                                                         </>
                                                     ) : (

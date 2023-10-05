@@ -12,7 +12,6 @@ export default function Contact() {
     subject: "",
     message: ""
   });
-
   const onchange = (e) => {
     setData({ ...data, id: new Date().getTime().toString(), [e.target.name]: e.target.value });
     console.log(data);
