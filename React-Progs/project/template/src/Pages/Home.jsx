@@ -194,7 +194,9 @@ export default function Home() {
                                                             </small>
                                                             <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />1 Bath</small>
                                                         </>
-                                                    ) : (user.price == 4000) ? (
+                                                    )
+                                                     : 
+                                                    (user.price == 4000) ? (
                                                         <>
                                                             <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />
                                                                 2 Bed
