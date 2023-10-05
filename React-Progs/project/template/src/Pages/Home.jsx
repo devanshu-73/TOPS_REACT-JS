@@ -187,7 +187,8 @@ export default function Home() {
                                             </div>
                                             <div className="d-flex mb-3">
                                                 {
-                                                    (user.price == 2000) ? (
+                                                    (user.price == 2000) ? 
+                                                    (
                                                         <>
                                                             <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />
                                                                 1 Bed
