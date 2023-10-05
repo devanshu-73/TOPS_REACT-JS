@@ -20,7 +20,6 @@ function App() {
   return (
     <BrowserRouter>
       <ToastContainer></ToastContainer>
-
       <Routes>
         <Route exact path="/" element={<>  <Header /><Home /> <Team />   <Footer /></>}></Route>
         <Route exact path="/about" element={<>  <Header /><About /> <Team />   <Footer /></>}></Route>
