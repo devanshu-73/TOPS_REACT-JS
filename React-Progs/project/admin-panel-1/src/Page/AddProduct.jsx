@@ -118,7 +118,6 @@ function AddProduct() {
                                                 <button type="button" className="btn btn-info" onClick={() => onInsert("Super Deluxe Room", 7000)}>
                                                     Add Room
                                                 </button>
-
                                             </div>
                                         </div>
                                     </div>
