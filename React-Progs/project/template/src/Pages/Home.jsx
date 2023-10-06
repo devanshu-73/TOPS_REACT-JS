@@ -221,7 +221,7 @@ export default function Home() {
                                             </div >
                                             <p className="text-body mb-3">Amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                                             <div className="d-flex justify-content-between">
-                                                <Link className="btn btn-dark rounded py-2 col-12 px-4" to='/rooms'>Book Now</Link>
+                                                <Link className="btn btn-dark rounded py-2 col-12 px-4" to='/booking'>Book Now</Link>
                                             </div>
                                         </div>
                                     </div>
