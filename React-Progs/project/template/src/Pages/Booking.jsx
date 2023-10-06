@@ -1,8 +1,68 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+// important Library... for dynamic date...
+// npm install react-datepicker date-fns
 
 export default function Booking() {
+    const [checkInDate, setCheckInDate] = useState(null);
+    const [checkOutDate, setCheckOutDate] = useState(null);
+
+    const handleCheckInDateChange = (date) => {
+        setCheckInDate(date);
+    };
+
+    const handleCheckOutDateChange = (date) => {
+        setCheckOutDate(date);
+    };
+
+    const [data, setData] = useState({
+        name: "",
+        email: "",
+    });
+    const onchange = (e) => {
+        setData({ ...data, id: new Date().getTime().toString(), [e.target.name]: e.target.value });
+        console.log(data);
+    }
+    function validation() {
+
+        var result = true;
+        if (data.name == "") {
+            toast.error('Name Field is required !');
+            result = false;
+        }
+        if (data.email == "") {
+            toast.error('Email Field is required !');
+            result = false;
+        }
+        if (data.subject == "") {
+            toast.error('Sub Field is required !');
+            result = false;
+        }
+        if (data.message == "") {
+            toast.error('Message Field is required !');
+            result = false;
+        }
+        return result;
+    }
+
+    const onsubmit = async (e) => {
+        e.preventDefault();
+        if (validation()) {
+            const res = await axios.post(`http://localhost:3000/order`, data);
+            if (res.status == 201) {
+                toast.success('Booking Successfull !');
+                setData({ ...data, name: "", email: "",  });
+            }
+        }
+    }
+
     return (
         <>
             {/* Page Header Start */}
@@ -97,28 +157,37 @@ export default function Booking() {
                                     <div className="row g-3">
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="text" className="form-control" id="name" placeholder="Your Name" />
+                                                <input type="text" className="form-control" id="name" onChange={onchange} placeholder="Your Name" />
                                                 <label htmlFor="name">Your Name</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="email" className="form-control" id="email" placeholder="Your Email" />
+                                                <input type="email" className="form-control" id="email" onChange={onchange} placeholder="Your Email" />
                                                 <label htmlFor="email">Your Email</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
-                                            <div className="form-floating date" id="date3" data-target-input="nearest">
-                                                <input type="text" className="form-control datetimepicker-input" id="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />
-                                                <label htmlFor="checkin">Check In</label>
+                                            <div className="date" id="date1" data-target-input="nearest">
+                                                <DatePicker
+                                                    selected={checkInDate}
+                                                    onChange={handleCheckInDateChange}
+                                                    placeholderText="Check in"
+                                                    className="form-control"
+                                                />
                                             </div>
                                         </div>
-                                        <div className="col-md-6">
-                                            <div className="form-floating date" id="date4" data-target-input="nearest">
-                                                <input type="text" className="form-control datetimepicker-input" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
-                                                <label htmlFor="checkout">Check Out</label>
+                                        <div className="col-md-5">
+                                            <div className="date" id="date2" data-target-input="nearest">
+                                                <DatePicker
+                                                    selected={checkOutDate}
+                                                    onChange={handleCheckOutDateChange}
+                                                    placeholderText="Check out"
+                                                    className="form-control"
+                                                />
                                             </div>
                                         </div>
+
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <select className="form-select" id="select1">
@@ -150,13 +219,7 @@ export default function Booking() {
                                             </div>
                                         </div>
                                         <div className="col-12">
-                                            <div className="form-floating">
-                                                <textarea className="form-control" placeholder="Special Request" id="message" style={{ height: 100 }} defaultValue={""} />
-                                                <label htmlFor="message">Special Request</label>
-                                            </div>
-                                        </div>
-                                        <div className="col-12">
-                                            <button className="btn btn-primary w-100 py-3" type="submit">Book Now</button>
+                                            <button className="btn btn-primary w-100 py-3" onClick={onsubmit} type="submit">Book Now</button>
                                         </div>
                                     </div>
                                 </form>
