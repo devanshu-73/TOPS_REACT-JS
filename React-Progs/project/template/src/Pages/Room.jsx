@@ -130,12 +130,11 @@ export default function Room() {
                                                             <small><i className="fa fa-wifi text-primary me-2" />Wifi</small>
                                                         </>
                                                     )
-                                                      
                                                 }
                                             </div >
                                             <p className="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                                             <div className="d-flex justify-content-between">
-                                                <Link className="btn col-12 btn-dark rounded py-2 px-4" to=''>Book Now</Link>
+                                                <Link className="btn col-12 btn-dark rounded py-2 px-4" to='/booking'>Book Now</Link>
                                             </div>
                                         </div>
                                     </div>
