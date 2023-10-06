@@ -187,34 +187,34 @@ export default function Home() {
                                             </div>
                                             <div className="d-flex mb-3">
                                                 {
-                                                    (user.price == 2000) ? 
-                                                    (
-                                                        <>
-                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />
-                                                                1 Bed
-                                                            </small>
-                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />1 Bath</small>
-                                                        </>
-                                                    )
-                                                     : 
-                                                    (user.price == 4000) ? (
-                                                        <>
-                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />
-                                                                2 Bed
-                                                            </small>
-                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" /> 1 Bath </small>
-                                                            <small><i className="fa fa-wifi text-primary me-2" />Wifi</small>
-                                                        </>
-                                                    ) : (
-                                                        // Render this if neither condition1 nor condition2 is true
-                                                        <>
-                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />
-                                                                3 Bed
-                                                            </small>
-                                                            <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />2 Bath</small>
-                                                            <small><i className="fa fa-wifi text-primary me-2" />Wifi</small>
-                                                        </>
-                                                    )
+                                                    (user.price == 2000) ?
+                                                        (
+                                                            <>
+                                                                <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />
+                                                                    1 Bed
+                                                                </small>
+                                                                <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />1 Bath</small>
+                                                            </>
+                                                        )
+                                                        :
+                                                        (user.price == 4000) ? (
+                                                            <>
+                                                                <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />
+                                                                    2 Bed
+                                                                </small>
+                                                                <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" /> 1 Bath </small>
+                                                                <small><i className="fa fa-wifi text-primary me-2" />Wifi</small>
+                                                            </>
+                                                        ) : (
+                                                            // Render this if neither condition1 nor condition2 is true
+                                                            <>
+                                                                <small className="border-end me-3 pe-3"><i className="fa fa-bed text-primary me-2" />
+                                                                    3 Bed
+                                                                </small>
+                                                                <small className="border-end me-3 pe-3"><i className="fa fa-bath text-primary me-2" />2 Bath</small>
+                                                                <small><i className="fa fa-wifi text-primary me-2" />Wifi</small>
+                                                            </>
+                                                        )
 
                                                 }
                                             </div >
