@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 export default function Room() {
     const [users, setUsers] = useState([]);
 
@@ -134,8 +135,7 @@ export default function Room() {
                                             </div >
                                             <p className="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                                             <div className="d-flex justify-content-between">
-                                                <a className="btn btn-sm btn-primary rounded py-2 px-4" href>View Detail</a>
-                                                <a className="btn btn-sm btn-dark rounded py-2 px-4" href>Book Now</a>
+                                                <Link className="btn col-12 btn-dark rounded py-2 px-4" to=''>Book Now</Link>
                                             </div>
                                         </div>
                                     </div>
