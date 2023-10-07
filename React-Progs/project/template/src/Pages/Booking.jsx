@@ -19,7 +19,7 @@ export default function Booking() {
         checkOutDate: null,
         numberOfAdults: 0,
         numberOfChildren: 0,
-        selectedRoom: 0,
+        selectedRoom: "",
     });
 
     const onchange = (e) => {
@@ -74,7 +74,7 @@ export default function Booking() {
                         checkOutDate: null,
                         numberOfAdults: 0,
                         numberOfChildren: 0,
-                        selectedRoom: 0,
+                        selectedRoom: "",
                     });
                 }
             } catch (error) {
@@ -192,10 +192,11 @@ export default function Booking() {
                                                 <DatePicker
                                                     selected={data.checkInDate}
                                                     onChange={handleCheckInDateChange}
+                                                    showTimeSelect
                                                     placeholderText="Check in"
                                                     className="form-control"
-                                                    dateFormat="MM/dd/yyyy"
-                                                    utcOffset={-5 * 60} // Offset in minutes (5 hours behind UTC)
+                                                    dateFormat="MMMM d, yyyy h:mm aa"
+                                                    utcOffset={0}
                                                 />
                                             </div>
                                         </div>
@@ -204,14 +205,15 @@ export default function Booking() {
                                                 <DatePicker
                                                     selected={data.checkOutDate}
                                                     onChange={handleCheckOutDateChange}
+                                                    showTimeSelect
                                                     placeholderText="Check out"
                                                     className="form-control"
-                                                    dateFormat="MM/dd/yyyy"
-                                                    utcOffset={-5 * 60} // Offset in minutes (5 hours behind UTC)
+                                                    dateFormat="MMMM d, yyyy h:mm aa"
+                                                    utcOffset={0}
                                                 />
-
                                             </div>
                                         </div>
+
 
                                         <div className="col-md-6">
                                             <div className="form-floating">
@@ -220,6 +222,7 @@ export default function Booking() {
                                                     value={data.numberOfAdults}
                                                     onChange={onchange}
                                                 >
+                                                    <option value={0} selected disabled >Selected</option>
                                                     <option value={1}>Adult 1</option>
                                                     <option value={2}>Adult 2</option>
                                                     <option value={3}>Adult 3</option>
@@ -234,6 +237,7 @@ export default function Booking() {
                                                     value={data.numberOfChildren} // Bind the input value to the state
                                                     onChange={onchange} // Wire up the onChange event handler
                                                 >
+                                                    <option value={0} selected disabled>Selected</option>
                                                     <option value={1}>Child 1</option>
                                                     <option value={2}>Child 2</option>
                                                     <option value={3}>Child 3</option>
@@ -248,9 +252,10 @@ export default function Booking() {
                                                     value={data.selectedRoom} // Bind the input value to the state
                                                     onChange={onchange} // Wire up the onChange event handler
                                                 >
-                                                    <option value={1}>Room 1</option>
-                                                    <option value={2}>Room 2</option>
-                                                    <option value={3}>Room 3</option>
+                                                    <option value="" disabled selected>Selected</option>
+                                                    <option value="Junior Suite Room">Junior Suite Room</option>
+                                                    <option value="Executive Suite Room">Executive Suite Room</option>
+                                                    <option value="Super Deluxe Room">Super Deluxe Room</option>
                                                 </select>
                                                 <label htmlFor="select3">Select A Room</label>
                                             </div>

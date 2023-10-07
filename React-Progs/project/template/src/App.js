@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
       <ToastContainer></ToastContainer>
       <Routes>
-        <Route exact path="/" element={<>  <Header /><Home /> <Team />   <Footer /></>}></Route>
+        <Route index exact path="/" element={<>  <Header /><Home /> <Team />   <Footer /></>}></Route>
         <Route exact path="/about" element={<>  <Header /><About /> <Team />   <Footer /></>}></Route>
         <Route exact path="/service" element={<>  <Header /><Service /> <Team />  <Footer /> </>}></Route>
         <Route exact path="/rooms" element={<> <Header /> <Room />  <Footer /> </>}></Route>

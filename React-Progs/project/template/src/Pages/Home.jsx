@@ -28,8 +28,8 @@ export default function Home() {
                                 <div className="p-3" style={{ maxWidth: 700 }}>
                                     <h6 className="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
                                     <h1 className="display-3 text-white mb-4 animated slideInDown">Discover A Brand Luxurious Hotel</h1>
-                                    <a href className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</a>
-                                    <a href className="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
+                                    <Link to='/rooms' className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</Link>
+                                    <Link to='/booking' className="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</Link>
                                 </div>
                             </div>
                         </div>
@@ -39,8 +39,8 @@ export default function Home() {
                                 <div className="p-3" style={{ maxWidth: 700 }}>
                                     <h6 className="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
                                     <h1 className="display-3 text-white mb-4 animated slideInDown">Discover A Brand Luxurious Hotel</h1>
-                                    <a href className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</a>
-                                    <a href className="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
+                                    <Link to='/rooms' className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</Link>
+                                    <Link to='/booking' className="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</Link>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@ export default function Home() {
                                     </div>
                                 </div>
                             </div>
-                            <a className="btn btn-primary py-3 px-5 mt-2" href>Explore More</a>
+                            <a className="btn btn-primary py-3 px-5 mt-2 col-12" href>Explore More</a>
                         </div>
                         <div className="col-lg-6">
                             <div className="row g-3">
@@ -237,11 +237,11 @@ export default function Home() {
                 <div className="row g-0">
                     <div className="col-md-6 bg-dark d-flex align-items-center">
                         <div className="p-5">
-                            <h6 className="section-title text-start text-white text-uppercase mb-3">Luxury Living</h6>
+                            <h6 className="section-title text-start text-dark text-uppercase mb-3">Luxury Living</h6>
                             <h1 className="text-white mb-4">Discover A Brand Luxurious Hotel</h1>
                             <p className="text-white mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                            <a href className="btn btn-primary py-md-3 px-md-5 me-3">Our Rooms</a>
-                            <a href className="btn btn-light py-md-3 px-md-5">Book A Room</a>
+                            <Link to='/rooms' className="btn btn-primary py-md-3 px-md-5 me-3">Our Rooms</Link>
+                            <Link to='/booking' className="btn btn-light py-md-3 px-md-5">Book A Room</Link>
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -279,18 +279,18 @@ export default function Home() {
                     </div>
                     <div className="row g-4">
                         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <a className="service-item rounded" href>
+                            <span className="service-item rounded" >
                                 <div className="service-icon bg-transparent border rounded p-1">
                                     <div className="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
                                         <i className="fa fa-hotel fa-2x text-primary" />
                                     </div>
                                 </div>
-                                <h5 className="mb-3">Rooms &amp; Appartment</h5>
+                                <h5 className="mb-3" style={{ textDecoration: 'none !important' }}>Rooms &amp; Appartment</h5>
                                 <p className="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            </a>
+                            </span>
                         </div>
                         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                            <a className="service-item rounded" href>
+                            <span className="service-item rounded" >
                                 <div className="service-icon bg-transparent border rounded p-1">
                                     <div className="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
                                         <i className="fa fa-utensils fa-2x text-primary" />
@@ -298,10 +298,10 @@ export default function Home() {
                                 </div>
                                 <h5 className="mb-3">Food &amp; Restaurant</h5>
                                 <p className="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            </a>
+                            </span>
                         </div>
                         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <a className="service-item rounded" href>
+                            <span className="service-item rounded">
                                 <div className="service-icon bg-transparent border rounded p-1">
                                     <div className="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
                                         <i className="fa fa-spa fa-2x text-primary" />
@@ -309,10 +309,10 @@ export default function Home() {
                                 </div>
                                 <h5 className="mb-3">Spa &amp; Fitness</h5>
                                 <p className="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            </a>
+                            </span>
                         </div>
                         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                            <a className="service-item rounded" href>
+                            <span className="service-item rounded">
                                 <div className="service-icon bg-transparent border rounded p-1">
                                     <div className="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
                                         <i className="fa fa-swimmer fa-2x text-primary" />
@@ -320,10 +320,10 @@ export default function Home() {
                                 </div>
                                 <h5 className="mb-3">Sports &amp; Gaming</h5>
                                 <p className="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            </a>
+                            </span>
                         </div>
                         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <a className="service-item rounded" href>
+                            <span className="service-item rounded">
                                 <div className="service-icon bg-transparent border rounded p-1">
                                     <div className="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
                                         <i className="fa fa-glass-cheers fa-2x text-primary" />
@@ -331,10 +331,10 @@ export default function Home() {
                                 </div>
                                 <h5 className="mb-3">Event &amp; Party</h5>
                                 <p className="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            </a>
+                            </span>
                         </div>
                         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                            <a className="service-item rounded" href>
+                            <span className="service-item rounded">
                                 <div className="service-icon bg-transparent border rounded p-1">
                                     <div className="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
                                         <i className="fa fa-dumbbell fa-2x text-primary" />
@@ -342,7 +342,7 @@ export default function Home() {
                                 </div>
                                 <h5 className="mb-3">GYM &amp; Yoga</h5>
                                 <p className="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            </a>
+                            </span>
                         </div>
                     </div>
                 </div>
