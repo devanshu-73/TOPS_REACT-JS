@@ -47,26 +47,6 @@
       "numberOfChildren": "3",
       "selectedRoom": "3",
       "id": 3
-    },
-    {
-      "name": "dev",
-      "email": "devanshuchauhan732000@gmail.com",
-      "checkInDate": "2023-10-04T18:30:00.000Z",
-      "checkOutDate": "2023-10-05T18:30:00.000Z",
-      "numberOfAdults": "3",
-      "numberOfChildren": "3",
-      "selectedRoom": "3",
-      "id": 4
-    },
-    {
-      "name": "btrbfg",
-      "email": "devanshuchauhan732000@gmail.com",
-      "checkInDate": "2023-10-04T18:30:00.000Z",
-      "checkOutDate": "2023-10-05T18:30:00.000Z",
-      "numberOfAdults": "3",
-      "numberOfChildren": "3",
-      "selectedRoom": "3",
-      "id": 5
     }
   ],
   "product": [
