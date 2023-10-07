@@ -28,7 +28,7 @@ function ManageUser() {
         <div id="page-inner">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="page-head-line">Order Table</h1>
+              <h1 className="page-head-line">Room Booking Table</h1>
             </div>
           </div>
           {/* /. ROW  */}
@@ -41,10 +41,13 @@ function ManageUser() {
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>Order No.</th>
+                          <th>Booking Room</th>
                           <th>Name</th>
-                          <th>Rooms</th>
-                          <th>Price</th>
+                          <th>Email</th>
+                          <th>Adults</th>
+                          <th>Children</th>
+                          <th>CheckIn</th>
+                          <th>CheckOut</th>
                           <th>Edit/Delete</th>
                         </tr>
                       </thead>
@@ -53,10 +56,13 @@ function ManageUser() {
                           users.map((user) => (
                             <tr>
                               <td>{user.id}</td>
-                              <td>{user.order_no}</td>
-                              <td>{user.username}</td>
-                              <td>{user.rooms}</td>
-                              <td>{user.price}</td>
+                              <td>{user.selectedRoom}</td>
+                              <td>{user.name}</td>
+                              <td>{user.email}</td>
+                              <td>{user.numberOfAdults}</td>
+                              <td>{user.numberOfChildren}</td>
+                              <td>{user.checkInDate}</td>
+                              <td>{user.checkOutDate}</td>
                               <td>
                                 <button type="submit" className="btn btn-success">
                                   Edit
