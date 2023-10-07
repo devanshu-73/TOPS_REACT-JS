@@ -7,61 +7,83 @@ import 'react-datepicker/dist/react-datepicker.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+
 // important Library... for dynamic date...
 // npm install react-datepicker date-fns
 
 export default function Booking() {
-    const [checkInDate, setCheckInDate] = useState(null);
-    const [checkOutDate, setCheckOutDate] = useState(null);
-
-    const handleCheckInDateChange = (date) => {
-        setCheckInDate(date);
-    };
-
-    const handleCheckOutDateChange = (date) => {
-        setCheckOutDate(date);
-    };
-
     const [data, setData] = useState({
         name: "",
         email: "",
+        checkInDate: null,
+        checkOutDate: null,
+        numberOfAdults: 0,
+        numberOfChildren: 0,
+        selectedRoom: 0,
     });
-    const onchange = (e) => {
-        setData({ ...data, id: new Date().getTime().toString(), [e.target.name]: e.target.value });
-        console.log(data);
-    }
-    function validation() {
 
+    const onchange = (e) => {
+        setData({ ...data, [e.target.name]: e.target.value });
+    };
+
+    function validation() {
         var result = true;
-        if (data.name == "") {
-            toast.error('Name Field is required !');
+        if (data.name === "") {
+            toast.error('Name Field is required!');
             result = false;
         }
-        if (data.email == "") {
-            toast.error('Email Field is required !');
-            result = false;
-        }
-        if (data.subject == "") {
-            toast.error('Sub Field is required !');
-            result = false;
-        }
-        if (data.message == "") {
-            toast.error('Message Field is required !');
+        if (data.email === "") {
+            toast.error('Email Field is required!');
             result = false;
         }
         return result;
     }
 
+    const handleCheckInDateChange = (date) => {
+        setData({ ...data, checkInDate: date });
+    };
+
+    const handleCheckOutDateChange = (date) => {
+        setData({ ...data, checkOutDate: date });
+    };
+
     const onsubmit = async (e) => {
         e.preventDefault();
         if (validation()) {
-            const res = await axios.post(`http://localhost:3000/order`, data);
-            if (res.status == 201) {
-                toast.success('Booking Successfull !');
-                setData({ ...data, name: "", email: "",  });
+            try {
+                // Convert the checkInDate and checkOutDate to UTC before sending
+                const checkInDateUTC = data.checkInDate.toISOString();
+                const checkOutDateUTC = data.checkOutDate.toISOString();
+
+                const res = await axios.post(`http://localhost:3000/order`, {
+                    name: data.name,
+                    email: data.email,
+                    checkInDate: checkInDateUTC,
+                    checkOutDate: checkOutDateUTC,
+                    numberOfAdults: data.numberOfAdults,
+                    numberOfChildren: data.numberOfChildren,
+                    selectedRoom: data.selectedRoom,
+                });
+
+                if (res.status === 201) {
+                    toast.success('Booking Successful!');
+                    setData({
+                        name: "",
+                        email: "",
+                        checkInDate: null,
+                        checkOutDate: null,
+                        numberOfAdults: 0,
+                        numberOfChildren: 0,
+                        selectedRoom: 0,
+                    });
+                }
+            } catch (error) {
+                console.error("Error submitting the form:", error);
+                toast.error('Booking failed. Please try again later.');
             }
         }
-    }
+    };
+
 
     return (
         <>
@@ -82,7 +104,6 @@ export default function Booking() {
             </div>
             {/* Page Header End */}
 
-            {/* Booking Start */}
             <div className="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
                 <div className="container">
                     <div className="bg-white shadow" style={{ padding: 35 }}>
@@ -124,7 +145,6 @@ export default function Booking() {
                     </div>
                 </div>
             </div>
-            {/* Booking End */}
 
 
             {/* Booking Start */}
@@ -157,40 +177,49 @@ export default function Booking() {
                                     <div className="row g-3">
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="text" className="form-control" id="name" onChange={onchange} placeholder="Your Name" />
+                                                <input type="text" className="form-control" name='name' id="name" onChange={onchange} placeholder="Your Name" />
                                                 <label htmlFor="name">Your Name</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="email" className="form-control" id="email" onChange={onchange} placeholder="Your Email" />
+                                                <input type="email" className="form-control" name='email' id="email" onChange={onchange} placeholder="Your Email" />
                                                 <label htmlFor="email">Your Email</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="date" id="date1" data-target-input="nearest">
                                                 <DatePicker
-                                                    selected={checkInDate}
+                                                    selected={data.checkInDate}
                                                     onChange={handleCheckInDateChange}
                                                     placeholderText="Check in"
                                                     className="form-control"
+                                                    dateFormat="MM/dd/yyyy"
+                                                    utcOffset={-5 * 60} // Offset in minutes (5 hours behind UTC)
                                                 />
                                             </div>
                                         </div>
-                                        <div className="col-md-5">
+                                        <div className="col-md-6">
                                             <div className="date" id="date2" data-target-input="nearest">
                                                 <DatePicker
-                                                    selected={checkOutDate}
+                                                    selected={data.checkOutDate}
                                                     onChange={handleCheckOutDateChange}
                                                     placeholderText="Check out"
                                                     className="form-control"
+                                                    dateFormat="MM/dd/yyyy"
+                                                    utcOffset={-5 * 60} // Offset in minutes (5 hours behind UTC)
                                                 />
+
                                             </div>
                                         </div>
 
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select className="form-select" id="select1">
+                                                <select className="form-select" id="select1"
+                                                    name="numberOfAdults"
+                                                    value={data.numberOfAdults}
+                                                    onChange={onchange}
+                                                >
                                                     <option value={1}>Adult 1</option>
                                                     <option value={2}>Adult 2</option>
                                                     <option value={3}>Adult 3</option>
@@ -200,7 +229,11 @@ export default function Booking() {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select className="form-select" id="select2">
+                                                <select className="form-select" id="select2"
+                                                    name="numberOfChildren" // Make sure 'name' attribute matches the state property
+                                                    value={data.numberOfChildren} // Bind the input value to the state
+                                                    onChange={onchange} // Wire up the onChange event handler
+                                                >
                                                     <option value={1}>Child 1</option>
                                                     <option value={2}>Child 2</option>
                                                     <option value={3}>Child 3</option>
@@ -210,7 +243,11 @@ export default function Booking() {
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
-                                                <select className="form-select" id="select3">
+                                                <select className="form-select" id="select3"
+                                                    name="selectedRoom" // Make sure 'name' attribute matches the state property
+                                                    value={data.selectedRoom} // Bind the input value to the state
+                                                    onChange={onchange} // Wire up the onChange event handler
+                                                >
                                                     <option value={1}>Room 1</option>
                                                     <option value={2}>Room 2</option>
                                                     <option value={3}>Room 3</option>
