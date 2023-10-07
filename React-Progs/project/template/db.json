@@ -19,13 +19,13 @@
   ],
   "order": [
     {
-      "name": "dev",
-      "email": "devanshuchauhan732000@gmail.com",
-      "checkInDate": "2023-10-09T18:30:00.000Z",
-      "checkOutDate": "2023-10-10T18:30:00.000Z",
-      "numberOfAdults": "3",
-      "numberOfChildren": "3",
-      "selectedRoom": "3",
+      "name": "yash",
+      "email": "yash@gmail.com",
+      "checkInDate": "2023-10-04T05:30:00.000Z",
+      "checkOutDate": "2023-10-06T01:00:00.000Z",
+      "numberOfAdults": "2",
+      "numberOfChildren": "2",
+      "selectedRoom": "Junior Suite Room",
       "id": 1
     }
   ],
