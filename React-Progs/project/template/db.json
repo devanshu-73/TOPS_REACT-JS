@@ -100,11 +100,6 @@
       "id": 1,
       "name": "admin1",
       "password": "1234"
-    },
-    {
-      "id": 2,
-      "name": "admin2",
-      "password": "1234"
     }
   ]
 }
