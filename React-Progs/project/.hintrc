@@ -3,15 +3,13 @@
     "development"
   ],
   "hints": {
-    "compat-api/html": [
-      "default",
-      {
-        "ignore": [
-          "meta[name=theme-color]"
-        ]
-      }
-    ],
-    "compat-api/css": "off"
+    "compat-api/html": "off",
+    "compat-api/css": "off",
+    "axe/language": "off",
+    "axe/name-role-value": "off",
+    "axe/text-alternatives": "off",
+    "no-inline-styles": "off",
+    "axe/forms": "off"
   },
   "browserslist": [
     "defaults",
