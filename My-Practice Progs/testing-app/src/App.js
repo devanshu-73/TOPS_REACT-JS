@@ -1,12 +1,13 @@
 
+import SignUpTest from './Components/SignUpTest';
 // import Lists from './Components/Lists';
-import ToggleDiv from './Components/ToggleDiv';
+// import ToggleDiv from './Components/ToggleDiv';
 function App() {
 
   return (
     <>
       {/* <BgChangeOnClick /> */}
-      {/* <SignUpTest /> */}
+      <SignUpTest />
       {/* <Lists /> */}
       {/* <ToggleDiv /> */}
     </>
