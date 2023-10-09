@@ -35,7 +35,7 @@ const SignUpTest = () => {
     }
     return (
         <div className='container'>
-            <h1 className='text-center'>Sign Up</h1>
+            <h1 className='text-center'>Sign Up Form</h1>
             <hr />
             <form className='d-flex flex-column justify-content-center align-items-center'>
                 <div>
