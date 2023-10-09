@@ -27,16 +27,6 @@
       "numberOfChildren": "2",
       "selectedRoom": "Junior Suite Room",
       "id": 1
-    },
-    {
-      "name": "sahil",
-      "email": "yash@gmail.com",
-      "checkInDate": "2023-10-05T02:00:00.000Z",
-      "checkOutDate": "2023-10-13T02:30:00.000Z",
-      "numberOfAdults": "3",
-      "numberOfChildren": "3",
-      "selectedRoom": "Super Deluxe Room",
-      "id": 2
     }
   ],
   "product": [
