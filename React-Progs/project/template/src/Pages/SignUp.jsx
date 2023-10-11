@@ -2,11 +2,13 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 
 function SignUp() {
+    const navigate = useNavigate();
     const [data, setData] = useState({
         username: "",
         email: "",
@@ -40,14 +42,41 @@ function SignUp() {
     }
     const onsubmit = async (e) => {
         e.preventDefault();
+
         if (validation()) {
-            const res = await axios.post(`http://localhost:3000/user`, data);
-            if (res.status == 201) {
-                alert('success');
-                setData({ ...data, username: "", email: "", phone: "", password: "" });
+            try {
+                const res = await axios.post(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json`, data);
+
+                if (res.status == "201") {
+                    alert('Sign-up successful');
+                    navigate('/profile');
+                    setData({ ...data, username: "", email: "", phone: "", password: "" });
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                if (error.response) {
+                    if (error.response.status === 400) {
+                        alert('Sign-up failed. The email address might already be in use.');
+                    } else {
+                        alert('Sign-up failed. An unexpected error occurred.');
+                    }
+                } else {
+                    alert('Sign-up failed. Please try again later.');
+                }
             }
         }
-    }
+    };
+
+    // const onsubmit = async (e) => {
+    //     e.preventDefault();
+    //     if (validation()) {
+    //         const res = await axios.post(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json`, data);
+    //         if (res.status == 201) {
+    //             alert('success');
+    //             setData({ ...data, username: "", email: "", phone: "", password: "" });
+    //         }
+    //     }
+    // }
     return (
         <div>
             <div className="container" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: 100 }}>
