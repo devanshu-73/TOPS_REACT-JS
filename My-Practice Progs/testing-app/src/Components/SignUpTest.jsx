@@ -3,6 +3,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 
 const SignUpTest = () => {
+    const [user, setUser] = useState([]);
     const [data, setData] = useState({
         username: "",
         password: ""
@@ -26,12 +27,21 @@ const SignUpTest = () => {
     const onsubmit = async (e) => {
         e.preventDefault();
         if (validation()) {
-            const res = await axios.post('http://localhost:3000/user', data);
-            if (res.status == 201) {
-                alert("success");
+            const res = await axios.post('https://testapp-73-default-rtdb.asia-southeast1.firebasedatabase.app/userData.json', data);
+            if (res.status == 200) {
+                // alert("success");
+                alert("Resource created successfully");
                 setData({ ...data, username: "", password: "" });
+            } else {
+                // Handle other status codes or errors
+                console.log('nothing');
             }
+
         }
+    }
+    const getData = async () => {
+        const res = await axios.get('https://testapp-73-default-rtdb.asia-southeast1.firebasedatabase.app/userData.json');
+        setUser(res.data)
     }
     return (
         <div className='container'>
@@ -49,8 +59,27 @@ const SignUpTest = () => {
                 <div className='mt-2 d-flex justify-content-center align-items-center'>
                     <button type="submit" onClick={onsubmit} className='btn btn-primary'>Sign Up Now</button>
                 </div>
-            </form>
-        </div>
+            </form >
+            <button type="button" onClick={getData} className='btn btn-primary'>Show Data</button>
+
+            <table border='2px solid black'>
+                <tr>
+                    <th>Username</th>
+                    <th>Password</th>
+                </tr>
+                {
+                    user.map((userdetail) => (
+                        <tr>
+                            <td>{userdetail.username}</td>
+                            <td>{userdetail.password}</td>
+                        </tr>
+                    ))
+                }
+            </table>
+
+
+
+        </div >
     )
 }
 
