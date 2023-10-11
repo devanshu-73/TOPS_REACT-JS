@@ -41,7 +41,7 @@ export default function Contact() {
   const onsubmit = async (e) => {
     e.preventDefault();
     if (validation()) {
-      const res = await axios.post(`http://localhost:3000/contact`, data);
+      const res = await axios.post(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/contact.json`, data);
       if (res.status == 201) {
         toast.success('Inquiry Submitted Success !');
         setData({ ...data, name: "", email: "", subject: "", message: "" });

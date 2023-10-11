@@ -57,7 +57,7 @@ export default function Header() {
                                         <NavLink to="/service" className="nav-item nav-link">Services</NavLink>
                                         <NavLink to="/rooms" className="nav-item nav-link">Rooms</NavLink>
                                         <div className="nav-item dropdown">
-                                            <Link to="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</Link>
+                                            <NavLink to="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</NavLink>
                                             <div className="dropdown-menu rounded-0 m-0">
                                                 <Link to="/booking" className="dropdown-item">Booking</Link>
                                                 <Link to="/team" className="dropdown-item">Our Team</Link>

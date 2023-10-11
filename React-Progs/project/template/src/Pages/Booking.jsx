@@ -55,7 +55,7 @@ export default function Booking() {
                 const checkInDateUTC = data.checkInDate.toISOString();
                 const checkOutDateUTC = data.checkOutDate.toISOString();
 
-                const res = await axios.post(`http://localhost:3000/order`, {
+                const res = await axios.post(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/order.json`, {
                     name: data.name,
                     email: data.email,
                     checkInDate: checkInDateUTC,

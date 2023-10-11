@@ -13,7 +13,7 @@ export default function Home() {
 
     // Axios.........
     const fetch = async () => {
-        const res = await axios.get('http://localhost:3000/product');
+        const res = await axios.get('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/product.json');
         setUsers(res.data);
     }
     return (
