@@ -43,29 +43,35 @@ function SignUp() {
     const onsubmit = async (e) => {
         e.preventDefault();
 
-        if (validation()) {
-            try {
-                const res = await axios.post(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json`, data);
+        if (!validation()) {
+            return;
+        }
 
-                if (res.status == "201") {
-                    alert('Sign-up successful');
-                    navigate('/profile');
-                    setData({ ...data, username: "", email: "", phone: "", password: "" });
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                if (error.response) {
-                    if (error.response.status === 400) {
-                        alert('Sign-up failed. The email address might already be in use.');
-                    } else {
-                        alert('Sign-up failed. An unexpected error occurred.');
-                    }
+        try {
+            const res = await axios.post('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json', data);
+
+            if (res.status === 201) {
+                alert('Sign-up successful');
+                navigate('/profile');
+                setData({ username: '', email: '', phone: '', password: '' });
+            } else {
+                throw new Error('Unexpected response status: ' + res.status);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+
+            if (error.response) {
+                if (error.response.status === 400) {
+                    alert('Sign-up failed. The email address might already be in use.');
                 } else {
-                    alert('Sign-up failed. Please try again later.');
+                    alert('Sign-up failed. An unexpected error occurred.');
                 }
+            } else {
+                alert('Sign-up failed. Please try again later.');
             }
         }
     };
+
 
     // const onsubmit = async (e) => {
     //     e.preventDefault();
