@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 function Login() {
+    const auth = getAuth();
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -19,34 +21,49 @@ function Login() {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3000/user');
-            const userData = await response.json();
-
-            const user = userData.find((user) => user.username === username && user.password === password);
+            const userCredential = await signInWithEmailAndPassword(auth, username, password);
+            const user = userCredential.user;
 
             if (user) {
-                if (user.status) {
+                if (user.emailVerified) {
                     alert('Login successful');
                     navigate('/profile');
-                    localStorage.setItem("username", username);
-
-                    localStorage.setItem("uid", user.id);
+                } else {
+                    alert('Email not verified. Please verify your email before logging in.');
                 }
-                else{
-                    alert('U r Blocked');
-
-                }
-
-                // localStorage.setItem("phone", user.phone);
-                // localStorage.setItem("email", user.email);
-                // localStorage.setItem("password", password);
-            } else {
-                alert('Login Failed');
             }
         } catch (error) {
             console.error('Error:', error);
+            alert('Login Failed. Please check your username and password.');
         }
     };
+
+    // const handleLogin = async (e) => {
+    //     e.preventDefault();
+
+    //     try {
+    //         const response = await fetch('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json');
+    //         const userData = await response.json();
+
+    //         const user = userData.find((user) => user.username === username && user.password === password);
+
+    //         if (user) {
+    //             if (user.status) {
+    //                 alert('Login successful');
+    //                 navigate('/profile');
+    //                 localStorage.setItem("username", username);
+    //                 localStorage.setItem("uid", user.id);
+    //             }
+    //             else {
+    //                 alert('U r Blocked');
+    //             }
+    //         } else {
+    //             alert('Login Failed');
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //     }
+    // };
 
     return (
         <>

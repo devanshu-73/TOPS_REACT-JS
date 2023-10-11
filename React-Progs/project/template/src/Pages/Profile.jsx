@@ -10,54 +10,71 @@ function Profile() {
         password: ""
     });
 
+    const [isLoading, setIsLoading] = useState(true); // Add loading state
+    const [error, setError] = useState(null); // Add error state
+
     useEffect(() => {
-        fetch();
+        fetchData();
     }, []);
 
-    const fetch = async () => {
+    const fetchData = async () => {
         try {
-            const res = await axios.get(`http://localhost:3000/user/${localStorage.getItem('uid')}`);
-            setFormValue(res.data);
+            const response = await axios.get(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${localStorage.getItem('uid')}`);
+            setFormValue(response.data);
         } catch (error) {
-            console.error("Error fetching data:", error);
+            setError(error.message); // Handle errors and set the error state
+        } finally {
+            setIsLoading(false); // Set loading state to false when data fetching is done
         }
     }
 
-    const onchange = (e) => {
+    const onChange = (e) => {
         setFormValue({ ...formValue, [e.target.name]: e.target.value });
-    }
-
-    function validation() {
-        var result = true;
-        if (formValue.username === "") {
-            alert('username is empty');
-            result = false;
-        }
-        if (formValue.email === "") {
-            alert('email is empty');
-            result = false;
-        }
-
-        if (formValue.phone === "") {
-            alert('phone is empty');
-            result = false;
-        }
-        if (formValue.password === "") {
-            alert('password is empty');
-            result = false;
-        }
-        return result;
     }
 
     const editData = async (e) => {
         e.preventDefault();
-        if (validation()) {
-            const res = await axios.patch(`http://localhost:3000/user/${formValue.id}`, formValue);
-            if (res.status === 200) {
+        try {
+            const response = await axios.patch(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${localStorage.getItem('uid')}`, formValue);
+            if (response.status === 200) {
                 alert('Update success');
             }
+        } catch (error) {
+            setError(error.message); // Handle errors and set the error state
         }
-    }     
+    }
+
+    // function validation() {
+    //     var result = true;
+    //     if (formValue.username === "") {
+    //         alert('username is empty');
+    //         result = false;
+    //     }
+    //     if (formValue.email === "") {
+    //         alert('email is empty');
+    //         result = false;
+    //     }
+
+    //     if (formValue.phone === "") {
+    //         alert('phone is empty');
+    //         result = false;
+    //     }
+    //     if (formValue.password === "") {
+    //         alert('password is empty');
+    //         result = false;
+    //     }
+    //     return result;
+    // }
+
+    // const editData = async (e) => {
+    //     e.preventDefault();
+    //     if (validation()) {
+    //         const res = await axios.patch(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${formValue.id}`, formValue);
+    //         if (res.status === 200) {
+    //             alert('Update success');
+    //         }
+    //     }
+    // }
 
     return (
         <div>
