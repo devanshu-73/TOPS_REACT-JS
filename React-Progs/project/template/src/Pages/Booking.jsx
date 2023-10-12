@@ -5,11 +5,8 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import axios from 'axios';
 import { toast } from 'react-toastify';
-
-// important Library... for dynamic date...
-// npm install react-datepicker date-fns
+import { getDatabase, ref, push, set } from 'firebase/database';
 
 export default function Booking() {
     const [data, setData] = useState({
@@ -26,6 +23,14 @@ export default function Booking() {
         setData({ ...data, [e.target.name]: e.target.value });
     };
 
+    const handleCheckInDateChange = (date) => {
+        setData({ ...data, checkInDate: date });
+    };
+
+    const handleCheckOutDateChange = (date) => {
+        setData({ ...data, checkOutDate: date });
+    };
+
     function validation() {
         var result = true;
         if (data.name === "") {
@@ -39,14 +44,6 @@ export default function Booking() {
         return result;
     }
 
-    const handleCheckInDateChange = (date) => {
-        setData({ ...data, checkInDate: date });
-    };
-
-    const handleCheckOutDateChange = (date) => {
-        setData({ ...data, checkOutDate: date });
-    };
-
     const onsubmit = async (e) => {
         e.preventDefault();
         if (validation()) {
@@ -55,7 +52,11 @@ export default function Booking() {
                 const checkInDateUTC = data.checkInDate.toISOString();
                 const checkOutDateUTC = data.checkOutDate.toISOString();
 
-                const res = await axios.post(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/order.json`, {
+                const db = getDatabase();
+                const ordersRef = ref(db, 'order'); // Reference to the 'order' path in your Firebase Realtime Database
+                const newOrderRef = push(ordersRef);
+
+                set(newOrderRef, {
                     name: data.name,
                     email: data.email,
                     checkInDate: checkInDateUTC,
@@ -63,22 +64,25 @@ export default function Booking() {
                     numberOfAdults: data.numberOfAdults,
                     numberOfChildren: data.numberOfChildren,
                     selectedRoom: data.selectedRoom,
-                });
-
-                if (res.status === 201) {
-                    toast.success('Booking Successful!');
-                    setData({
-                        name: "",
-                        email: "",
-                        checkInDate: null,
-                        checkOutDate: null,
-                        numberOfAdults: 0,
-                        numberOfChildren: 0,
-                        selectedRoom: "",
+                })
+                    .then(() => {
+                        toast.success('Booking Successful!');
+                        setData({
+                            name: "",
+                            email: "",
+                            checkInDate: null,
+                            checkOutDate: null,
+                            numberOfAdults: 0,
+                            numberOfChildren: 0,
+                            selectedRoom: "",
+                        });
+                    })
+                    .catch((error) => {
+                        console.error('Error submitting the form:', error);
+                        toast.error('Booking failed. Please try again later.');
                     });
-                }
             } catch (error) {
-                console.error("Error submitting the form:", error);
+                console.error('Error:', error);
                 toast.error('Booking failed. Please try again later.');
             }
         }

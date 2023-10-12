@@ -38,33 +38,6 @@ function Login() {
         }
     };
 
-    // const handleLogin = async (e) => {
-    //     e.preventDefault();
-
-    //     try {
-    //         const response = await fetch('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json');
-    //         const userData = await response.json();
-
-    //         const user = userData.find((user) => user.username === username && user.password === password);
-
-    //         if (user) {
-    //             if (user.status) {
-    //                 alert('Login successful');
-    //                 navigate('/profile');
-    //                 localStorage.setItem("username", username);
-    //                 localStorage.setItem("uid", user.id);
-    //             }
-    //             else {
-    //                 alert('U r Blocked');
-    //             }
-    //         } else {
-    //             alert('Login Failed');
-    //         }
-    //     } catch (error) {
-    //         console.error('Error:', error);
-    //     }
-    // };
-
     return (
         <>
             <div>
@@ -76,14 +49,13 @@ function Login() {
                                     <h5>Enter Details to Login</h5>
                                     <div className="form-group input-group" style={{ padding: 10 }}>
                                         <span className="input-group-addon"><i className="fa fa-tag" /></span>
-                                        <input type="text" className="form-control" value={username} onChange={handleUsernameChange} />
+                                        <input type="text" className="form-control" value={username} onChange={handleUsernameChange} placeholder="Username" />
                                     </div>
 
                                     <div className="form-group input-group" style={{ padding: 10 }}>
                                         <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                                        <input type="password" className="form-control" value={password} onChange={handlePasswordChange} />
+                                        <input type="password" className="form-control" value={password} onChange={handlePasswordChange} placeholder="Password" />
                                     </div>
-                                    {/* Use the navigate function to navigate to the profile page */}
                                     <button type="button" onClick={handleLogin} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="btn btn-primary">
                                         Login Now
                                     </button>

@@ -1,8 +1,14 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { getDatabase, ref, set } from 'firebase/database';
 
 function Profile() {
+    const navigate = useNavigate();
+
     const [formValue, setFormValue] = useState({
         username: "",
         email: "",
@@ -10,71 +16,40 @@ function Profile() {
         password: ""
     });
 
-    const [isLoading, setIsLoading] = useState(true); // Add loading state
-    const [error, setError] = useState(null); // Add error state
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
-    const fetchData = async () => {
-        try {
-            const response = await axios.get(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${localStorage.getItem('uid')}`);
-            setFormValue(response.data);
-        } catch (error) {
-            setError(error.message); // Handle errors and set the error state
-        } finally {
-            setIsLoading(false); // Set loading state to false when data fetching is done
-        }
-    }
-
     const onChange = (e) => {
         setFormValue({ ...formValue, [e.target.name]: e.target.value });
     }
 
-    const editData = async (e) => {
+    const saveData = async (e) => {
         e.preventDefault();
+
+        // Ensure you have the user's unique ID; you can retrieve it from wherever you store it.
+        const userId = localStorage.getItem('uid'); 
+
+        if (!userId) {
+            toast.error('User ID is missing.');
+            return;
+        }
+
+        // Initialize Firebase Realtime Database
+        const db = getDatabase();
+        const userRef = ref(db, `users/${userId}`);
+
         try {
-            const response = await axios.patch(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${localStorage.getItem('uid')}`, formValue);
-            if (response.status === 200) {
-                alert('Update success');
-            }
+            // Update the user's data in the database
+            await set(userRef, {
+                username: formValue.username,
+                email: formValue.email,
+                phone: formValue.phone,
+                password: formValue.password,
+            });
+
+            toast.success('Profile updated successfully');
+            navigate('/profile'); // Navigate back to the profile page or any other page you prefer
         } catch (error) {
-            setError(error.message); // Handle errors and set the error state
+            toast.error('Failed to update profile: ' + error.message);
         }
     }
-
-    // function validation() {
-    //     var result = true;
-    //     if (formValue.username === "") {
-    //         alert('username is empty');
-    //         result = false;
-    //     }
-    //     if (formValue.email === "") {
-    //         alert('email is empty');
-    //         result = false;
-    //     }
-
-    //     if (formValue.phone === "") {
-    //         alert('phone is empty');
-    //         result = false;
-    //     }
-    //     if (formValue.password === "") {
-    //         alert('password is empty');
-    //         result = false;
-    //     }
-    //     return result;
-    // }
-
-    // const editData = async (e) => {
-    //     e.preventDefault();
-    //     if (validation()) {
-    //         const res = await axios.patch(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${formValue.id}`, formValue);
-    //         if (res.status === 200) {
-    //             alert('Update success');
-    //         }
-    //     }
-    // }
 
     return (
         <div>
@@ -86,22 +61,21 @@ function Profile() {
                                 <h5>Profile Page</h5>
                                 <div className="form-group input-group" style={{ padding: 10 }}>
                                     <span className="input-group-addon"><i className="fa fa-tag" /></span>
-                                    <input type="text" className="form-control" onChange={onchange} value={formValue.username} name="username" placeholder="Your UserName" />
+                                    <input type="text" className="form-control" onChange={onChange} value={formValue.username} name="username" placeholder="Your UserName" />
                                 </div>
                                 <div className="form-group input-group" style={{ padding: 10 }}>
                                     <span className="input-group-addon"><i className="fa fa-tag" /></span>
-                                    <input type="number" className="form-control" onChange={onchange} value={formValue.phone} name="phone" placeholder="Your Phone" />
+                                    <input type="number" className="form-control" onChange={onChange} value={formValue.phone} name="phone" placeholder="Your Phone" />
                                 </div>
                                 <div className="form-group input-group" style={{ padding: 10 }}>
                                     <span className="input-group-addon"><i className="fa fa-tag" /></span>
-                                    <input type="email" className="form-control" onChange={onchange} value={formValue.email} name="email" placeholder="Your Email" />
+                                    <input type="email" className="form-control" onChange={onChange} value={formValue.email} name="email" placeholder="Your Email" />
                                 </div>
-
                                 <div className="form-group input-group" style={{ padding: 10 }}>
                                     <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                                    <input type="password" className="form-control" onChange={onchange} value={formValue.password} name="password" placeholder="Your Password" />
+                                    <input type="password" className="form-control" onChange={onChange} value={formValue.password} name="password" placeholder="Your Password" />
                                 </div>
-                                <button type="button" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={editData} className="btn btn-primary">Edit</button>
+                                <button type="button" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={saveData} className="btn btn-primary">Save</button>
                             </form>
                         </div>
                     </div>

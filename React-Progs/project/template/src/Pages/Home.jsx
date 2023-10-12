@@ -9,13 +9,25 @@ import { Link } from 'react-router-dom';
 export default function Home() {
     const [users, setUsers] = useState([]);
 
-    useEffect(() => { fetch() }, []);
+    useEffect(() => {
+        fetchUsers();
+    }, []);
+
 
     // Axios.........
-    const fetch = async () => {
-        const res = await axios.get('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/product.json');
-        setUsers(res.data);
+    const fetchUsers = async () => {
+        try {
+            const res = await axios.get('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/product.json');
+            if (Array.isArray(res.data)) {
+                setUsers(res.data);
+            } else {
+                console.error("Data received is not an array.");
+            }
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
     }
+
     return (
         <div>
             {/* Carousel Start */}
@@ -166,7 +178,6 @@ export default function Home() {
                         <h1 className="mb-5">Explore Our <span className="text-primary text-uppercase">Rooms</span></h1>
                     </div>
                     <div className="row g-4">
-
                         {
                             users.map((user) => (
                                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
@@ -226,8 +237,10 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                            ))
+                            )
+                            )
                         }
+
                     </div>
                 </div>
             </div>

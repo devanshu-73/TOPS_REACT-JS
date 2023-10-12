@@ -2,37 +2,36 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useState } from "react";
-import axios from 'axios';
 import { toast } from 'react-toastify';
+import { getDatabase, ref, push } from 'firebase/database';
 export default function Contact() {
-
   const [data, setData] = useState({
     name: "",
     email: "",
     subject: "",
     message: ""
   });
-  const onchange = (e) => {
-    setData({ ...data, id: new Date().getTime().toString(), [e.target.name]: e.target.value });
-    console.log(data);
-  }
-  function validation() {
 
+  const onchange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  }
+
+  function validation() {
     var result = true;
-    if (data.name == "") {
-      toast.error('Name Field is required !');
+    if (data.name === "") {
+      toast.error('Name Field is required!');
       result = false;
     }
-    if (data.email == "") {
-      toast.error('Email Field is required !');
+    if (data.email === "") {
+      toast.error('Email Field is required!');
       result = false;
     }
-    if (data.subject == "") {
-      toast.error('Sub Field is required !');
+    if (data.subject === "") {
+      toast.error('Subject Field is required!');
       result = false;
     }
-    if (data.message == "") {
-      toast.error('Message Field is required !');
+    if (data.message === "") {
+      toast.error('Message Field is required!');
       result = false;
     }
     return result;
@@ -41,13 +40,33 @@ export default function Contact() {
   const onsubmit = async (e) => {
     e.preventDefault();
     if (validation()) {
-      const res = await axios.post(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/contact.json`, data);
-      if (res.status == 201) {
-        toast.success('Inquiry Submitted Success !');
-        setData({ ...data, name: "", email: "", subject: "", message: "" });
+      try {
+        const db = getDatabase();
+        const inquiriesRef = ref(db, 'contact');
+        const newInquiryRef = push(inquiriesRef);
+
+        // Push the data to Firebase
+        push(newInquiryRef, data)
+          .then(() => {
+            toast.success('Inquiry Submitted Successfully!');
+            setData({
+              name: "",
+              email: "",
+              subject: "",
+              message: ""
+            });
+          })
+          .catch((error) => {
+            console.error('Error submitting the form:', error);
+            toast.error('Inquiry submission failed. Please try again later.');
+          });
+      } catch (error) {
+        console.error('Error:', error);
+        toast.error('Inquiry submission failed. Please try again later.');
       }
     }
   }
+
 
 
   return (
