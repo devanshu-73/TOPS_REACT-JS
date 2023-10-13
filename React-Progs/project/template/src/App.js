@@ -38,7 +38,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-const yourFirebaseDatabaseRef = ref(db, 'users'); // Replace 'users' with your desired database location
+const yourFirebaseDatabaseRef = ref(db, 'users');
 
 function App() {
   return (
