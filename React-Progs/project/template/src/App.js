@@ -20,7 +20,6 @@ import Testimonial from "./Pages/Testimonial";
 import SignUp from "./Pages/SignUp";
 import Login from './Pages/Login';
 import Profile from './Pages/Profile';
-
 import 'react-toastify/dist/ReactToastify.css';
 
 // Initialize Firebase with your Firebase configuration
