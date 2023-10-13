@@ -2,10 +2,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref } from 'firebase/database';
-
 import Home from "./Pages/Home";
 import Footer from "./Comps/Footer";
 import About from "./Pages/About";
