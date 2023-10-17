@@ -1,5 +1,7 @@
 import Button from '@mui/material/Button';
 import StyledComp from './Styled_Comp';
+import ButtonAppBar from './ButtonAppBar';
+import ResponsiveAppBar from './ResponsiveAppBar';
 function App() {
   let text1 = ["hello", "frew", "rv", "btrbr"];
   let color1 = ["yellow", "white", "red", "blue", "orange"];
@@ -10,6 +12,7 @@ function App() {
       <Button variant="text">Text</Button>
       <Button variant="outlined">Outlined</Button>
 
+
       <hr />
       <hr />
 
@@ -18,6 +21,14 @@ function App() {
           <StyledComp key={index} text={val} color_1={color1[index]} /></>
         ))
       }
+
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <ButtonAppBar />
+      <ResponsiveAppBar />
     </>
   );
 }
