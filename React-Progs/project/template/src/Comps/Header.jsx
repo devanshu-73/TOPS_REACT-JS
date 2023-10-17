@@ -44,9 +44,9 @@ export default function Header() {
                                 </div>
                             </div>
                             <nav className="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
-                                <a href="index.html" className="navbar-brand d-block d-lg-none">
-                                    <h1 className="m-0 text-primary text-uppercase">Hotelier</h1>
-                                </a>
+                                <NavLink to='/' className="navbar-brand d-block d-lg-none">
+                                    <h1 className="m-0 text-primary text-uppercase">Dev_eloper</h1>
+                                </NavLink>
                                 <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                                     <span className="navbar-toggler-icon" />
                                 </button>
