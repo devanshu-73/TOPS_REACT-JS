@@ -12,9 +12,6 @@ function App() {
 
       <hr />
       <hr />
-      <hr />
-      <hr />
-      <hr />
 
       {
         text1.map((val, index) => (<>
