@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { useEffect, useState } from 'react'
-import Func_img from './Func_img';
+import Func_Img from './Func_Img';
 
 const Func_Life = () => {
 
@@ -20,7 +20,7 @@ const Func_Life = () => {
       <button onClick={() => setisImage(false)}>Hide</button>
       <button onClick={() => setisImage(true)}>Show</button>
       {
-        isImage ? <Func_img /> : null
+        isImage ? <Func_Img /> : null
       }
     </div>
   )
