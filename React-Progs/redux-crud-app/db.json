@@ -4,8 +4,8 @@
       "id": 1,
       "name": "dev",
       "email": "dev@gamil.com",
-      "password":1234,
-      "mobile":6474764746
+      "password":"1234",
+      "mobile":"6474764746"
     }
   ],
   "contact": [
