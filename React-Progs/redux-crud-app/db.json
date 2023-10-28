@@ -1,0 +1,17 @@
+{
+    "user":[
+        {
+            "id":1,
+            "name":"dev",
+            "email":"dev@gmail.com",
+            "password":1234,
+            "mobile":1234567891
+        }
+    ],
+    "contact":[{
+        "id":1,
+        "name":"devanshu",
+        "email":"dev@gmail.com",
+        "message":"hi ......"
+    }]
+}
