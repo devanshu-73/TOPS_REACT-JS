@@ -1,9 +1,9 @@
-const objectinia={
-    allcontact:[],
-    singlecontact:{}
+const objectinia = {
+    allcontact: [],
+    singlecontact: {}
 }
 
-const contactReducer=(state=objectinia,action)=>{
+const contactReducer = (state = objectinia, action) => {
 
     return state;
 }

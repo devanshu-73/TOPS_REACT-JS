@@ -1,9 +1,6 @@
 import React from 'react'
 
 function Manage_data() {
-
-   
-
     return (
         <div>
             <div className="container mt-5">
@@ -25,7 +22,7 @@ function Manage_data() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                          
+
                                         </tbody>
                                     </table>
                                 </div>{/* /content-panel */}

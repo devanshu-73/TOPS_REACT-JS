@@ -1,13 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-
 import { useSelector } from 'react-redux';
-
 
 function Dashboard() {
 
-    const {demo}=useSelector((state)=> state.userReducer);
-
+    const { demo } = useSelector((state) => state.userReducer);
     return (
         <div>
             <div className="container mt-5">
@@ -50,8 +47,7 @@ function Dashboard() {
                 </div>
             </div>
         </div>
-
     )
 }
 
-export default Dashboard
+export default Dashboard;
