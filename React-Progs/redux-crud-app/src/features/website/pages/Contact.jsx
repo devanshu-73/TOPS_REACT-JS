@@ -1,34 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { insert } from '../../userReducer';
 
 function Contact() {
+
+
+    const [formValue, setFormValue] = useState({
+        id: "",
+        name: "",
+        email: "",
+        message: ""
+    })
+
+    const changehandel = (e) => {
+        setFormValue({ ...formValue, id: new Date().getTime().toString(), [e.target.name]: e.target.value });
+    }
+
+    const dispatch = useDispatch();
+
+    const submithandel = (e) => {
+        e.preventDefault();
+        dispatch(insert(`http://localhost:3000/contact`, formValue));
+        setFormValue({ ...formValue, name: "", email: "", message: "" });
+    }
+
+
     return (
         <div>
-        <div className="container mt-5">
-            <div className="row">
+            <div className="container mt-5">
+                <div className="row">
 
-                <div className="col-md-8 offset-md-2">
-                    <form action="">
-                        <div className="mb-3 mt-3">
-                            <label htmlFor="email">Name:</label>
-                            <input type="text" className="form-control" id="Name" placeholder="Enter Name" name="name" />
-                        </div>
-                        <div className="mb-3 mt-3">
-                            <label htmlFor="email">Email:</label>
-                            <input type="email" className="form-control" id="email" placeholder="Enter email" name="email" />
-                        </div>
-                        
-                        <div className="mb-3">
-                            <label htmlFor="pwd">Message:</label>
-                            <textarea className="form-control" id="message" placeholder="Enter message" name="message" ></textarea>
-                        </div>
-                       
-                        <button type="submit" className="btn btn-primary">Submit</button>
-                    </form>
+                    <div className="col-md-8 offset-md-2">
+                        <form action="">
+                            <div className="mb-3 mt-3">
+                                <label htmlFor="email">Name:</label>
+                                <input type="text" value={formValue.name} onChange={changehandel} className="form-control" id="Name" placeholder="Enter Name" name="name" />
+                            </div>
+                            <div className="mb-3 mt-3">
+                                <label htmlFor="email">Email:</label>
+                                <input type="email" value={formValue.email} onChange={changehandel} className="form-control" id="email" placeholder="Enter email" name="email" />
+                            </div>
 
+                            <div className="mb-3">
+                                <label htmlFor="pwd">Message:</label>
+                                <textarea value={formValue.message} onChange={changehandel} className="form-control" id="message" placeholder="Enter message" name="message" ></textarea>
+                            </div>
+
+                            <button type="submit" onClick={submithandel} className="btn btn-primary">Submit</button>
+                        </form>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
     )
 }
