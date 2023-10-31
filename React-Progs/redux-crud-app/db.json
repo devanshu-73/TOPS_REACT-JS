@@ -1,19 +1,17 @@
 {
-  "user": [
-    {
-      "id": 1,
-      "name": "dev",
-      "email": "dev@gamil.com",
-      "password":"1234",
-      "mobile":"6474764746"
-    }
-  ],
+  "user": [],
   "contact": [
     {
       "id": 1,
       "name": "dev",
       "email": "dev@gamil.com",
-      "message":"hi...."
+      "message": "hi...."
+    },
+    {
+      "id": "1698743045186",
+      "name": "dev",
+      "email": "dev@gmail.com",
+      "message": "hello...."
     }
   ]
 }
