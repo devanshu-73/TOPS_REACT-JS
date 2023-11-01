@@ -3,7 +3,7 @@ function App() {
   return (
     <>
       <div>Hello </div>
-      {toast.success("hello")}
+      <button onClick={() => (toast.success("hello"))}>Click</button>
     </>
   );
 }
