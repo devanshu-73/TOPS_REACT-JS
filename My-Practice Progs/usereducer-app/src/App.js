@@ -1,8 +1,9 @@
-
+import { toast } from 'react-toastify';
 function App() {
   return (
     <>
-      <div>Hello Users...</div>
+      <div>Hello </div>
+      {toast.success("hello")}
     </>
   );
 }
