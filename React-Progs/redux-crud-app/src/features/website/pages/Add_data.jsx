@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
 import { insert } from '../../userReducer';
+
 
 function Add_data() {
 
-
-    const [formValue, setFormValue] = useState({
+    const [formvalue, setFormvalue] = useState({
         id: "",
         name: "",
         email: "",
@@ -14,17 +15,15 @@ function Add_data() {
     })
 
     const changehandel = (e) => {
-        setFormValue({ ...formValue, id: new Date().getTime().toString(), [e.target.name]: e.target.value });
+        setFormvalue({ ...formvalue, id: new Date().getTime().toString(), [e.target.name]: e.target.value });
     }
 
     const dispatch = useDispatch();
-
     const submithandel = (e) => {
         e.preventDefault();
-        dispatch(insert(`http://localhost:3000/user`, formValue));
-        setFormValue({ ...formValue, name: "", email: "", password: "", mobile: "" });
+        dispatch(insert(`http://localhost:3000/user`, formvalue));
+        setFormvalue({ ...formvalue, name: "", email: "", password: "", mobile: "" });
     }
-
     return (
         <div>
             <div className="container mt-5">
@@ -34,19 +33,19 @@ function Add_data() {
                         <form action="">
                             <div className="mb-3 mt-3">
                                 <label htmlFor="email">Name:</label>
-                                <input type="text" value={formValue.name} onChange={changehandel} className="form-control" id="Name" placeholder="Enter Name" name="name" />
+                                <input type="text" value={formvalue.name} onChange={changehandel} className="form-control" id="Name" placeholder="Enter Name" name="name" />
                             </div>
                             <div className="mb-3 mt-3">
                                 <label htmlFor="email">Email:</label>
-                                <input type="email" value={formValue.email} onChange={changehandel} className="form-control" id="email" placeholder="Enter email" name="email" />
+                                <input type="email" value={formvalue.email} onChange={changehandel} className="form-control" id="email" placeholder="Enter email" name="email" />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="pwd">Password:</label>
-                                <input type="password" value={formValue.password} onChange={changehandel} className="form-control" id="pwd" placeholder="Enter password" name="password" />
+                                <input type="password" value={formvalue.password} onChange={changehandel} className="form-control" id="pwd" placeholder="Enter password" name="password" />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="pwd">Mobile:</label>
-                                <input type="number" value={formValue.mobile} onChange={changehandel} className="form-control" id="Mobile" placeholder="Enter Mobile" name="mobile" />
+                                <input type="number" value={formvalue.mobile} onChange={changehandel} className="form-control" id="Mobile" placeholder="Enter Mobile" name="mobile" />
                             </div>
 
                             <button type="submit" onClick={submithandel} className="btn btn-primary">Submit</button>
