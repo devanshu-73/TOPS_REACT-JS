@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 function Dashboard() {
 
-    const { demo } = useSelector((state) => state.userReducer);
+    const {demo}=useSelector((state)=> state.userReducer);
 
     return (
         <div>
