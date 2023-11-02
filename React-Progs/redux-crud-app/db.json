@@ -1,17 +1,19 @@
 {
-  "user": [],
+  "user": [
+    {
+      "id": "1698915341613",
+      "name": "dev",
+      "email": "devanshuchauhan732000@gmail.com",
+      "password": "13133",
+      "mobile": "421123124"
+    }
+  ],
   "contact": [
     {
-      "id": 1,
-      "name": "dev",
-      "email": "dev@gamil.com",
-      "message": "hi...."
-    },
-    {
-      "id": "1698743045186",
-      "name": "dev",
-      "email": "dev@gmail.com",
-      "message": "hello...."
+      "id": "1698915401303",
+      "name": "btrbfg",
+      "email": "devanshuchauhan732000@gmail.com",
+      "message": "nwkdfcnkewcwec"
     }
   ]
 }
