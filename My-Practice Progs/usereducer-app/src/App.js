@@ -5,11 +5,12 @@ import { useState } from "react";
 function App() {
   const [count, setCount] = useState(0);
   return (
-    <>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
       {/* <button onClick={() => (toast.success("hello"))}>Click</button> */}
+      <button onClick={() => setCount((count) => count + 1)}><h1>+</h1></button>
       <div>{count}</div>
-      <button onClick={setCount((count) => count + 1)}></button>
-    </>
+      <button onClick={() => setCount((count) => count - 1)}><h1>-</h1></button>
+    </div>
   );
 }
 
