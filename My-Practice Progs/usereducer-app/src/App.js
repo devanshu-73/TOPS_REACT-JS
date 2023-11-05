@@ -1,10 +1,11 @@
-import { toast } from 'react-toastify';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 function App() {
   return (
     <>
-      <button onClick={() => (toast.success("hello"))}>Click</button>
-
+      <Header />
+      <Footer />
     </>
   );
 }
