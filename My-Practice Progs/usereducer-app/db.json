@@ -1,0 +1,25 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "dev1",
+            "email": "dev1@gmail.com",
+            "phone": 544552025,
+            "password": 1234
+        },
+        {
+            "id": 2,
+            "name": "dev2",
+            "email": "dev2@gmail.com",
+            "phone": 5445512025,
+            "password": 1234
+        },
+        {
+            "id": 3,
+            "name": "dev3",
+            "email": "dev3@gmail.com",
+            "phone": 545522025,
+            "password": 1234
+        }
+    ]
+}
