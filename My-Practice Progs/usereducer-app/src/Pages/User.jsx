@@ -85,7 +85,7 @@ export default function User() {
   return (
 
     <>
-      <h1 className='text-center'>Sign Up Form</h1>
+      <h1 className='text-center'>Form</h1>
       <div className='d-flex justify-content-center align-items-center'>
         <form className='col-6' onSubmit={onsubmit}>
           <div className="mb-3 mt-3">
