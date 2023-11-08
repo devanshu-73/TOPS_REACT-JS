@@ -116,7 +116,7 @@ export default function User() {
               <th>Action</th>
             </tr>
           </thead>
-          
+
           <tbody>
             {
               userData.map((user, index) => (
@@ -133,6 +133,7 @@ export default function User() {
               ))
             }
           </tbody>
+
         </table>
       </div>
     </>
