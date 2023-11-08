@@ -119,7 +119,7 @@ export default function User() {
 
           <tbody>
             {
-              userData.map((user, index) => (
+              userData.map((user) => (
                 <tr key={user.id}>
                   <td>{user.id}</td>
                   <td>{user.name}</td>
@@ -139,4 +139,3 @@ export default function User() {
     </>
   );
 }
-
