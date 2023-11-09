@@ -1,9 +1,9 @@
 import React from 'react'
-
+axios
 const Manage_user = () => {
   return (
     <div>
-      Manage User....
+      
     </div>
   )
 }
