@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-
 const Manage_user = () => {
 
   const [userData, setUserData] = useState([]);
