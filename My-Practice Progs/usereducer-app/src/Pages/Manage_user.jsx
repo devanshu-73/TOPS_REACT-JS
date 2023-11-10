@@ -10,7 +10,6 @@ const Manage_user = () => {
 
     const res = await axios.get(`http://localhost:3000/users`);
     setUserData(res.data);
-    // console.log(res);
   };
 
   useEffect(() => {
