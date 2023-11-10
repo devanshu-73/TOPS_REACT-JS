@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function User() {
+  
   const [userData, setUserData] = useState([]);
   
   const [users, setUsers] = useState({
