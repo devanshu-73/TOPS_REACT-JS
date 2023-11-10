@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function User() {
   const [userData, setUserData] = useState([]);
+  
   const [users, setUsers] = useState({
     id: uuid().slice(0, 10),
     name: "",
