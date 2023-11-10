@@ -10,7 +10,7 @@ const Manage_user = () => {
 
     const res = await axios.get(`http://localhost:3000/users`);
     setUserData(res.data);
-
+    // console.log(res);
   };
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Manage_user = () => {
   }, [])
 
   return (
-    <div>
+    <div className='d-flex justify-content-center align-items-center mt-3'>
       <table className='table-bordered'>
         <thead>
           <tr>
