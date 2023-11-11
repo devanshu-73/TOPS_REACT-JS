@@ -5,9 +5,9 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function User() {
-  
+
   const [userData, setUserData] = useState([]);
-  
+
   const [users, setUsers] = useState({
     id: uuid().slice(0, 10),
     name: "",
@@ -55,7 +55,7 @@ export default function User() {
     e.preventDefault();
     try {
       if (validation()) {
-        const res = await axios.post("http://localhost:3000/users", users);
+        const res = await axios.post(`http://localhost:3000/users`, users);
         if (res.status === 201) {
           toast.success("User created successfully");
           fetchData();
