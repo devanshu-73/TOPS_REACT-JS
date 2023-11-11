@@ -70,8 +70,9 @@ export default function User() {
           });
         }
       }
-    } catch (error) {
-      console.error("Error creating user:", error);
+    }
+    catch (error) {
+      console.error("Error while creating user:", error);
       toast.error("Error creating user");
     }
   };
