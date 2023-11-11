@@ -59,6 +59,7 @@ export default function User() {
         if (res.status === 201) {
           toast.success("User created successfully");
           fetchData();
+         
           setUsers({
             id: uuid().slice(0, 10),
             name: "",
