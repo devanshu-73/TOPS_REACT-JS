@@ -57,9 +57,11 @@ export default function User() {
       if (validation()) {
         const res = await axios.post(`http://localhost:3000/users`, users);
         if (res.status === 201) {
+
           toast.success("User created successfully");
+
           fetchData();
-         
+
           setUsers({
             id: uuid().slice(0, 10),
             name: "",
