@@ -1,15 +1,27 @@
+// import axios from 'axios';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid'
+import { toast } from 'react-toastify';
 const BothUser = () => {
     const [users, setUsers] = useState({
         id: uuid().slice(0, 5),
         name: "",
-        email: "",
-        password: ""
     })
+    const onsubmit = async (e) => {
+        e.preventDefault();
+        const res = await axios.post(`http://localhost:3000/users`, users);
+        if (res.status === 201) {
+            toast.success("success");
+            setUsers({
+                id: "",
+                name: ""
+            })
+        }
+    }
     return (
         <div>
+            <h1 className='text-center'>Form</h1>
             <form action="" onSubmit={onsubmit}>
                 <div className='mb-3 mt-3'>
                     <label htmlFor="name" className='form-lable'>Name</label>
