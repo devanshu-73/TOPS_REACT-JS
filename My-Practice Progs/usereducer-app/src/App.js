@@ -4,8 +4,8 @@
 // import User from "./Pages/User";
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Manage_user from './Pages/Manage_user';
-
 import BothUser from './Pages/BothUser';
+
 function App() {
   return (
     <>
