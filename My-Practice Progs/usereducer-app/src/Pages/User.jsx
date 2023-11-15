@@ -112,6 +112,7 @@ export default function User() {
 
 
       <div className="container mt-3">
+        
         <table className="table table-hover table-bordered text-center">
           <thead>
             <tr>
