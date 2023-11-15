@@ -16,6 +16,7 @@ const Manage_user = () => {
   }, [])
 
   return (
+    
     <div className='d-flex justify-content-center align-items-center mt-3'>
       <table className='table-bordered'>
         <thead>
