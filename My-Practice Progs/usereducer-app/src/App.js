@@ -4,6 +4,7 @@
 // import User from "./Pages/User";
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Manage_user from './Pages/Manage_user';
+
 import BothUser from './Pages/BothUser';
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
           <Route path="/manageuser" element={<><Header /><Manage_user /><Footer /></>}></Route>
         </Routes>
       </BrowserRouter> */}
+
       <BothUser />
+
     </>
   );
 }
