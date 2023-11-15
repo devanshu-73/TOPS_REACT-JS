@@ -7,7 +7,9 @@
 import BothUser from './Pages/BothUser';
 
 function App() {
+
   return (
+
     <>
       {/* <BrowserRouter>
         <Routes>
