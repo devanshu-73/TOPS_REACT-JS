@@ -19,6 +19,7 @@ const BothUser = () => {
             })
         }
     }
+    
     return (
         <div>
             <h1 className='text-center'>Form</h1>
