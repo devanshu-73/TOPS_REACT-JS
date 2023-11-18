@@ -3,7 +3,10 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 const ManagePost = () => {
   const [users, setUsers] = useState([]);
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState({
+    id: "",
+    name: ""
+  });
 
   useEffect(() => {
     fetchData();
@@ -14,6 +17,10 @@ const ManagePost = () => {
     setUsers(res.data);
   }
 
+  const handleSubmit = async (id) => {
+    const res = await axios.patch(`http://localhost:3000/users/${id}`);
+    setUser(res.data);
+  }
   const handleUpdate = async (id) => {
     const res = await axios.get(`http://localhost:3000/users/${id}`);
     setUser(res.data);
@@ -67,14 +74,14 @@ const ManagePost = () => {
                 <form action="">
                   <div className='mb-3 mt-3'>
                     <label htmlFor="name" className='form-lable'>Name</label>
-                    <input type="text" className='form-control' placeholder='Enter Name' onChange={(e) => ({ ...user, [e.target.name]: e.target.value })} value={user.name} name="name" />
+                    <input type="text" className='form-control' placeholder='Enter Name' onChange={(e) => setUser({ ...user, [e.target.name]: e.target.value })} value={user.name} name="name" />
                   </div>
                 </form>
               </div>
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary">Save</button>
+              <button type="button" className="btn btn-primary" onClick={handleSubmit}>Save</button>
             </div>
           </div>
         </div>
