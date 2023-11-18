@@ -67,14 +67,14 @@ const ManagePost = () => {
                 <form action="">
                   <div className='mb-3 mt-3'>
                     <label htmlFor="name" className='form-lable'>Name</label>
-                    <input type="text" className='form-control' placeholder='Enter Name' value={user.name} name="name" />
+                    <input type="text" className='form-control' placeholder='Enter Name' onChange={(e) => ({ ...user, [e.target.name]: e.target.value })} value={user.name} name="name" />
                   </div>
                 </form>
               </div>
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary">Save changes</button>
+              <button type="button" className="btn btn-primary">Save</button>
             </div>
           </div>
         </div>
