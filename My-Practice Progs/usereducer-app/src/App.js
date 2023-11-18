@@ -1,10 +1,13 @@
 /* eslint-disable react/jsx-pascal-case */
 // import Header from './Components/Header';
-// import Footer from './Components/Footer';
 // import User from "./Pages/User";
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import Footer from './Components/Footer';
 // import Manage_user from './Pages/Manage_user';
 // import BothUser from './Pages/BothUser';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header2 from './Components/Header2';
+import PostUser from './Pages/PostUser';
+import ManagePost from './Pages/ManagePost';
 
 function App() {
 
@@ -18,7 +21,12 @@ function App() {
         </Routes>
       </BrowserRouter> */}
       {/* <BothUser /> */}
-
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<><Header2 /><PostUser /></>}></Route>
+          <Route path='/manage' element={<><Header2 /><ManagePost /></>}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
