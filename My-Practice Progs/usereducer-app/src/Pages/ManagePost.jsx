@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 const ManagePost = () => {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState({
-    id: "",
     name: ""
   });
 
@@ -17,9 +16,14 @@ const ManagePost = () => {
     setUsers(res.data);
   }
 
-  const handleSubmit = async (id) => {
-    const res = await axios.patch(`http://localhost:3000/users/${id}`);
-    setUser(res.data);
+  const handleSubmit = async (e, id) => {
+    e.preventDefault();
+    const res = await axios.patch(`http://localhost:3000/users/${id}`, user);
+    if (res.status === 200) {
+      toast.success("success");
+      setUser({ ...user, name: "" });
+      fetchData();
+    }
   }
   const handleUpdate = async (id) => {
     const res = await axios.get(`http://localhost:3000/users/${id}`);
@@ -80,8 +84,7 @@ const ManagePost = () => {
               </div>
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary" onClick={handleSubmit}>Save</button>
+              <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={(e) => handleSubmit(e, user.id)}>Save</button>
             </div>
           </div>
         </div>
