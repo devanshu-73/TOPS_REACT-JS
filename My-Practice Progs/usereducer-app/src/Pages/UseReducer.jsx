@@ -16,10 +16,10 @@ const UseReducer = () => {
     const [count, dispatch] = useReducer(reducer, initState);
     return (
         <div className='w-100 mt-5 d-flex border border-5 flex-column justify-content-center align-items-center'>
-            <div className='text-center'>Count : {count}</div>
+            <div className='text-center'><h1>{count}</h1></div>
             <div >
-                <button className='btn btn-primary' onClick={() => dispatch("increment")}>Increment</button>
-                <button className='btn btn-primary' onClick={() => dispatch("decrement")}>Decrement</button>
+                <button className='btn btn-primary me-3' onClick={() => dispatch("decrement")}>Decrement</button>
+                <button className='btn btn-primary ms-3' onClick={() => dispatch("increment")}>Increment</button>
             </div>
         </div>
     )
