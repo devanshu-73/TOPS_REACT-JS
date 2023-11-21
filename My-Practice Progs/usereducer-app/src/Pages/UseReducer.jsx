@@ -1,9 +1,12 @@
 import React, { useReducer } from 'react'
 
-const 
+const initState = 0;
+const reducer = (state) => {
+
+}
 
 const UseReducer = () => {
-    useReducer(reducer,initState)
+    const [count, dispatch] = useReducer(reducer, initState);
     return (
         <div>
             <div>Count : {count}</div>
