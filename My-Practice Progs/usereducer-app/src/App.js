@@ -8,14 +8,13 @@
 // import Header2 from './Components/Header2';
 // import PostUser from './Pages/PostUser';
 // import ManagePost from './Pages/ManagePost';
-import UseReducer from './Pages/UseReducer';
+import Counter from './Pages/Counter';
 
 function App() {
 
   return (
-
     <>
-      <UseReducer />
+      <Counter />
       {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<><Header /><User /><Footer /></>}></Route>
