@@ -1,8 +1,8 @@
-// import axios from 'axios';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid'
 import { toast } from 'react-toastify';
+
 const BothUser = () => {
     const [users, setUsers] = useState({
         id: uuid().slice(0, 5),
@@ -19,7 +19,7 @@ const BothUser = () => {
             })
         }
     }
-    
+
     return (
         <div>
             <h1 className='text-center'>Form</h1>
