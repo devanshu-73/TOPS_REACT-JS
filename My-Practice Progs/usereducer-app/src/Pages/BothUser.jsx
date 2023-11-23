@@ -4,10 +4,12 @@ import { v4 as uuid } from 'uuid'
 import { toast } from 'react-toastify';
 
 const BothUser = () => {
+
     const [users, setUsers] = useState({
         id: uuid().slice(0, 5),
         name: "",
     })
+
     const onsubmit = async (e) => {
         e.preventDefault();
         const res = await axios.post(`http://localhost:3000/users`, users);
