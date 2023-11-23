@@ -1,4 +1,3 @@
-// import Counter from './Pages/Counter';
 import UseRef from './Pages/UseRef';
 
 function App() {
@@ -6,7 +5,6 @@ function App() {
   return (
     <>
       <UseRef />
-      {/* <Counter /> */}
     </>
   );
 }
