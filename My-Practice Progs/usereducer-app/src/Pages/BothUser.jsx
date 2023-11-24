@@ -23,6 +23,7 @@ const BothUser = () => {
     }
 
     return (
+
         <div>
             <h1 className='text-center'>Form</h1>
             <form action="" onSubmit={onsubmit}>
