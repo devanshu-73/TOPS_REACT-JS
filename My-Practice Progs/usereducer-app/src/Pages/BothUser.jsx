@@ -31,7 +31,7 @@ const BothUser = () => {
                     <label htmlFor="name" className='form-lable'>Name</label>
                     <input type="text" name="name" value={users.name} onChange={(e) => (setUsers({ ...users, [e.target.name]: e.target.value }))} className='form-control' placeholder='Enter Name' />
                 </div>
-                <button type="submit" className='btn btn-danger' >Submit</button>
+                <button type="submit" className='btn btn-danger' >Save</button>
             </form>
         </div>
 
