@@ -2,19 +2,17 @@
   "users": [
     {
       "username": "dev",
-      "email": "devanshuchauhan732000@gmail.com",
-      "phone": "4211233535",
+      "email": "dev@gmail.com",
+      "phone": "12121212",
       "password": "1234",
-      "status": true,
-      "id": "1696324022810"
+      "id": 1
     },
     {
-      "username": "yash",
-      "email": "devanshuchauhan732000@gmail.com",
-      "phone": "421123124",
+      "username": "dev1",
+      "email": "dev1@gmail.com",
+      "phone": "1231231231",
       "password": "1234",
-      "id": "1696327401202",
-      "status": true
+      "id": 2
     }
   ],
   "order": [

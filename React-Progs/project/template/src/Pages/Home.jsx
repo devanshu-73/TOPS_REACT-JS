@@ -17,7 +17,7 @@ export default function Home() {
     // Axios.........
     const fetchUsers = async () => {
         try {
-            const res = await axios.get('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/product.json');
+            const res = await axios.get('http://localhost:3000/product');
             if (Array.isArray(res.data)) {
                 setUsers(res.data);
             } else {

@@ -1,9 +1,8 @@
-/* eslint-disable eqeqeq */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useState } from "react";
 import { toast } from 'react-toastify';
-import { getDatabase, ref, push } from 'firebase/database';
+
 export default function Contact() {
   const [data, setData] = useState({
     name: "",
@@ -37,37 +36,18 @@ export default function Contact() {
     return result;
   }
 
-  const onsubmit = async (e) => {
+  const onsubmit = (e) => {
     e.preventDefault();
     if (validation()) {
-      try {
-        const db = getDatabase();
-        const inquiriesRef = ref(db, 'contact');
-        const newInquiryRef = push(inquiriesRef);
-
-        // Push the data to Firebase
-        push(newInquiryRef, data)
-          .then(() => {
-            toast.success('Inquiry Submitted Successfully!');
-            setData({
-              name: "",
-              email: "",
-              subject: "",
-              message: ""
-            });
-          })
-          .catch((error) => {
-            console.error('Error submitting the form:', error);
-            toast.error('Inquiry submission failed. Please try again later.');
-          });
-      } catch (error) {
-        console.error('Error:', error);
-        toast.error('Inquiry submission failed. Please try again later.');
-      }
+      toast.success('Inquiry Submitted Successfully!');
+      setData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
     }
   }
-
-
 
   return (
     <div>
@@ -123,7 +103,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="col-md-2">
-                <button className="btn btn-primary w-100">Submit</button>
+                <button className="btn btn-primary w-100" onClick={onsubmit}>Submit</button>
               </div>
             </div>
           </div>
@@ -197,6 +177,5 @@ export default function Contact() {
       </div>
       {/* Contact-End */}
     </div>
-
   )
 }

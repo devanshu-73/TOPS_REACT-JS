@@ -1,18 +1,26 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable no-undef */
-import React from 'react'
-import { NavLink, Link } from 'react-router-dom'
-// import { NavLink, Link, useNavigate } from 'react-router-dom'
-export default function Header() {
-    // const navigate = useNavigate();
+import React, { useState, useEffect } from 'react';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
+
+const Header = () => {
+    const navigate = useNavigate();
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    useEffect(() => {
+        setIsAuthenticated(!!localStorage.getItem('username'));
+    }, []); // Run only once on component mount
+
     const logout = () => {
         alert('logout');
         localStorage.clear();
-    }
+        setIsAuthenticated(false);
+        navigate('/login');
+    };
+    
+
     return (
         <>
             <div>
-
                 {/* Header Start */}
                 <div className="container-fluid bg-dark px-0">
                     <div className="row gx-0">
@@ -23,23 +31,13 @@ export default function Header() {
                         </div>
                         <div className="col-lg-9">
                             <div className="row gx-0 bg-white d-none d-lg-flex">
-                                <div className="col-lg-7 px-5 text-start">
-                                    <div className="h-100 d-inline-flex align-items-center py-2 me-4">
-                                        <i className="fa fa-envelope text-primary me-2" />
-                                        <p className="mb-0">info@example.com</p>
-                                    </div>
-                                    <div className="h-100 d-inline-flex align-items-center py-2">
-                                        <i className="fa fa-phone-alt text-primary me-2" />
-                                        <p className="mb-0">+012 345 6789</p>
-                                    </div>
-                                </div>
                                 <div className="col-lg-5 px-5 text-end">
                                     <div className="d-inline-flex align-items-center py-2">
-                                        <a className="me-3" href><i className="fab fa-facebook-f" /></a>
-                                        <a className="me-3" href><i className="fab fa-twitter" /></a>
-                                        <a className="me-3" href><i className="fab fa-linkedin-in" /></a>
-                                        <a className="me-3" href><i className="fab fa-instagram" /></a>
-                                        <a className href><i className="fab fa-youtube" /></a>
+                                        <a className="me-3" href="#"><i className="fab fa-facebook-f" /></a>
+                                        <a className="me-3" href="#"><i className="fab fa-twitter" /></a>
+                                        <a className="me-3" href="#"><i className="fab fa-linkedin-in" /></a>
+                                        <a className="me-3" href="#"><i className="fab fa-instagram" /></a>
+                                        <a className="me-3" href="#"><i className="fab fa-youtube" /></a>
                                     </div>
                                 </div>
                             </div>
@@ -66,25 +64,17 @@ export default function Header() {
                                         </div>
                                         <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
                                         {
-                                            (() => {
-                                                if (localStorage.getItem('username')) {
-                                                    return (
-                                                        <>
-                                                            <Link className="nav-item nav-link" to='/profile'>{localStorage.getItem('username')}</Link>
-                                                            {/* <a href=`javascript:void(0)` onClick={logout}>Logout</a> */}
-                                                            <Link className="nav-item nav-link" to='/header2' onClick={logout}>Logout</Link>
-                                                        </>
-                                                    )
-                                                }
-                                                else {
-                                                    return (
-                                                        <>
-                                                            <NavLink className="nav-item nav-link" to="/signup">SignUp</NavLink>
-                                                            <NavLink className="nav-item nav-link" to="/login">Login</NavLink>
-                                                        </>
-                                                    )
-                                                }
-                                            })()
+                                            isAuthenticated ? (
+                                                <>
+                                                    <Link className="nav-item nav-link" to='/profile'>{localStorage.getItem('username')}</Link>
+                                                    <button className="nav-item nav-link" onClick={logout}>Logout</button>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <NavLink className="nav-item nav-link" to="/signup">SignUp</NavLink>
+                                                    <NavLink className="nav-item nav-link" to="/login">Login</NavLink>
+                                                </>
+                                            )
                                         }
                                     </div>
                                     <a href="https://htmlcodex.com/hotel-html-template-pro" className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Premium Version<i className="fa fa-arrow-right ms-3" /></a>
@@ -93,9 +83,10 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-                {/* Header-End */}
+                {/* Header End */}
             </div>
-
         </>
-    )
-}
+    );
+};
+
+export default Header;

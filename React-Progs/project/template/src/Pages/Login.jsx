@@ -1,10 +1,10 @@
-/* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTag, faLock } from '@fortawesome/free-solid-svg-icons';
 
 function Login() {
-    const auth = getAuth();
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -16,56 +16,62 @@ function Login() {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
-
     const handleLogin = async (e) => {
         e.preventDefault();
-
+    
         try {
-            const userCredential = await signInWithEmailAndPassword(auth, username, password);
-            const user = userCredential.user;
-
-            if (user) {
-                if (user.emailVerified) {
-                    alert('Login successful');
-                    navigate('/profile');
-                } else {
-                    alert('Email not verified. Please verify your email before logging in.');
-                }
+            const response = await axios.get(`http://localhost:3000/users?username=${username}&password=${password}`);
+    
+            if (response.data.length > 0) {
+                alert('Login successful');
+                navigate('/profile'); // Use the navigate function to redirect to the profile page
+            } else {
+                alert('Login failed. Please check your username and password.');
             }
         } catch (error) {
-            console.error('Error:', error);
-            alert('Login Failed. Please check your username and password.');
+            console.error('Error during login:', error);
+            alert('Login failed. Please try again.');
         }
     };
+    
 
     return (
-        <>
-            <div>
-                <div className="container" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: 100 }}>
-                    <div className="row ">
-                        <div className="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-                            <div className="panel-body">
-                                <form role="form" style={{ width: "300px", marginTop: 20, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                                    <h5>Enter Details to Login</h5>
-                                    <div className="form-group input-group" style={{ padding: 10 }}>
-                                        <span className="input-group-addon"><i className="fa fa-tag" /></span>
+        <div className="container">
+            <div className="row justify-content-center mt-5">
+                <div className="col-md-4">
+                    <div className="card">
+                        <div className="card-body">
+                            <h3 className="card-title text-center mb-4">Login</h3>
+                            <form className="text-center">
+                                <div className="form-group">
+                                    <div className="input-group">
+                                        <div className="input-group-prepend">
+                                            <span className="input-group-text">
+                                                <FontAwesomeIcon icon={faTag} />
+                                            </span>
+                                        </div>
                                         <input type="text" className="form-control" value={username} onChange={handleUsernameChange} placeholder="Username" />
                                     </div>
-
-                                    <div className="form-group input-group" style={{ padding: 10 }}>
-                                        <span className="input-group-addon"><i className="fa fa-lock" /></span>
+                                </div>
+                                <div className="form-group">
+                                    <div className="input-group">
+                                        <div className="input-group-prepend">
+                                            <span className="input-group-text">
+                                                <FontAwesomeIcon icon={faLock} />
+                                            </span>
+                                        </div>
                                         <input type="password" className="form-control" value={password} onChange={handlePasswordChange} placeholder="Password" />
                                     </div>
-                                    <button type="button" onClick={handleLogin} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="btn btn-primary">
-                                        Login Now
-                                    </button>
-                                </form>
-                            </div>
+                                </div>
+                                <button type="button" onClick={handleLogin} className="btn btn-primary">
+                                    Login Now
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

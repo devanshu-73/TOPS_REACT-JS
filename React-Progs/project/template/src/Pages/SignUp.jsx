@@ -2,9 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { getDatabase, ref, set, push } from 'firebase/database';
-
+import axios from 'axios';
 
 function SignUp() {
     const navigate = useNavigate();
@@ -29,7 +27,6 @@ function SignUp() {
             toast.error('Email is empty');
             result = false;
         }
-
         if (data.phone === '') {
             toast.error('Phone is empty');
             result = false;
@@ -40,6 +37,7 @@ function SignUp() {
         }
         return result;
     }
+
     const onSubmit = async (e) => {
         e.preventDefault();
 
@@ -47,46 +45,20 @@ function SignUp() {
             return;
         }
 
-        const auth = getAuth(); // Initialize Firebase Authentication
-
         try {
-            createUserWithEmailAndPassword(auth, data.email, data.password)
-                .then((userCredential) => {
-                    // User registration successful
-                    const user = userCredential.user;
-                    toast.success('Sign-up successful');
+            // Make a POST request using Axios
+            const response = await axios.post('http://localhost:3000/users', data);
 
-                    // Store user data under 'users' path with a unique key
-                    const db = getDatabase(); // Initialize Firebase Realtime Database
-                    const usersRef = ref(db, 'users');
-                    const newUserRef = push(usersRef); // This generates a unique key for the user
-
-                    // Create a user profile object to store in the database
-                    const userProfile = {
-                        username: data.username,
-                        email: data.email,
-                        phone: data.phone,
-                    };
-
-                    // Set the user profile in the database under the unique key
-                    set(newUserRef, userProfile)
-                        .then(() => {
-                            // Data has been written to the database
-                            navigate('/profile');
-                            setData({ username: '', email: '', phone: '', password: '' });
-                        })
-                        .catch((error) => {
-                            console.error('Error writing to the database:', error);
-                        });
-                })
-                .catch((error) => {
-                    // Handle registration error
-                    toast.error('Registration error: ' + error.message);
-                });
+            if (response.status === 201) {
+                toast.success('Sign-up successful');
+                navigate('/profile');
+            } else {
+                toast.error('Registration error: Unable to create user');
+            }
         } catch (error) {
-            console.error('Error:', error);
-            // Handle other errors as needed
-        };
+            console.error('Error creating user:', error);
+            toast.error('Registration error: Unable to create user');
+        }
     };
 
     return (
@@ -99,7 +71,7 @@ function SignUp() {
                                 <h5>Enter Details to Sign Up</h5>
                                 <div className="form-group input-group" style={{ padding: 10 }}>
                                     <span className="input-group-addon"><i className="fa fa-tag" /></span>
-                                    <input type="text" value={data.username} name='username' className="form-control" onChange={handleChange} placeholder="User Name " />
+                                    <input type="text" value={data.username} name='username' className="form-control" onChange={handleChange} placeholder="User Name" />
                                 </div>
                                 <div className="form-group input-group" style={{ padding: 10 }}>
                                     <span className="input-group-addon"><i className="fa fa-tag" /></span>

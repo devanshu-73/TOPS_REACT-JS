@@ -5,7 +5,6 @@ import React from 'react'
 export default function Footer() {
     return (
         <div>
-        
             {/* Newsletter-Start */}
             <div className="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
                 <div className="row justify-content-center">
@@ -91,10 +90,8 @@ export default function Footer() {
             </div>
             {/* Back-to-Top */}
             <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top"><i className="bi bi-arrow-up" /></a>
-
             {/* Footer-End */}
         </div>
-
     )
 }
 

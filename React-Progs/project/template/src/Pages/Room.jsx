@@ -11,7 +11,7 @@ export default function Room() {
 
     // Axios.........
     const fetch = async () => {
-        const res = await axios.get('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/product.json');
+        const res = await axios.get('http://localhost:3000/product');
         setUsers(res.data);
     }
     return (
@@ -85,8 +85,8 @@ export default function Room() {
                     <div className="row g-4">
 
                         {
-                            users.map((user) => (
-                                <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                            users.map((user,index) => (
+                                <div className="col-lg-4 col-md-6 wow fadeInUp" key={index} data-wow-delay="0.6s">
                                     <div className="room-item shadow rounded overflow-hidden">
                                         <div className="position-relative">
                                             <img className="img-fluid" src="img/room-3.jpg" alt />

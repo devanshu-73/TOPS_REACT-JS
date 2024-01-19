@@ -6,7 +6,6 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { toast } from 'react-toastify';
-import { getDatabase, ref, push, set } from 'firebase/database';
 
 export default function Booking() {
     const [data, setData] = useState({
@@ -44,50 +43,23 @@ export default function Booking() {
         return result;
     }
 
-    const onsubmit = async (e) => {
+    const onsubmit = (e) => {
         e.preventDefault();
         if (validation()) {
-            try {
-                // Convert the checkInDate and checkOutDate to UTC before sending
-                const checkInDateUTC = data.checkInDate.toISOString();
-                const checkOutDateUTC = data.checkOutDate.toISOString();
-
-                const db = getDatabase();
-                const ordersRef = ref(db, 'order'); // Reference to the 'order' path in your Firebase Realtime Database
-                const newOrderRef = push(ordersRef);
-
-                set(newOrderRef, {
-                    name: data.name,
-                    email: data.email,
-                    checkInDate: checkInDateUTC,
-                    checkOutDate: checkOutDateUTC,
-                    numberOfAdults: data.numberOfAdults,
-                    numberOfChildren: data.numberOfChildren,
-                    selectedRoom: data.selectedRoom,
-                })
-                    .then(() => {
-                        toast.success('Booking Successful!');
-                        setData({
-                            name: "",
-                            email: "",
-                            checkInDate: null,
-                            checkOutDate: null,
-                            numberOfAdults: 0,
-                            numberOfChildren: 0,
-                            selectedRoom: "",
-                        });
-                    })
-                    .catch((error) => {
-                        console.error('Error submitting the form:', error);
-                        toast.error('Booking failed. Please try again later.');
-                    });
-            } catch (error) {
-                console.error('Error:', error);
-                toast.error('Booking failed. Please try again later.');
-            }
+            // Handle the form submission or any other actions you want to perform
+            // You can add your logic here without involving Firebase
+            toast.success('Booking Successful!');
+            setData({
+                name: "",
+                email: "",
+                checkInDate: null,
+                checkOutDate: null,
+                numberOfAdults: 0,
+                numberOfChildren: 0,
+                selectedRoom: "",
+            });
         }
     };
-
 
     return (
         <>
@@ -143,13 +115,12 @@ export default function Booking() {
                                 </div>
                             </div>
                             <div className="col-md-2">
-                                <button className="btn btn-primary w-100">Submit</button>
+                                <button className="btn btn-primary w-100" onClick={onsubmit}>Submit</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
 
             {/* Booking Start */}
             <div className="container-xxl py-5">
@@ -162,7 +133,7 @@ export default function Booking() {
                         <div className="col-lg-6">
                             <div className="row g-3">
                                 <div className="col-6 text-end">
-                                    <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="img/about-1.jpg" style={{ marginTop: '25%' }} />
+                                    <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="img/about-1.jpg" style={{ marginTop: '25%' }} alt="Room" />
                                 </div>
                                 <div className="col-6 text-start">
                                     <img className="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="img/about-2.jpg" />
@@ -173,6 +144,7 @@ export default function Booking() {
                                 <div className="col-6 text-start">
                                     <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="img/about-4.jpg" />
                                 </div>
+                                {/* ... (unchanged) ... */}
                             </div>
                         </div>
                         <div className="col-lg-6">
@@ -217,8 +189,6 @@ export default function Booking() {
                                                 />
                                             </div>
                                         </div>
-
-
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <select className="form-select" id="select1"
@@ -275,7 +245,6 @@ export default function Booking() {
                 </div>
             </div>
             {/* Booking-End */}
-
         </>
     );
 }
