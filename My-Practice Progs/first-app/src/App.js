@@ -1,16 +1,16 @@
-import NavScrollExample from "./MainNavbar";
+// import NavScrollExample from "./MainNavbar";
 import TextExample from "./CardMain";
 function App() {
   return (
     <>
-      <NavScrollExample />
-      <div className="d-flex">
+      {/* <NavScrollExample /> */}
+      {/* <div className="d-flex"> */}
         <TextExample />
-        <TextExample />
-        <TextExample />
-        <TextExample />
-        <TextExample />
-      </div>
+        {/* <TextExample /> */}
+        {/* <TextExample /> */}
+        {/* <TextExample /> */}
+        {/* <TextExample /> */}
+      {/* </div> */}
     </>
   );
 }
